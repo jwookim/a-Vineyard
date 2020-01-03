@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+class Time
+{
+private:
+	int m_iHour;
+	int m_iMin;
+public:
+	void ShowTime();
+	Time operator + (Time time);
+	Time() {};
+	Time(int Hour, int Min) { m_iHour = Hour, m_iMin = Min; }
+	~Time() {};
+};
+void Time::ShowTime()
+{
+	cout << endl;
+	cout << "             총 공부 시간 ♪ " << m_iHour << " : " << m_iMin << endl;
+}
+
+Time Time::operator +(Time time)
+{
+	int tmp;
+	time.m_iHour += this->m_iHour;
+	time.m_iMin += this->m_iMin;
+	if (time.m_iMin>= 60)
+	{
+		tmp = time.m_iMin/60;
+		time.m_iHour += tmp;
+		time.m_iMin -= tmp * 60;
+	}
+	return time;
+}
+
+void main()
+{
+	int i = 1, tmp,tHour=0,tMin=0;
+	Time t1(0,0);
+	while (1)
+	{
+		Time t2(tHour, tMin);
+		t1 = t2+t1;
+		system("cls");
+		t1.ShowTime();
+		cout << " ┌─────────────────────┐" << endl;
+		cout << " │                                          │" << endl;
+		cout << " │    공부 시간 관리 프로그램 < " << i++ << " Day >     │" << endl;
+		cout << " │                                          │" << endl;
+		cout << " │            ▶ 1. 시간 등록               │" << endl;
+		cout << " │            ▶ 2. 종료                    │" << endl;
+		cout << " │                                          │" << endl;
+		cout << " └─────────────────────┘" << endl;
+		cout << "   메뉴 선택 : ";
+		cin >> tmp;
+		cout << endl;
+		switch (tmp)
+		{
+		case 1:
+			cout << "▶ 시간 : ";
+			cin >> tHour;
+			cout << endl << "▶ 분 :";
+			cin >> tMin;
+			break;
+		case 2:
+			system("cls");
+			t1.ShowTime();
+			return;
+		}
+	}
+}

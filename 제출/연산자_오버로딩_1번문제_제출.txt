@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+
+class Point
+{
+private:
+	int x, y; 
+public:
+	Point(int a, int b) { x = a; y = b; }
+	void Print() { cout << "     ¢Ñ x = " << x << ", y = " << y <<  endl; }
+	Point operator / (Point tmp);
+};
+
+Point Point::operator / (Point tmp)
+{
+	if (this->x > tmp.x)
+		tmp.x = (this->x / tmp.x);
+	else if (this->x < tmp.x)
+		tmp.x = (tmp.x / this->x);
+	if (this->y > tmp.y)
+		tmp.y = (this->y / tmp.y);
+	else if (this->y < tmp.y)
+		tmp.y = (tmp.y / this->y);
+	return tmp;
+}
+
+void main()
+{
+	////////////////////// ¹®Á¦ 1 ///////////////////////////////////////
+	Point P1(10, 20), P2(5, 40),P3(0,0);
+	cout <<endl<< "¡Ú Question 1) °´Ã¼ / °´Ã¼ ¡Ú" << endl<<endl;
+	P1.Print();
+	P2.Print();
+	P3 = P1 / P2;
+	P3.Print();
+	cout << endl;
+}

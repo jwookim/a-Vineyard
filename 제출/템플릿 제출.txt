@@ -1,0 +1,69 @@
+#include<iostream>
+using namespace std;
+//////////////////// 문제 1번 ////////////////////////////
+template <typename T>
+void Plus(T a)
+{
+	a += 1;
+	cout << "▶1증가 된 값은 " << a << endl;
+}
+//////////////////// 문제 2번 ////////////////////////////
+template <typename S>
+void Smallest(S s1, S s2)
+{
+	if (s1 > s2)
+		cout << "두 수중 최소 값은 : " << s2 << endl;
+	else
+		cout << "두 수중 최소 값은 : " << s1 << endl;
+}
+//////////////////// 문제 3번 ////////////////////////////
+template <typename B>
+void Biggest(B b1, B b2, B b3)
+{
+	if (b1 > b2)
+	{
+		if (b1 > b3)
+			cout << "세 수중 최대값은 : " << b1 << endl;
+		else
+			cout << "세 수중 최소값은 : " << b3 << endl;
+	}
+	else if(b1< b2)
+	{
+		if (b2 > b3)
+			cout << "세 수중 최대값은 : " << b2 << endl;
+		else
+			cout << "세 수중 최대값은 : " << b3 << endl;
+	}
+}
+
+void main()
+{
+	int x = 2;
+	double y = 4.2;
+	cout << endl<<"              ★ 1번 문제 ★" << endl;
+	cout << "=========================================" << endl;
+	cout << "▶int 값  = " << x << endl;
+	Plus(x);
+	cout << "▶double 값 = " << y << endl;
+	Plus(y);
+	cout << "=========================================" << endl;
+	int a, b;
+	cout << endl << "              ★ 2번 문제 ★" << endl;
+	cout << "=========================================" << endl;
+	cout << "▶ 두 수를 입력해주세요 : ";
+	cin >> a >> b;
+	cout << endl;
+	Smallest(a, b);
+	cout << "=========================================" << endl;
+
+	int q, w, e;
+	cout << endl << "              ★ 3번 문제 ★" << endl;
+	cout << "=========================================" << endl;
+	cout << "▶ 세 수를 입력해주세요 : ";
+	cin >> q >> w >> e;
+	cout << endl;
+	Biggest(q, w, e);
+	cout << "=========================================" << endl;
+
+}
+

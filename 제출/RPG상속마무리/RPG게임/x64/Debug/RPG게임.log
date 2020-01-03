@@ -1,0 +1,141 @@
+﻿  Bow.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\bow.cpp(14): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\bow.cpp(22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Character.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(5): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(64): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(71): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(102): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(108): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(116): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(117): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(125): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(129): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(141): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(152): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(158): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(166): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(167): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(175): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(176): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(183): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(184): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(194): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(195): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(202): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(203): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(229): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(230): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(244): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(225): warning C4101: 'Num' :참조되지 않은 지역 변수입니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(265): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(266): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(270): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(271): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(275): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(276): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(281): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(317): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(345): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(391): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(385): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(434): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(435): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(450): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\character.cpp(451): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Dagger.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\dagger.cpp(17): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\dagger.cpp(25): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Game.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(15): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(17): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(18): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(19): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(20): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(48): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(49): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(50): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(51): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(53): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(54): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(55): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(104): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(119): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(120): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(121): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(122): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\game.cpp(123): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Gun.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\gun.cpp(15): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\gun.cpp(23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Hammer.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\hammer.cpp(17): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\hammer.cpp(25): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  main.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\main.cpp(5): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  MapDraw.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.cpp(27): warning C4267: '-=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.cpp(94): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  Shop.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(225): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(227): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(228): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(229): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(230): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(231): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(232): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(234): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(235): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(267): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(269): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(275): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(276): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(326): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(328): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(334): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(335): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(379): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(381): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(387): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(388): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(432): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(434): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(440): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(441): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(485): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(487): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(493): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(494): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(538): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(540): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(546): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\shop.cpp(547): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Sword.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\sword.cpp(16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\sword.cpp(24): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Wand.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\wand.cpp(17): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\wand.cpp(25): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Weapon.cpp
+e:\강의자료\기초반자료\제출\rpg상속마무리\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  코드를 생성하고 있습니다...
+  RPG게임.vcxproj -> E:\강의자료\기초반자료\제출\RPG상속마무리\x64\Debug\RPG게임.exe

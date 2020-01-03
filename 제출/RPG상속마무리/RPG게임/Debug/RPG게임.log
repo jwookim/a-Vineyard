@@ -1,0 +1,27 @@
+﻿  Bow.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\bow.cpp(41): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\bow.cpp(53): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Dagger.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\dagger.cpp(43): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\dagger.cpp(54): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Gun.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\gun.cpp(41): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\gun.cpp(52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Hammer.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\hammer.cpp(41): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\hammer.cpp(52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Sword.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\sword.cpp(41): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\sword.cpp(52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Wand.cpp
+c:\users\sinis\source\repos\rpg게임\rpg게임\mapdraw.h(21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\wand.cpp(42): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\sinis\source\repos\rpg게임\rpg게임\wand.cpp(53): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\sinis\source\repos\RPG게임\Debug\RPG게임.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  RPG게임.vcxproj -> C:\Users\sinis\source\repos\RPG게임\Debug\RPG게임.exe

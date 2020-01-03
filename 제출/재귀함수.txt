@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+int Sum(int _iNum)
+{
+	if (_iNum <=1)
+		return 1;
+	else
+		return _iNum + Sum(_iNum - 1);
+}
+
+void binary(int _iNum2)
+{
+	if (_iNum2 <= 0)
+		return;
+	else
+		binary(_iNum2 / 2);
+	cout << (_iNum2 % 2);
+}
+void main()
+{
+	system("mode con: lines=20 cols=40");
+
+	int iNum;
+	int iNum2;
+	cout << endl<< "  ★★★★★ 재귀함수 문제 ★★★★★" << endl;
+	cout << endl;
+	cout <<endl<< "     < 1. 정수를 입력하세요  > : ";
+	cin >> iNum;
+	cout << endl;	 
+	cout << "           1 ~ " << iNum << "의 합 -> " << Sum(iNum);
+	cout << endl << endl;
+
+	cout << "     < 2. 정수를 입력하세요  > : ";
+	cin >> iNum2;
+	cout << endl;	
+	cout << "                "<<iNum2 << " -> " ;
+	binary(iNum2);
+}
+

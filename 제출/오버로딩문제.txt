@@ -1,0 +1,148 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Overloadding
+{
+public:
+	void Quiz1(int num1, int num2);
+	void Quiz1(char ch, int num);
+	void Quiz2(string ch2);
+	void Quiz2(string ch3, string ch4);
+	void Quiz3(int number[5]);
+	void Quiz3(char text[5]);
+};
+
+void Overloadding::Quiz1(int num1, int num2)
+{
+	float res = 1;
+	if (num2 < 1)
+	{
+		cout << "※ 제곱수를 잘못 입력 하셨습니다(1이상) ※" << endl;
+		return;
+	}
+	else if (num2 == 1)
+		cout << num1 << "의 " << num2 << "승 : " << num1 << endl;
+	else
+		for (int i = 1; i <= num2; i++)
+			res *= (float)num1;
+	cout << num1 << "의 " << num2 << "승 : " << res << endl;
+
+}
+
+void Overloadding::Quiz1(char ch, int num)
+{
+	char tmp='a';
+	if (((char)(int)ch + num) > 'z')
+		cout << ch << "로부터 " << num << "이후의 문자는 [  " << (char)((int)tmp + num-1) << "  ] 입니다." << endl;
+	else
+		cout << ch << "로부터 " << num << "이후의 문자는 [  " << (char)((int)ch + num) << "  ] 입니다." << endl;
+
+}
+
+void Overloadding::Quiz2(string ch2)
+{
+	cout << "원래 문자열 : " << ch2 << " ===>  바뀐 문자열 : ";
+	for (int i = ch2.length() - 1; i >= 0; i--)
+	{
+		cout << ch2[i];
+	}
+	cout << endl;
+}
+
+void Overloadding::Quiz2(string ch3, string ch4)
+{
+	cout << ch3 << " + " << ch4 << "  = " << ch3 + ch4 << endl;
+}
+
+void Overloadding::Quiz3(int number[5])
+{
+	int tmp;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i + 1; j < 5; j++)
+		{
+			if (number[i] > number[j])
+			{
+				tmp = number[i];
+				number[i] = number[j];
+				number[j] = tmp;
+			}
+		}
+	}
+	cout << "오름 차순 정렬 후 ↓" << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << number[i];
+	}
+	cout << endl;
+
+}
+
+void Overloadding::Quiz3(char text[5])
+{
+	int tmp;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i + 1; j < 5; j++)
+		{
+			if (text[i] < text[j])
+			{
+				tmp = text[i];
+				text[i] = text[j];
+				text[j] = tmp;
+			}
+		}
+	}
+
+	cout << "내림 차순 정렬 후 ↓" << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << text[i];
+	}
+	cout << endl;
+}
+void main()
+{
+	Overloadding O;
+	//Quiz 1
+	int n1, n2, n3;
+	int num[5];
+	char c1;
+	string ch1, ch2, ch3;
+	char text[5];
+	cout << "==========================================================" << endl;
+	cout << "▶ 1. 정수 2개 입력 : ";
+	cin >> n1 >> n2;
+	O.Quiz1(n1, n2);
+	cout << "▶ 1. 단일문자와 정수 입력: ";
+	cin >> c1 >> n3;
+	O.Quiz1(c1, n3);
+	cout << "==========================================================" << endl << endl << endl;
+
+	//Quiz 2
+	cout << "==========================================================" << endl;
+	cout << "▶ 2. 문자열 하나 입력 : ";
+	cin >> ch1;
+	O.Quiz2(ch1);
+	cout << "▶ 2. 문자열 두개 입력 : ";
+	cin >> ch2 >> ch3;
+	O.Quiz2(ch2, ch3);
+	cout << "==========================================================" << endl << endl << endl;
+
+	//Quiz 3
+	cout << "==========================================================" << endl;
+	cout << "▶ 3. 숫자 5개 입력 : ";
+	for (int i = 0; i < 5; i++)
+	{
+		cin >> num[i];
+	}
+	O.Quiz3(num);
+	cout << "▶3. 단일 문자 5개 입력 : ";
+	for (int i = 0; i < 5; i++)
+	{
+		cin >> text[i];
+	}
+	O.Quiz3(text);
+	cout << "==========================================================" << endl << endl << endl;
+}

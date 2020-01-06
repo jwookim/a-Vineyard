@@ -20,8 +20,8 @@ int Character::ShowInfo(int line)
 	DrawManager.TextDraw("공격력 = " + to_string(m_iAtk) + "	생명력 = " + to_string(m_iHealth) + "/" + to_string(m_iMaxHealth), WIDTH / 2, line++);
 	DrawManager.TextDraw("경험치 = " + to_string(m_iExp) + "/" + to_string(m_iMaxExp) + "	GetExp : " + to_string(m_iGetExp), WIDTH / 2, line++);
 	DrawManager.TextDraw("Gold = " + to_string(m_iGold), WIDTH / 2, line++);
-	if(m_Weapon != NULL)
-		DrawManager.DrawMidText()
+	if (m_Weapon != NULL)
+		m_Weapon->ShowInfo(line++);
 	return line;
 }
 

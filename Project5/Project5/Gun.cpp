@@ -4,6 +4,7 @@
 
 Gun::Gun()
 {
+	SetType("รั");
 }
 
 

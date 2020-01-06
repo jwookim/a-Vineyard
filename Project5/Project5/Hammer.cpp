@@ -4,6 +4,7 @@
 
 Hammer::Hammer()
 {
+	SetType("ÇØ¸Ó");
 }
 
 

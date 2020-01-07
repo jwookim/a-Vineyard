@@ -4,6 +4,7 @@
 
 Wand::Wand()
 {
+	SetType("ÁöÆÎÀÌ");
 }
 
 

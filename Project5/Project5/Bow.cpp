@@ -4,6 +4,7 @@
 
 Bow::Bow()
 {
+	SetType("Ȱ");
 }
 
 

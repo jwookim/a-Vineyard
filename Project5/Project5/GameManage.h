@@ -2,7 +2,7 @@
 #include"Mecro.h"
 #include"MapDraw.h"
 #include"Character.h"
-
+#include"Shop.h"
 
 class GameManage
 {

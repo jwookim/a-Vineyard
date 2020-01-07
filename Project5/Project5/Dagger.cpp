@@ -4,6 +4,7 @@
 
 Dagger::Dagger()
 {
+	SetType("´ë°Å");
 }
 
 

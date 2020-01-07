@@ -4,6 +4,7 @@
 
 Sword::Sword()
 {
+	SetType("¿Â∞À");
 }
 
 

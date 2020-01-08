@@ -7,6 +7,8 @@ GameManage::GameManage()
 	char buff[50];
 	sprintf(buff, "mode con: cols=%d lines=%d", WIDTH * 2 + 1, HEIGHT);
 	system(buff);
+
+	m_Player = new Character;
 }
 
 void GameManage::Start()
@@ -51,7 +53,7 @@ void GameManage::NewGame()
 	YELLOW
 	DrawManager.DrawMidText("Player 이름 입력 : ", WIDTH, HEIGHT / 2);
 	cin >> name;
-	m_Player.SetName(name);
+	m_Player->SetName(name);
 	ORIGINAL
 
 		ReadDefaultPlayer();
@@ -98,28 +100,25 @@ void GameManage::ReadDefaultPlayer()
 	int tmp;
 
 	load.open("DefaultPlayer.txt");
-	while (!load.eof())
-	{
-		load >> tmp;
-		m_Player.SetAtk(tmp);
+	load >> tmp;
+	m_Player->SetAtk(tmp);
 
-		load >> tmp;
-		m_Player.SetHealth(tmp);
-		m_Player.SetMaxHealth(tmp);
+	load >> tmp;
+	m_Player->SetHealth(tmp);
+	m_Player->SetMaxHealth(tmp);
 
-		load >> tmp;
-		m_Player.SetMaxExp(tmp);
+	load >> tmp;
+	m_Player->SetMaxExp(tmp);
 
-		load >> tmp;
-		m_Player.SetExp(tmp);
-		m_Player.SetGetExp(tmp);
+	load >> tmp;
+	m_Player->SetExp(tmp);
+	m_Player->SetGetExp(tmp);
 
-		load >> tmp;
-		m_Player.SetLevel(tmp);
+	load >> tmp;
+	m_Player->SetLevel(tmp);
 
-		load >> tmp;
-		m_Player.SetGold(tmp);
-	}
+	load >> tmp;
+	m_Player->SetGold(tmp);
 
 	load.close();
 }
@@ -230,7 +229,7 @@ void GameManage::PlayerInfo()
 {
 	ClearWindow();
 	YELLOW
-		m_Player.ShowInfo(HEIGHT / 2);
+		m_Player->ShowInfo(HEIGHT / 2);
 	ORIGINAL
 
 		getch();
@@ -257,4 +256,9 @@ void GameManage::ClearWindow()
 }
 GameManage::~GameManage()
 {
+	delete m_Player;
+	m_Player = NULL;
+
+	delete m_Monster;
+	m_Monster = NULL;
 }

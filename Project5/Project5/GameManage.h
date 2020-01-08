@@ -7,7 +7,7 @@
 class GameManage
 {
 private:
-	Character m_Player;
+	Character* m_Player;
 	Character* m_Monster;
 	int m_iMonsterNum;
 	MapDraw DrawManager;

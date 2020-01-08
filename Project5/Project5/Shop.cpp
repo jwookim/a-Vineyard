@@ -57,6 +57,10 @@ Shop::Shop()
 	load.close();
 }
 
+void Shop::Menu(Character& player)
+{
+
+}
 
 void Shop::addWeapon(Weapon* newWeapon)
 {

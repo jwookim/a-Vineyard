@@ -11,6 +11,7 @@ private:
 	Character* m_Monster;
 	int m_iMonsterNum;
 	MapDraw DrawManager;
+	Shop m_Shop;
 public:
 	GameManage();
 	void Start();

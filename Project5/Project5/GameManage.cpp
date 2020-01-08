@@ -213,10 +213,10 @@ void GameManage::Menu()
 			MonsterInfo();
 			break;
 		case 4:
-
+			m_Shop.Menu(m_Player);
 			break;
 		case 5:
-
+			
 			break;
 		case 6:
 

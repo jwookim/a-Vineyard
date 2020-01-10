@@ -74,6 +74,7 @@ public:
 	{
 		return m_iGold;
 	}
+	void BuyItem(Weapon* weapon);
 	~Character();
 };
 

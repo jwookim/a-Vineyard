@@ -5,7 +5,10 @@
 Shop::Shop()
 {
 	for (int i = 0; i < WPNUM; i++)
+	{
 		m_Weapon[i] = NULL;
+		m_iWeaponNum[i] = 0;
+	}
 
 	ifstream load;
 	string tmp;
@@ -60,6 +63,8 @@ Shop::Shop()
 		weapon->SetPrice(tmpNum);
 		addWeapon(weapon, type);
 
+		m_iWeaponNum[type]++;
+
 		
 	}
 
@@ -87,22 +92,102 @@ void Shop::Menu(Character* player)
 
 		Select = DrawManager.MenuSelectCursor(7, 2, WIDTH / 2 - 3, HEIGHT / 4 + Margin);
 
-		switch (Select)
-		{
-		case 1:
-
-		case 2:
-
-		case 3:
-
-		case 4:
-
-		case 5:
-
-		case 6:
-			break;
-		}
+		if (Select != 7)
+			ShowList(player, (WEAPON)(Select - 1));
 	}
+}
+
+void Shop::ShowList(Character* player, WEAPON type)
+{
+	int Select = 0;
+	int listsize = 0;
+	int listStartNum = 0;
+	int Margin = 3;
+	int line = 0;
+	string tmp;
+
+	switch (type)
+	{
+	case WEAPON_DAGGER:
+		tmp = "Dagger";
+		break;
+	case WEAPON_GUN:
+		tmp = "Gun";
+		break;
+	case WEAPON_SWORD:
+		tmp = "Sword";
+		break;
+	case WEAPON_WAND:
+		tmp = "Wand";
+		break;
+	case WEAPON_BOW:
+		tmp = "Bow";
+		break;
+	case WEAPON_HAMMER:
+		tmp = "Hammer";
+		break;
+	}
+
+	while (Select != listsize + 3)
+	{
+		ClearWindow();
+		DrawManager.DrawMidText("보유 Gold : " + to_string(player->GetGold()), WIDTH, 3);
+		DrawManager.DrawMidText(tmp + " Shop", WIDTH, 5);
+
+		if (listStartNum + LISTSIZE <= m_iWeaponNum[type])
+			listsize = LISTSIZE;
+		else
+			listsize = m_iWeaponNum[type] % 5;
+		YELLOW
+			ShowWeapon(type, listStartNum, listStartNum + listsize, 7);
+		ORIGINAL
+
+			line = listsize;
+
+		DrawManager.DrawMidText("이전 페이지", WIDTH, 7 + (Margin * line++));
+		DrawManager.DrawMidText("다음 페이지", WIDTH, 7 + (Margin * line++));
+		DrawManager.DrawMidText("돌아가기", WIDTH, 7 + (Margin * line++));
+
+		Select = DrawManager.MenuSelectCursor(listsize + 3, Margin, WIDTH / 6, 7);
+
+		if (Select <= listsize)
+		{
+			player->BuyItem(SearchWeapon(type, (Select - 1) + listStartNum));
+		}
+		else if (Select == listsize + 1)
+		{
+			if (listStartNum - LISTSIZE >= 0)
+				listStartNum -= LISTSIZE;
+		}
+		else if (Select == listsize + 2)
+		{
+			if (listStartNum + LISTSIZE < m_iWeaponNum[type])
+				listStartNum += LISTSIZE;
+		}
+
+	}
+
+}
+
+void Shop::ShowWeapon(WEAPON type, int startNum, int endNum, int line)
+{
+	if (m_Weapon[type] != NULL)
+		ShowWeapon(m_Weapon[type], startNum, endNum, line);
+}
+
+void Shop::ShowWeapon(Weapon* weapon, int startNum, int endNum, int line)
+{
+	if (startNum <= 0)
+	{
+		weapon->ShowInfo_Shop(line);
+		line += 3;
+		endNum--;
+	}
+
+	startNum--;
+
+	if (weapon->GetNextWeapon() != NULL && endNum > 0)
+		ShowWeapon(weapon->GetNextWeapon(), startNum, endNum, line);
 }
 
 void Shop::addWeapon(Weapon* newWeapon, WEAPON type)
@@ -119,6 +204,32 @@ void Shop::addWeapon(Weapon* newWeapon, Weapon* check)
 		addWeapon(newWeapon, check->GetNextWeapon());
 	else
 		check->SetNextWeapon(newWeapon);
+}
+
+Weapon* Shop::SearchWeapon(WEAPON type, int num)
+{
+	if (m_Weapon[type] != NULL)
+	{
+		if (num <= 0)
+			return m_Weapon[type];
+		else
+			return SearchWeapon(m_Weapon[type], num - 1);
+	}
+	else
+		return NULL;
+}
+
+Weapon* Shop::SearchWeapon(Weapon* weapon, int num)
+{
+	if (weapon->GetNextWeapon() != NULL)
+	{
+		if (num <= 0)
+			return weapon->GetNextWeapon();
+		else
+			return SearchWeapon(weapon->GetNextWeapon(), num - 1);
+	}
+	else
+		return NULL;
 }
 
 void Shop::ClearWeapon()

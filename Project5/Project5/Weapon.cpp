@@ -34,13 +34,13 @@ void Weapon::SetNextWeapon(Weapon* weapon)
 
 void Weapon::ShowInfo_Shop(int line)
 {
-	DrawManager.DrawMidText("가격 : " + to_string(m_iPrice) + " 무기타입 : " + m_strType, WIDTH, line);
-	DrawManager.DrawMidText("무기이름 : " + m_strName + " 공격력 : " + to_string(m_iAtk), WIDTH, ++line);
+	DrawManager.DrawMidText("가격 : " + to_string(m_iPrice) + " 무기타입 : " + m_strType, WIDTH, line++);
+	DrawManager.DrawMidText("무기이름 : " + m_strName + " 공격력 : " + to_string(m_iAtk), WIDTH, line);
 }
 
 void Weapon::ShowInfo(int line)
 {
-	DrawManager.DrawMidText(" 무기타입 : " + m_strType + "무기이름 : " + m_strName + " 공격력 : " + to_string(m_iAtk), WIDTH, line);
+	DrawManager.DrawMidText("무기타입 : " + m_strType + " 무기이름 : " + m_strName + " 공격력 : " + to_string(m_iAtk), WIDTH, line);
 }
 
 void Weapon::Clear()

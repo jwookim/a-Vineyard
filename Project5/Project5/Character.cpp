@@ -70,6 +70,15 @@ void Character::SetGold(int gold)
 	m_iGold = gold;
 }
 
+void Character::BuyItem(Weapon* weapon)
+{
+	if (weapon !=NULL && m_iGold >= weapon->GetPrice())
+	{
+		m_iGold -= weapon->GetPrice();
+		m_Weapon = weapon;
+	}
+}
+
 Character::~Character()
 {
 }

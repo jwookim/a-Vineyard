@@ -26,6 +26,7 @@ public:
 	void PlayerInfo();
 	void MonsterInfo();
 	void ClearWindow();
+	void DeleteInfo();
 	~GameManage();
 };
 

@@ -8,7 +8,8 @@ GameManage::GameManage()
 	sprintf(buff, "mode con: cols=%d lines=%d", WIDTH * 2 + 1, HEIGHT);
 	system(buff);
 
-	m_Player = new Character;
+	m_Player = NULL;
+	m_Monster = NULL;
 }
 
 void GameManage::Start()
@@ -49,6 +50,8 @@ void GameManage::NewGame()
 	ClearWindow();
 
 	string name;
+
+	m_Player = new Character;
 
 	YELLOW
 	DrawManager.DrawMidText("Player 이름 입력 : ", WIDTH, HEIGHT / 2);
@@ -169,7 +172,7 @@ void GameManage::ReadDefaultMonster()
 
 void GameManage::ReadPlayer(int num)
 {
-
+	m_Player = new Character;
 }
 
 void GameManage::ReadMonster(int num)
@@ -223,6 +226,7 @@ void GameManage::Menu()
 		}
 	}
 
+	DeleteInfo();
 }
 
 void GameManage::PlayerInfo()
@@ -254,11 +258,24 @@ void GameManage::ClearWindow()
 		DrawManager.BoxDraw(0, 0, WIDTH, HEIGHT);
 	ORIGINAL
 }
+
+void GameManage::DeleteInfo()
+{
+	if (m_Player != NULL)
+	{
+		delete m_Player;
+		m_Player = NULL;
+	}
+
+
+	if (m_Monster != NULL)
+	{
+		delete[] m_Monster;
+		m_Monster = NULL;
+	}
+}
+
 GameManage::~GameManage()
 {
-	delete m_Player;
-	m_Player = NULL;
-
-	delete m_Monster;
-	m_Monster = NULL;
+	DeleteInfo();
 }

@@ -10,6 +10,7 @@
 #include"Character.h"
 
 #define WPNUM 6
+#define LISTSIZE 5
 
 enum WEAPON
 {
@@ -25,15 +26,17 @@ class Shop
 {
 private:
 	Weapon* m_Weapon[WPNUM];
+	int m_iWeaponNum[WPNUM];
 	MapDraw DrawManager;
 public:
 	void Menu(Character* player);
 	void ShowList(Character* player, WEAPON type);
 	void addWeapon(Weapon* newweapon, WEAPON type);
 	void addWeapon(Weapon* newweapon, Weapon* check);
-	void ShowWeapon(WEAPON type, int startNum, int endNum);
+	void ShowWeapon(WEAPON type, int startNum, int endNum, int line);
+	void ShowWeapon(Weapon* weapon, int startNum, int endNum, int line);
 	Weapon* SearchWeapon(WEAPON type, int num);
-	Weapon* SearchWeapon(Weapon* weapon);
+	Weapon* SearchWeapon(Weapon* weapon, int num);
 	void ClearWeapon();
 	void ClearWeapon(Weapon* weapon);
 	void ClearWindow();

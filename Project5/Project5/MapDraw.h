@@ -13,6 +13,7 @@ public:
 	void TextDraw(string str, int x, int y);
 	void ErasePoint(int x, int y);
 	int MenuSelectCursor(int MenuLen, int AddCol, int x, int y);
+	void ClearWindow();
 	MapDraw();
 	inline void gotoxy(int x, int y)
 	{

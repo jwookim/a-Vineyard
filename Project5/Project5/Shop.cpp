@@ -79,7 +79,7 @@ void Shop::Menu(Character* player)
 	while (Select != 7)
 	{
 		line = 0;
-		ClearWindow();
+		DrawManager.ClearWindow();
 
 		DrawManager.DrawMidText("¢¿ ¢À S H O P ¢À ¢¿", WIDTH, HEIGHT / 4 + (Margin * line++));
 		DrawManager.DrawMidText("Dagger", WIDTH, HEIGHT / 4 + (Margin * line++));
@@ -130,7 +130,7 @@ void Shop::ShowList(Character* player, WEAPON type)
 
 	while (Select != listsize + 3)
 	{
-		ClearWindow();
+		DrawManager.ClearWindow();
 		DrawManager.DrawMidText("º¸À¯ Gold : " + to_string(player->GetGold()), WIDTH, 3);
 		DrawManager.DrawMidText(tmp + " Shop", WIDTH, 5);
 
@@ -252,14 +252,6 @@ void Shop::ClearWeapon(Weapon* weapon)
 		ClearWeapon(weapon->GetNextWeapon());
 		weapon->Clear();
 	}
-}
-
-void Shop::ClearWindow()
-{
-	system("cls");
-	BLUE
-		DrawManager.BoxDraw(0, 0, WIDTH, HEIGHT);
-	ORIGINAL
 }
 
 Shop::~Shop()

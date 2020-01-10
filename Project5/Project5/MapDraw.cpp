@@ -113,6 +113,15 @@ int MapDraw::MenuSelectCursor(int MenuLen, int AddCol, int x, int y)
 			ORIGINAL
 		}
 }
+
+void MapDraw::ClearWindow()
+{
+	system("cls");
+	BLUE
+		BoxDraw(0, 0, WIDTH, HEIGHT);
+	ORIGINAL
+}
+
 MapDraw::~MapDraw()
 {
 }

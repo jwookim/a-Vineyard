@@ -11,6 +11,23 @@
 #include"Wand.h"
 using namespace std;
 
+enum STATUS
+{
+	STATUS_NORMAL,
+	STATUS_STUN,
+	STATUS_BLEEDING,
+	STATUS_POISON,
+	STATUS_SHOCK
+};
+
+enum BATTLE
+{
+	BATTLE_NONE,
+	BATTLE_STONE,
+	BATTLE_SCISSOR,
+	BATTLE_PAPER
+};
+
 class Character
 {
 protected:
@@ -23,10 +40,12 @@ protected:
 	int m_iMaxExp;
 	int m_iGetExp;
 	int m_iGold;
+	STATUS m_Status;
 	Weapon* m_Weapon;
 	MapDraw DrawManager;
 public:
 	Character();
+	void Attack(Character* enemy);
 	int Dmg(int Atk);
 	int ShowInfo(int line);
 	void SetName(string name);
@@ -38,6 +57,7 @@ public:
 	void SetMaxExp(int exp);
 	void SetGetExp(int exp);
 	void SetGold(int gold);
+	void SetStatus(STATUS stat);
 	inline string GetName()
 	{
 		return m_strName;
@@ -73,6 +93,10 @@ public:
 	inline int GetGold()
 	{
 		return m_iGold;
+	}
+	inline STATUS GetStatus()
+	{
+		return m_Status;
 	}
 	void BuyItem(Weapon* weapon);
 	~Character();

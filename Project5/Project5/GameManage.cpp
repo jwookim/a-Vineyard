@@ -23,9 +23,9 @@ void GameManage::Start()
 	{
 		line = 0;
 
-		ClearWindow();
+		DrawManager.ClearWindow();
 
-		DrawManager.DrawMidText("¡Ù¡Ú DonGeonRPG ¡Ú¡Ù", WIDTH, 10 + (Margin * line++));
+		DrawManager.DrawMidText("¡Ù¡Ú DunGeonRPG ¡Ú¡Ù", WIDTH, 10 + (Margin * line++));
 		DrawManager.DrawMidText("New Game", WIDTH, 10 + (Margin * line++));
 		DrawManager.DrawMidText("Load Game", WIDTH, 10 + (Margin * line++));
 		DrawManager.DrawMidText("Game Exit", WIDTH, 10 + (Margin * line++));
@@ -47,7 +47,7 @@ void GameManage::Start()
 
 void GameManage::NewGame()
 {
-	ClearWindow();
+	DrawManager.ClearWindow();
 
 	string name;
 
@@ -72,7 +72,7 @@ bool GameManage::LoadGame()
 
 	ifstream slot;
 
-	ClearWindow();
+	DrawManager.ClearWindow();
 
 	int num = 1;
 	GREEN
@@ -191,7 +191,7 @@ void GameManage::Menu()
 	while (Select != 6)
 	{
 		line = 0;
-		ClearWindow();
+		DrawManager.ClearWindow();
 
 		DrawManager.DrawMidText("¡Ù¡Ú Menu ¡Ú¡Ù", WIDTH, 10 + (Margin * line++));
 		DrawManager.DrawMidText("Dungeon", WIDTH, 10 + (Margin * line++));
@@ -206,7 +206,7 @@ void GameManage::Menu()
 		switch (Select)
 		{
 		case 1:
-
+			m_Dungeon.Menu(m_Player, m_Monster, m_iMonsterNum);
 			break;
 		case 2:
 			PlayerInfo();
@@ -231,7 +231,7 @@ void GameManage::Menu()
 
 void GameManage::PlayerInfo()
 {
-	ClearWindow();
+	DrawManager.ClearWindow();
 	YELLOW
 		m_Player->ShowInfo(HEIGHT / 2);
 	ORIGINAL
@@ -241,7 +241,7 @@ void GameManage::PlayerInfo()
 
 void GameManage::MonsterInfo()
 {
-	ClearWindow();
+	DrawManager.ClearWindow();
 	int line = HEIGHT / 10;
 	for (int i = 0; i < m_iMonsterNum; i++)
 	{
@@ -249,14 +249,6 @@ void GameManage::MonsterInfo()
 	}
 
 	getch();
-}
-
-void GameManage::ClearWindow()
-{
-	system("cls");
-	BLUE
-		DrawManager.BoxDraw(0, 0, WIDTH, HEIGHT);
-	ORIGINAL
 }
 
 void GameManage::DeleteInfo()

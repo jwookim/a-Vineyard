@@ -22,6 +22,25 @@ int Character::ShowInfo(int line)
 	DrawManager.TextDraw("Gold = " + to_string(m_iGold), WIDTH / 2, line++);
 	if (m_Weapon != NULL)
 		m_Weapon->ShowInfo(line++);
+	if (m_Status != STATUS_NORMAL)
+	{
+		DrawManager.TextDraw("상태 이상 : ", WIDTH / 2, line++);
+		switch (m_Status)
+		{
+		case STATUS_STUN:
+			cout << "기절";
+			break;
+		case STATUS_BLEEDING:
+			cout << "출혈";
+			break;
+		case STATUS_POISON:
+			cout << "중독";
+			break;
+		case STATUS_SHOCK:
+			cout << "감전";
+			break;
+		}
+	}
 	return line;
 }
 

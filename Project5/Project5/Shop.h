@@ -39,7 +39,6 @@ public:
 	Weapon* SearchWeapon(Weapon* weapon, int num);
 	void ClearWeapon();
 	void ClearWeapon(Weapon* weapon);
-	void ClearWindow();
 	Shop();
 	~Shop();
 };

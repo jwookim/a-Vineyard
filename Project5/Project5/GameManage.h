@@ -3,6 +3,7 @@
 #include"MapDraw.h"
 #include"Character.h"
 #include"Shop.h"
+#include"Dungeon.h"
 
 class GameManage
 {
@@ -12,6 +13,7 @@ private:
 	int m_iMonsterNum;
 	MapDraw DrawManager;
 	Shop m_Shop;
+	Dungeon m_Dungeon;
 public:
 	GameManage();
 	void Start();
@@ -25,7 +27,6 @@ public:
 	void Menu();
 	void PlayerInfo();
 	void MonsterInfo();
-	void ClearWindow();
 	void DeleteInfo();
 	~GameManage();
 };

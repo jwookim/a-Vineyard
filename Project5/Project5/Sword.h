@@ -4,6 +4,7 @@
 class Sword : public Weapon
 {
 public:
+	STATUS Attack();
 	Sword();
 	~Sword();
 };

@@ -2,7 +2,6 @@
 #include<iostream>
 #include<string>
 #include"MapDraw.h"
-#include"Weapon.h"
 #include"Bow.h"
 #include"Dagger.h"
 #include"Gun.h"
@@ -11,22 +10,6 @@
 #include"Wand.h"
 using namespace std;
 
-enum STATUS
-{
-	STATUS_NORMAL,
-	STATUS_STUN,
-	STATUS_BLEEDING,
-	STATUS_POISON,
-	STATUS_SHOCK
-};
-
-enum BATTLE
-{
-	BATTLE_NONE,
-	BATTLE_STONE,
-	BATTLE_SCISSOR,
-	BATTLE_PAPER
-};
 
 class Character
 {
@@ -40,6 +23,7 @@ protected:
 	int m_iMaxExp;
 	int m_iGetExp;
 	int m_iGold;
+	int m_iStatusDur;
 	STATUS m_Status;
 	Weapon* m_Weapon;
 	MapDraw DrawManager;
@@ -98,6 +82,12 @@ public:
 	{
 		return m_Status;
 	}
+	int Bleeding();
+	void DurationCheck();
+	void Cure();
+	void Recovery();
+	void Win(int exp);
+	void LevelUp();
 	void BuyItem(Weapon* weapon);
 	~Character();
 };

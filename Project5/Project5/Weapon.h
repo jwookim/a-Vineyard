@@ -4,6 +4,16 @@
 #include"MapDraw.h"
 using namespace std;
 
+enum STATUS
+{
+	STATUS_NORMAL,
+	STATUS_STUN,
+	STATUS_BLEEDING,
+	STATUS_POISON,
+	STATUS_SHOCK,
+	STATUS_CRIT
+};
+
 class Weapon
 {
 protected:
@@ -14,7 +24,7 @@ protected:
 	MapDraw DrawManager;
 	Weapon* m_pNextWeapon;
 public:
-	//virtual void Attack() = 0;
+	virtual STATUS Attack() = 0;
 	void SetName(string name);
 	void SetType(string Type);
 	void SetAtk(int atk);

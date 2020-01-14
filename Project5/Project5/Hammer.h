@@ -4,6 +4,7 @@
 class Hammer : public Weapon
 {
 public:
+	STATUS Attack();
 	Hammer();
 	~Hammer();
 };

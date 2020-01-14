@@ -5,11 +5,38 @@
 Character::Character()
 {
 	m_Weapon = NULL;
+	m_Status = STATUS_NORMAL;
+	m_iStatusDur = 0;
+}
+
+void Character::Attack(Character* enemy)
+{
+	STATUS tmp;
+	enemy->Dmg(m_iAtk);
+	if (m_Weapon != NULL)
+	{
+		enemy->Dmg(m_Weapon->GetAtk());
+		tmp = m_Weapon->Attack();
+		switch (tmp)
+		{
+		case STATUS_NORMAL:
+			break;
+		case STATUS_CRIT:
+			enemy->Dmg(m_iAtk + m_Weapon->GetAtk());
+			break;
+		default:
+			enemy->SetStatus(tmp);
+			break;
+		}
+	}
 }
 
 int Character::Dmg(int Atk)
 {
 	m_iHealth -= Atk;
+
+	if (m_iHealth < 0)
+		m_iHealth = 0;
 
 	return m_iHealth;
 }
@@ -89,6 +116,26 @@ void Character::SetGold(int gold)
 	m_iGold = gold;
 }
 
+void Character::SetStatus(STATUS stat)
+{
+	m_Status = stat;
+	m_iStatusDur = 2;
+}
+
+int Character::Bleeding()
+{
+	int dmg = 0;
+	if (m_Status == STATUS_BLEEDING)
+	{
+		dmg = m_iMaxHealth / 10;
+		if (m_iHealth - dmg <= 0)
+			dmg -= (dmg - m_iHealth) + 1;
+
+		Dmg(dmg);
+	}
+	return dmg;
+}
+
 void Character::BuyItem(Weapon* weapon)
 {
 	if (weapon !=NULL && m_iGold >= weapon->GetPrice())
@@ -96,6 +143,27 @@ void Character::BuyItem(Weapon* weapon)
 		m_iGold -= weapon->GetPrice();
 		m_Weapon = weapon;
 	}
+}
+
+void Character::DurationCheck()
+{
+	if (m_iStatusDur > 0)
+	{
+		if (--m_iStatusDur <= 0)
+			Cure();
+	}
+}
+
+void Character::Cure()
+{
+	m_Status = STATUS_NORMAL;
+	m_iStatusDur = 0;
+}
+
+void Character::Recovery()
+{
+	m_iHealth = m_iMaxHealth;
+	Cure();
 }
 
 Character::~Character()

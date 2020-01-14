@@ -69,32 +69,54 @@ bool GameManage::LoadGame()
 	int Margin = 2;
 	int line = 0;
 	int Select = 0;
-
+	int num;
 	ifstream slot;
 
-	DrawManager.ClearWindow();
+	
+	while (1)
+	{
+		DrawManager.ClearWindow();
+		num = 1;
+		line = 0;
+		GREEN
+			for (; num <= 10; num++)
+			{
+				DrawManager.DrawMidText(to_string(num) + "번슬롯 : (파일여부 : ", WIDTH, 5 + (Margin * line++));
+				slot.open("SavePlayer" + to_string(num) + ".txt");
+				if (slot.is_open())
+					cout << "O)";
+				else
+					cout << "X)";
+				slot.close();
+			}
+		DrawManager.DrawMidText(to_string(num) + ".돌아가기", WIDTH, 5 + (Margin * line++));
+		ORIGINAL
 
-	int num = 1;
-	GREEN
-		for (; num <= 10; num++)
+			Select = DrawManager.MenuSelectCursor(11, Margin, WIDTH / 4, 5);
+		
+		if (Select == num)
+			return false;
+		else
 		{
-			DrawManager.DrawMidText(to_string(num) + "번슬롯 : (파일여부 : ", WIDTH, 5 + (Margin * line++));
-			slot.open("SavePlayer" + to_string(num) +".txt");
+			slot.open("SavePlayer" + to_string(Select) + ".txt");
 			if (slot.is_open())
-				cout << "O)";
+			{
+				slot.close();
+				ReadPlayer(Select);
+				ReadMonster(Select);
+				return true;
+			}
 			else
-				cout << "X)";
-			slot.close();
+			{
+				slot.close();
+				DrawManager.ClearWindow();
+
+				DrawManager.DrawMidText("파일이 없습니다.", WIDTH, HEIGHT / 2);
+				getch();
+			}
+			
 		}
-	DrawManager.DrawMidText(to_string(num) + ".돌아가기", WIDTH, 5 + (Margin * line++));
-	ORIGINAL
-
-		Select = DrawManager.MenuSelectCursor(11, Margin, WIDTH / 4, 5);
-
-	if (Select == num)
-		return false;
-
-	return true;
+	}
 }
 
 void GameManage::ReadDefaultPlayer()
@@ -103,27 +125,30 @@ void GameManage::ReadDefaultPlayer()
 	int tmp;
 
 	load.open("DefaultPlayer.txt");
-	load >> tmp;
-	m_Player->SetAtk(tmp);
+	if (load.is_open())
+	{
+		load >> tmp;
+		m_Player->SetAtk(tmp);
 
-	load >> tmp;
-	m_Player->SetHealth(tmp);
-	m_Player->SetMaxHealth(tmp);
+		load >> tmp;
+		m_Player->SetHealth(tmp);
+		m_Player->SetMaxHealth(tmp);
 
-	load >> tmp;
-	m_Player->SetMaxExp(tmp);
+		load >> tmp;
+		m_Player->SetMaxExp(tmp);
 
-	load >> tmp;
-	m_Player->SetExp(tmp);
-	m_Player->SetGetExp(tmp);
+		load >> tmp;
+		m_Player->SetExp(tmp);
+		m_Player->SetGetExp(tmp);
 
-	load >> tmp;
-	m_Player->SetLevel(tmp);
+		load >> tmp;
+		m_Player->SetLevel(tmp);
 
-	load >> tmp;
-	m_Player->SetGold(tmp);
+		load >> tmp;
+		m_Player->SetGold(tmp);
 
-	load.close();
+		load.close();
+	}
 }
 
 void GameManage::ReadDefaultMonster()
@@ -173,11 +198,101 @@ void GameManage::ReadDefaultMonster()
 void GameManage::ReadPlayer(int num)
 {
 	m_Player = new Character;
+
+	ifstream load;
+	int tmp;
+	string name;
+	WEAPON search;
+
+	load.open("SavePlayer" + to_string(num) + ".txt");
+	if (load.is_open())
+	{
+		load >> name;
+		m_Player->SetName(name);
+
+		load >> tmp;
+		m_Player->SetAtk(tmp);
+
+		load >> tmp;
+		m_Player->SetMaxHealth(tmp);
+
+		load >> tmp;
+		m_Player->SetMaxExp(tmp);
+
+		load >> tmp;
+		m_Player->SetGetExp(tmp);
+
+		load >> tmp;
+		m_Player->SetLevel(tmp);
+
+		load >> tmp;
+		m_Player->SetGold(tmp);
+
+		load >> tmp;
+		m_Player->SetExp(tmp);
+
+		load >> tmp;
+		m_Player->SetHealth(tmp);
+
+		load >> name;
+		if (name != "0")
+		{
+			if (name == "헌트")
+			{
+
+			}
+			load >> tmp;
+			m_Player->EquipWeapon(m_Shop.SearchWeapon(search, tmp));
+		}
+		load.close();
+	}
 }
 
 void GameManage::ReadMonster(int num)
 {
+	ifstream load;
+	string name;
+	int tmp;
 
+	load.open("SaveMonster" + to_string(num) + ".txt");
+
+	while (!load.eof())
+	{
+		load >> tmp;
+		m_iMonsterNum = tmp;
+		m_Monster = new Character[m_iMonsterNum];
+		for (int i = 0; i < m_iMonsterNum; i++)
+		{
+			load >> name;
+			m_Monster[i].SetName(name);
+
+			load >> tmp;
+			m_Monster[i].SetAtk(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetMaxHealth(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetMaxExp(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetGetExp(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetLevel(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetGold(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetExp(tmp);
+
+			load >> tmp;
+			m_Monster[i].SetHealth(tmp);
+		}
+	}
+
+	load.close();
 }
 
 void GameManage::Menu()
@@ -206,7 +321,8 @@ void GameManage::Menu()
 		switch (Select)
 		{
 		case 1:
-			m_Dungeon.Menu(m_Player, m_Monster, m_iMonsterNum);
+			if (!m_Dungeon.Menu(m_Player, m_Monster, m_iMonsterNum))
+				Select = 6;
 			break;
 		case 2:
 			PlayerInfo();
@@ -218,10 +334,7 @@ void GameManage::Menu()
 			m_Shop.Menu(m_Player);
 			break;
 		case 5:
-			
-			break;
-		case 6:
-
+			Save();
 			break;
 		}
 	}
@@ -249,6 +362,90 @@ void GameManage::MonsterInfo()
 	}
 
 	getch();
+}
+
+void GameManage::Save()
+{
+	int Margin = 2;
+	int line = 0;
+	int Select = 0;
+	int num;
+	ifstream slot;
+
+	while (1)
+	{
+		DrawManager.ClearWindow();
+		num = 1;
+		line = 0;
+		GREEN
+			for (; num <= 10; num++)
+			{
+				DrawManager.DrawMidText(to_string(num) + "번슬롯 : (파일여부 : ", WIDTH, 5 + (Margin * line++));
+				slot.open("SavePlayer" + to_string(num) + ".txt");
+				if (slot.is_open())
+					cout << "O)";
+				else
+					cout << "X)";
+				slot.close();
+			}
+		DrawManager.DrawMidText(to_string(num) + ".돌아가기", WIDTH, 5 + (Margin * line++));
+		ORIGINAL
+
+			Select = DrawManager.MenuSelectCursor(11, Margin, WIDTH / 4, 5);
+
+		if (Select == num)
+			break;
+		else
+		{
+			slot.open("SavePlayer" + to_string(Select) + ".txt");
+			if (slot.is_open())
+			{
+				slot.close();
+				ReadPlayer(Select);
+				ReadMonster(Select);
+			}
+			else
+			{
+				slot.close();
+				DrawManager.ClearWindow();
+
+				DrawManager.DrawMidText("파일이 없습니다.", WIDTH, HEIGHT / 2);
+				getch();
+			}
+
+		}
+	}
+}
+
+void GameManage::SaveData(int num)
+{
+	ofstream save;
+	save.open("SavePlayer" + to_string(num) + ".txt");
+
+	save << m_Player->GetName() << " ";
+
+	save << m_Player->GetAtk() << " ";
+
+	save << m_Player->GetMaxHealth() << " ";
+
+	save << m_Player->GetMaxExp() << " ";
+
+	save << m_Player->GetGetExp() << " ";
+
+	save << m_Player->GetLevel() << " ";
+
+	save << m_Player->GetGold() << " ";
+
+	save << m_Player->GetExp() << " ";
+
+	save << m_Player->GetHealth() << endl;
+
+	if (m_Player->GetWeapon() != NULL)
+	{
+
+	}
+	else
+		save << m_Player->GetWeapon();
 }
 
 void GameManage::DeleteInfo()

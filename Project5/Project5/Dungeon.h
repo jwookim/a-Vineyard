@@ -24,8 +24,8 @@ private:
 	string m_strPick[4];
 	MapDraw DrawManager;
 public:
-	void Menu(Character* player, Character Monster[], int MonsterNum);
-	void Stage(Character* player, Character* Monster);
+	bool Menu(Character* player, Character Monster[], int MonsterNum);
+	bool Stage(Character* player, Character* Monster);
 	PLAY Battle(Character* player, Character* Monster);
 	void BattleInterface(Character* player, Character* Monster);
 	void Result(PLAY result);

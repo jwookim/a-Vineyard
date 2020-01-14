@@ -41,6 +41,7 @@ public:
 	void SetMaxExp(int exp);
 	void SetGetExp(int exp);
 	void SetGold(int gold);
+	void EquipWeapon(Weapon* weapon);
 	void SetStatus(STATUS stat);
 	inline string GetName()
 	{
@@ -78,6 +79,10 @@ public:
 	{
 		return m_iGold;
 	}
+	inline Weapon* GetWeapon()
+	{
+		return m_Weapon;
+	}
 	inline STATUS GetStatus()
 	{
 		return m_Status;
@@ -86,7 +91,7 @@ public:
 	void DurationCheck();
 	void Cure();
 	void Recovery();
-	void Win(int exp);
+	void Win(Character* enemy);
 	void LevelUp();
 	void BuyItem(Weapon* weapon);
 	~Character();

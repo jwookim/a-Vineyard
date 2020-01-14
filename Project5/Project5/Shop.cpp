@@ -153,6 +153,7 @@ void Shop::ShowList(Character* player, WEAPON type)
 		if (Select <= listsize)
 		{
 			player->BuyItem(SearchWeapon(type, (Select - 1) + listStartNum));
+			break;
 		}
 		else if (Select == listsize + 1)
 		{

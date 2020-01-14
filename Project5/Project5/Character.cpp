@@ -116,6 +116,11 @@ void Character::SetGold(int gold)
 	m_iGold = gold;
 }
 
+void Character::EquipWeapon(Weapon* weapon)
+{
+	m_Weapon = weapon;
+}
+
 void Character::SetStatus(STATUS stat)
 {
 	m_Status = stat;
@@ -164,6 +169,52 @@ void Character::Recovery()
 {
 	m_iHealth = m_iMaxHealth;
 	Cure();
+}
+
+void Character::Win(Character* enemy)
+{
+	DrawManager.ClearWindow();
+
+	RED
+		DrawManager.DrawMidText(m_strName + " 승리!!", WIDTH, HEIGHT / 4);
+
+	DrawManager.DrawMidText(m_strName + "가 경험치 " + to_string(enemy->GetGetExp()) + "를 얻었습니다.", WIDTH, HEIGHT / 3);
+
+	m_iGetExp += enemy->GetGetExp();
+	m_iExp += enemy->GetGetExp();
+	ORIGINAL
+
+		getch();
+
+	while (m_iExp >= m_iMaxExp)
+	{
+		LevelUp();
+	}
+}
+
+void Character::LevelUp()
+{
+	DrawManager.ClearWindow();
+	int Benefit;
+	m_iExp -= m_iMaxExp;
+
+	PUPPLE
+		DrawManager.DrawMidText(m_strName + " 레벨 업!!", WIDTH, HEIGHT / 2 - 2);
+	m_iLevel++;
+	m_iMaxExp += 3;
+
+	Benefit = rand() % 10 + 1;
+	m_iAtk += Benefit;
+	DrawManager.DrawMidText("공격력 " + to_string(Benefit) + " 증가!!", WIDTH, HEIGHT / 2);
+
+	Benefit = rand() % 10 + 1;
+	m_iMaxHealth += Benefit;
+	DrawManager.DrawMidText("생명력 " + to_string(Benefit) + " 증가!!", WIDTH, HEIGHT / 2 + 2);
+
+	Recovery();
+	ORIGINAL
+
+		getch();
 }
 
 Character::~Character()

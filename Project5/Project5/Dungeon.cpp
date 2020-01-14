@@ -10,13 +10,13 @@ Dungeon::Dungeon()
 	m_strPick[BATTLE_PAPER] = "º¸";
 }
 
-void Dungeon::Menu(Character* player, Character Monster[], int MonsterNum)
+bool Dungeon::Menu(Character* player, Character Monster[], int MonsterNum)
 {
 	int Margin = 2;
 	int Select = 0;
 	int line;
-
-	while (Select != MonsterNum + 1)
+	bool alive = true;
+	while (Select != MonsterNum + 1 && alive == true)
 	{
 		line = 0;
 
@@ -34,11 +34,12 @@ void Dungeon::Menu(Character* player, Character Monster[], int MonsterNum)
 		Select = DrawManager.MenuSelectCursor(MonsterNum + 1, Margin, WIDTH / 4, HEIGHT / 3);
 
 		if (Select != MonsterNum + 1)
-			Stage(player, &Monster[Select - 1]);
+			alive = Stage(player, &Monster[Select - 1]);
 	}
+	return alive;
 }
 
-void Dungeon::Stage(Character* player, Character* Monster)
+bool Dungeon::Stage(Character* player, Character* Monster)
 {
 	int status = PLAY_BATTLE;
 	DrawManager.ClearWindow();
@@ -50,9 +51,26 @@ void Dungeon::Stage(Character* player, Character* Monster)
 		BattleInterface(player, Monster);
 	}
 
-	player->Recovery();
-	Monster->Recovery();
 	getch();
+
+	Monster->Recovery();
+
+	switch (status)
+	{
+	case PLAY_P1WIN:
+		player->Win(Monster);
+		break;
+	case PLAY_P2WIN:
+		Monster->Win(player);
+		DrawManager.ClearWindow();
+		RED
+			DrawManager.DrawMidText("Game Over", WIDTH, HEIGHT / 2);
+		ORIGINAL
+			getch();
+		return false;
+	}
+	getch();
+	return true;
 }
 
 PLAY Dungeon::Battle(Character* player, Character* Monster)

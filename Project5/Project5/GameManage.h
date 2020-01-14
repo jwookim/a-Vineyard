@@ -23,10 +23,11 @@ public:
 	void ReadDefaultMonster();
 	void ReadPlayer(int num);
 	void ReadMonster(int num);
-	void ReadWeapon();
 	void Menu();
 	void PlayerInfo();
 	void MonsterInfo();
+	void Save();
+	void SaveData(int num);
 	void DeleteInfo();
 	~GameManage();
 };

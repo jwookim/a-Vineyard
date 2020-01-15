@@ -426,7 +426,7 @@ void GameManage::SaveData(int num)
 		save << m_Player->GetWeapon()->GetName();
 	}
 	else
-		save << m_Player->GetWeapon();
+		save << "0";
 
 	save.close();
 

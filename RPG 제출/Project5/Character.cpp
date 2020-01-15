@@ -182,6 +182,7 @@ void Character::Win(Character* enemy)
 
 	m_iGetExp += enemy->GetGetExp();
 	m_iExp += enemy->GetGetExp();
+	m_iGold += enemy->GetGold();
 	ORIGINAL
 
 		getch();
@@ -197,6 +198,7 @@ void Character::LevelUp()
 	DrawManager.ClearWindow();
 	int Benefit;
 	m_iExp -= m_iMaxExp;
+	m_iGetExp -= m_iMaxExp;
 
 	PUPPLE
 		DrawManager.DrawMidText(m_strName + " ·¹º§ ¾÷!!", WIDTH, HEIGHT / 2 - 2);

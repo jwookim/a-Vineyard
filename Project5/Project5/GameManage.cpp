@@ -202,7 +202,6 @@ void GameManage::ReadPlayer(int num)
 	ifstream load;
 	int tmp;
 	string name;
-	WEAPON search;
 
 	load.open("SavePlayer" + to_string(num) + ".txt");
 	if (load.is_open())
@@ -236,14 +235,10 @@ void GameManage::ReadPlayer(int num)
 
 		load >> name;
 		if (name != "0")
-		{
-			if (name == "헌트")
-			{
+			m_Player->EquipWeapon(m_Shop.LoadWeapon(name));
+		else
+			m_Player->EquipWeapon(NULL);
 
-			}
-			load >> tmp;
-			m_Player->EquipWeapon(m_Shop.SearchWeapon(search, tmp));
-		}
 		load.close();
 	}
 }
@@ -397,22 +392,8 @@ void GameManage::Save()
 			break;
 		else
 		{
-			slot.open("SavePlayer" + to_string(Select) + ".txt");
-			if (slot.is_open())
-			{
-				slot.close();
-				ReadPlayer(Select);
-				ReadMonster(Select);
-			}
-			else
-			{
-				slot.close();
-				DrawManager.ClearWindow();
-
-				DrawManager.DrawMidText("파일이 없습니다.", WIDTH, HEIGHT / 2);
-				getch();
-			}
-
+			SaveData(Select);
+			break;
 		}
 	}
 }
@@ -442,10 +423,40 @@ void GameManage::SaveData(int num)
 
 	if (m_Player->GetWeapon() != NULL)
 	{
-
+		save << m_Player->GetWeapon()->GetName();
 	}
 	else
 		save << m_Player->GetWeapon();
+
+	save.close();
+
+	save.open("SaveMonster" + to_string(num) + ".txt");
+
+	save << m_iMonsterNum;
+	for (int i = 0; i < m_iMonsterNum; i++)
+	{
+		save << endl;
+
+		save << m_Monster[i].GetName() << " ";
+
+		save << m_Monster[i].GetAtk() << " ";
+
+		save << m_Monster[i].GetMaxHealth() << " ";
+
+		save << m_Monster[i].GetMaxExp() << " ";
+
+		save << m_Monster[i].GetGetExp() << " ";
+
+		save << m_Monster[i].GetLevel() << " ";
+
+		save << m_Monster[i].GetGold() << " ";
+
+		save << m_Monster[i].GetExp() << " ";
+
+		save << m_Monster[i].GetHealth();
+	}
+
+	save.close();
 }
 
 void GameManage::DeleteInfo()

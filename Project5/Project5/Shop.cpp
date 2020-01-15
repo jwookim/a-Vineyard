@@ -233,6 +233,40 @@ Weapon* Shop::SearchWeapon(Weapon* weapon, int num)
 		return NULL;
 }
 
+Weapon* Shop::LoadWeapon(string name)
+{
+	Weapon* check;
+	for (int i = 0; i < WPNUM; i++)
+	{
+		if (m_Weapon[i] != NULL)
+		{
+			if (m_Weapon[i]->GetName() == name)
+				check = m_Weapon[i];
+			else
+				check = LoadWeapon(name, m_Weapon[i]);
+
+			if (check != NULL)
+				return check;
+		}
+	}
+	return check;
+}
+
+Weapon* Shop::LoadWeapon(string name, Weapon* weapon)
+{
+	if (weapon->GetNextWeapon() != NULL)
+	{
+		if (weapon->GetNextWeapon()->GetName() == name)
+			return weapon->GetNextWeapon();
+
+		else
+			return LoadWeapon(name, weapon->GetNextWeapon());
+	}
+
+	else
+		return NULL;
+}
+
 void Shop::ClearWeapon()
 {
 	for (int i = 0; i < WPNUM; i++)

@@ -37,7 +37,8 @@ public:
 	void ShowWeapon(Weapon* weapon, int startNum, int endNum, int line);
 	Weapon* SearchWeapon(WEAPON type, int num);
 	Weapon* SearchWeapon(Weapon* weapon, int num);
-	int SaveWeapon(Weapon* weapon);
+	Weapon* LoadWeapon(string name);
+	Weapon* LoadWeapon(string name, Weapon* weapon);
 	void ClearWeapon();
 	void ClearWeapon(Weapon* weapon);
 	Shop();

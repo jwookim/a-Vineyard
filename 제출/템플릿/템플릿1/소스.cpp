@@ -4,12 +4,11 @@
 #include"Min.h"
 #include <conio.h>
 
-template <typename Type>
 void main()
 {
-	Add<Type> add;
-	Min<Type> min;
-	Max<Type> max;
+	Add<int> add;
+	Min<int> min;
+	Max<int> max;
 
 	add.Input();
 

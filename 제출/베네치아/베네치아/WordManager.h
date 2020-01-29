@@ -9,7 +9,7 @@ private:
 public:
 	void AddWord();
 	void SearchWord(string name);
-	void SearchWord(string name, Word* nextWord);
+	int SearchWord(string name, Word* nextWord);
 	WordManager();
 	~WordManager();
 };

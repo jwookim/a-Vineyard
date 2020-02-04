@@ -26,7 +26,6 @@ private:
 	string m_strName;
 	int m_ix;
 	int m_iy;
-	bool m_bState;
 	EFFECT m_Effect;
 	Word* m_NextWord;
 public:

@@ -4,6 +4,7 @@
 
 Word::Word()
 {
+	m_NextWord = NULL;
 }
 
 void Word::Drop()

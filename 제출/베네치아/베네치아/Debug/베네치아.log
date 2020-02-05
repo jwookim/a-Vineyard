@@ -1,6 +1,13 @@
 ﻿  Play.cpp
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(49): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(50): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(51): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(52): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-  베네치아.vcxproj -> C:\work\jeongwookim\제출\베네치아\Debug\베네치아.exe
+c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(87): error C2248: 'WordManager::m_strInput': private 멤버('WordManager' 클래스에서 선언)에 액세스할 수 없습니다.
+  c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\wordmanager.h(11): note: 'WordManager::m_strInput' 선언을 참조하십시오.
+  c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\wordmanager.h(5): note: 'WordManager' 선언을 참조하십시오.
+  Word.cpp
+  WordManager.cpp
+  소스.cpp
+c:\users\admin\documents\github\jeongwookim\제출\베네치아\베네치아\소스.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...

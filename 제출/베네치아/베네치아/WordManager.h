@@ -1,15 +1,19 @@
 #pragma once
 #include"Word.h"
+#include<fstream>
 
 class WordManager
 {
 private:
 	Word* m_Word;
 	string* m_strList;
+	int m_iListSize;
+	string m_strInput;
 public:
 	void AddWord();
-	void SearchWord(string name);
-	int SearchWord(string name, Word* nextWord);
+	bool SearchWord(string name);
+	bool SearchWord(string name, Word* nextWord);
+	void WordLoad();
 	WordManager();
 	~WordManager();
 };

@@ -61,32 +61,61 @@ void Play::Story()
 
 void Play::Game()
 {
-	m_bState = true;
 	int time = clock();
-
+	char input;
 	int Delay = DELAY;
 
-	while (m_bState)
+	while (m_iLife > 0)
 	{
 		while (true)
 		{
 			if (clock() - time >= Delay)
 			{
+				AddWord();
+				m_iLife -= DropWord();
+			}
 
+			if (kbhit() && m_bState)
+			{
+				input = getch();
+
+				if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'A'))
+					m_strInput += input;
+				else if (input == 13 && m_strInput != "")
+					WordCheck(CheckWord(m_strInput));
+			}
+
+			if (clock() - m_iStun >= STUN)
+			{
+				m_bState = true;
 			}
 		}
 	}
+}
+
+void Play::WordCheck(bool check)
+{
+	if (check)
+	{
+		m_iScore += m_strInput.length() * SCORE;
+	}
+	else if (check)
+	{
+		m_bState = false;
+		m_iStun = clock();
+	}
+
+	m_strInput = "";
 }
 
 void Play::Init()
 {
 	m_strName = "? ? ?";
 	m_iScore = 0;
-	m_iLife = 9;
+	m_iLife = LIFE;
 	m_iStage = 1;
 	m_strInput = "";
-	m_bState = false;
-
+	m_bState = true;
 	for (int i = 0; i < LINE; i++)
 		m_strStory[i] = "";
 }

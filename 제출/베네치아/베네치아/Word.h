@@ -11,6 +11,7 @@ using namespace std;
 
 enum EFFECT
 {
+	EFFECT_NULL,
 	EFFECT_START,
 	EFFECT_NORMAL = EFFECT_START,
 	EFFECT_FAST,
@@ -49,6 +50,10 @@ public:
 	void SetNextWord(Word* nextWord);
 	void Drop();
 	void Delete();
+	void operator ++ ()
+	{
+		m_iy++;
+	}
 	Word();
 	~Word();
 };

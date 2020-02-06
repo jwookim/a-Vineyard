@@ -5,8 +5,8 @@
 class WordManager
 {
 protected:
-	Word* m_Word;
-	string* m_strList;
+	Word* m_Word = NULL;
+	string* m_strList = NULL;
 	int m_iListSize;
 	string m_strInput;
 public:
@@ -18,7 +18,10 @@ public:
 	bool SearchWord(string name, Word* nextWord);
 	bool CheckWord(string name);
 	bool CheckWord(string name, Word* nextWord);
+	int Clear();
+	int Clear(Word* nextWord);
 	void WordLoad();
+	void WordInit();
 	WordManager();
 	~WordManager();
 };

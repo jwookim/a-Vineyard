@@ -5,6 +5,7 @@
 WordManager::WordManager()
 {
 	WordLoad();
+	WordInit();
 }
 
 void WordManager::AddWord()
@@ -143,6 +144,36 @@ bool WordManager::CheckWord(string name, Word* nextWord)
 		return false;
 }
 
+int WordManager::Clear()
+{
+	int len = 0;
+	if (m_Word != NULL)
+	{
+		len += m_Word->GetName().length();
+		len += Clear(m_Word->GetNextWord());
+		delete m_Word;
+		m_Word = NULL;
+		return len;
+	}
+	else
+		return NULL;
+}
+
+int WordManager::Clear(Word* nextWord)
+{
+	int len = 0;
+	if (nextWord != NULL)
+	{
+		len += nextWord->GetName().length();
+		len += Clear(nextWord->GetNextWord());
+		delete nextWord;
+		nextWord = NULL;
+		return len;
+	}
+	else
+		return NULL;
+}
+
 void WordManager::WordLoad()
 {
 	ifstream load;
@@ -164,6 +195,15 @@ void WordManager::WordLoad()
 	}
 }
 
+void WordManager::WordInit()
+{
+	Clear();
+	m_strInput = "";
+}
+
 WordManager::~WordManager()
 {
+	Clear();
+	if(m_strList != NULL)
+		delete m_strList;
 }

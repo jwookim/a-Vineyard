@@ -63,46 +63,58 @@ void Play::Game()
 {
 	int time = clock();
 	char input;
+	int totalScore = 0;
 	int Delay = DELAY;
 
 	while (m_iLife > 0)
 	{
-		while (true)
+
+		if (clock() - time >= Delay)
 		{
-			if (clock() - time >= Delay)
-			{
-				AddWord();
-				m_iLife -= DropWord();
-			}
+			AddWord();
+			m_iLife -= DropWord();
 
-			if (kbhit() && m_bState)
-			{
-				input = getch();
+			time = clock();
+		}
 
-				if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'A'))
-					m_strInput += input;
-				else if (input == 13 && m_strInput != "")
-					WordCheck(CheckWord(m_strInput));
-			}
+		if (kbhit() && !m_bStun)
+		{
+			input = getch();
 
-			if (clock() - m_iStun >= STUN)
-			{
-				m_bState = true;
-			}
+			if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'A'))
+				m_strInput += input;
+			else if (input == 13 && m_strInput != "")
+				WordCheck(CheckWord(m_strInput));
+		}
+
+		if (m_bStun && clock() - m_iStunTime >= STUN)
+		{
+			m_bStun = false;
+		}
+		if (m_iScore >= SCOREMAX - ((m_iStage - 1) * LVSCORE))
+		{
+			totalScore += m_iScore;
+			m_iScore = 0;
+			m_iStage++;
 		}
 	}
+}
+
+void Play::Goal(int len)
+{
+	m_iScore += len * SCORE;
 }
 
 void Play::WordCheck(bool check)
 {
 	if (check)
 	{
-		m_iScore += m_strInput.length() * SCORE;
+		Goal(m_strInput.length());
 	}
 	else if (!check)
 	{
-		m_bState = false;
-		m_iStun = clock();
+		m_bStun = true;
+		m_iStunTime = clock();
 	}
 
 	m_strInput = "";
@@ -114,10 +126,12 @@ void Play::Init()
 	m_iScore = 0;
 	m_iLife = LIFE;
 	m_iStage = 1;
-	m_strInput = "";
-	m_bState = true;
+	m_bStun = false;
+
 	for (int i = 0; i < LINE; i++)
 		m_strStory[i] = "";
+
+	WordInit();
 }
 
 Play::~Play()

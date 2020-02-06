@@ -99,7 +99,7 @@ void Play::WordCheck(bool check)
 	{
 		m_iScore += m_strInput.length() * SCORE;
 	}
-	else if (check)
+	else if (!check)
 	{
 		m_bState = false;
 		m_iStun = clock();

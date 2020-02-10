@@ -42,6 +42,10 @@ public:
 	{
 		return m_iy;
 	}
+	inline EFFECT GetEffect()
+	{
+		return m_Effect;
+	}
 	inline Word* GetNextWord()
 	{
 		return m_NextWord;

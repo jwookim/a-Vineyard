@@ -108,40 +108,42 @@ bool WordManager::SearchWord(string name, Word* nextWord)
 		return false;
 }
 
-bool WordManager::CheckWord(string name)
+EFFECT WordManager::CheckWord(string name)
 {
 	if (m_Word != NULL)
 	{
 		if (m_Word->GetName() == name)
 		{
 			Word* tmp = m_Word->GetNextWord();
+			EFFECT Effect = m_Word->GetEffect();
 			delete m_Word;
 			m_Word = tmp;
-			return true;
+			return Effect;
 		}
 		else
 			return CheckWord(name, m_Word->GetNextWord());
 	}
 	else
-		return false;
+		return EFFECT_NULL;
 }
 
-bool WordManager::CheckWord(string name, Word* nextWord)
+EFFECT WordManager::CheckWord(string name, Word* nextWord)
 {
 	if (nextWord != NULL)
 	{
 		if (nextWord->GetName() == name)
 		{
 			Word* tmp = nextWord->GetNextWord();
+			EFFECT Effect = nextWord->GetEffect();
 			delete nextWord;
 			nextWord = tmp;
-			return true;
+			return Effect;
 		}
 		else
-			return SearchWord(name, nextWord->GetNextWord());
+			return CheckWord(name, nextWord->GetNextWord());
 	}
 	else
-		return false;
+		return EFFECT_NULL;
 }
 
 int WordManager::Clear()

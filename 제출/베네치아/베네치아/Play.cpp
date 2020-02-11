@@ -69,7 +69,7 @@ void Play::Game()
 	while (m_iLife > 0)
 	{
 
-		if (clock() - time >= Delay)
+		if (clock() - time >= DelayCheck(Delay))
 		{
 			AddWord();
 			m_iLife -= DropWord();
@@ -83,9 +83,16 @@ void Play::Game()
 
 			if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'A'))
 				m_strInput += input;
-			else if (input == 13 && m_strInput != "")
-				WordCheck(CheckWord(m_strInput));
+			else if (m_strInput != "")
+			{
+				if (input == 8)
+					m_strInput[m_strInput.length() - 1] = NULL;
+				else if (input == 13) // ENTER
+					WordCheck(CheckWord(m_strInput));
+			}
 		}
+
+		EffectCheck();
 
 		if (m_bStun && clock() - m_iStunTime >= STUN)
 		{
@@ -105,19 +112,68 @@ void Play::Goal(int len)
 	m_iScore += len * SCORE;
 }
 
-void Play::WordCheck(bool check)
+void Play::WordCheck(EFFECT check)
 {
-	if (check)
+	if (check != EFFECT_NULL)
 	{
+		switch (check)
+		{
+		case EFFECT_FAST:
+		case EFFECT_SLOW:
+		case EFFECT_PAUSE:
+		case EFFECT_HIDE:
+			m_Effect = check;
+			break;
+		case EFFECT_CLEAR:
+			Goal(Clear());
+			break;
+		}
 		Goal(m_strInput.length());
 	}
-	else if (!check)
+	else
 	{
 		m_bStun = true;
 		m_iStunTime = clock();
 	}
 
 	m_strInput = "";
+}
+
+int Play::DelayCheck(int delay)
+{
+	switch (m_Effect)
+	{
+	case EFFECT_FAST:
+		delay /= 2;
+		break;
+	case EFFECT_SLOW:
+		delay *= 2;
+		break;
+	case EFFECT_PAUSE:
+		delay *= 100;
+		break;
+	}
+	return delay;
+}
+
+void Play::EffectCheck()
+{
+	if (m_Effect != EFFECT_NORMAL)
+	{
+		switch (m_Effect)
+		{
+		case EFFECT_FAST:
+		case EFFECT_SLOW:
+		case EFFECT_PAUSE:
+			if (clock() - m_iEffectTime >= 3000)
+				m_Effect = EFFECT_NORMAL;
+			break;
+		case EFFECT_HIDE:
+			if (clock() - m_iEffectTime >= 1500)
+				m_Effect = EFFECT_NORMAL;
+			break;
+		}
+	}
 }
 
 void Play::Init()
@@ -127,6 +183,8 @@ void Play::Init()
 	m_iLife = LIFE;
 	m_iStage = 1;
 	m_bStun = false;
+	m_Effect = EFFECT_NORMAL;
+
 
 	for (int i = 0; i < LINE; i++)
 		m_strStory[i] = "";

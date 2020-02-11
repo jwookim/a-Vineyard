@@ -1,10 +1,16 @@
 ﻿  Play.cpp
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(50): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(50): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(52): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(52): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(80): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(80): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\work\jeongwookim\제출\베네치아\베네치아\play.cpp(82): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(82): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-  베네치아.vcxproj -> C:\work\jeongwookim\제출\베네치아\Debug\베네치아.exe
+  Word.cpp
+  WordManager.cpp
+  소스.cpp
+c:\sos\jeongwookim\제출\베네치아\베네치아\소스.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...
+  LINK : C:\sos\jeongwookim\제출\베네치아\Debug\베네치아.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  베네치아.vcxproj -> C:\sos\jeongwookim\제출\베네치아\Debug\베네치아.exe

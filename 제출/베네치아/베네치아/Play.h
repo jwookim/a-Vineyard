@@ -22,14 +22,18 @@ private:
 	int m_iLife;
 	int m_iStage;
 	int m_iStunTime;
+	int m_iEffectTime;
 	bool m_bStun;
+	EFFECT m_Effect;
 	string m_strStory[LINE];
 public:
 	void Menu();
 	void Story();
 	void Game();
 	void Goal(int len);
-	void WordCheck(bool check);
+	void WordCheck(EFFECT check);
+	int DelayCheck(int delay);
+	void EffectCheck();
 	void Init();
 	Play();
 	~Play();

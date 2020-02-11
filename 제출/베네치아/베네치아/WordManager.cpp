@@ -44,7 +44,7 @@ int WordManager::DropWord()
 	{
 		m_Word++;
 
-		if (m_Word->Gety() >= ENDY)
+		if (m_Word->Gety() >= HEIGHT)
 		{
 			Word* tmp = m_Word->GetNextWord();
 			delete m_Word;
@@ -67,7 +67,7 @@ int WordManager::DropWord(Word* nextWord)
 	{
 		nextWord++;
 
-		if (nextWord->Gety() >= ENDY)
+		if (nextWord->Gety() >= HEIGHT)
 		{
 			Word* tmp = nextWord->GetNextWord();
 			delete nextWord;

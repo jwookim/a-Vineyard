@@ -139,13 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MapDraw.cpp" />
     <ClCompile Include="Play.cpp" />
+    <ClCompile Include="Rank.cpp" />
     <ClCompile Include="Word.cpp" />
     <ClCompile Include="WordManager.cpp" />
     <ClCompile Include="소스.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MapDraw.h" />
     <ClInclude Include="Play.h" />
+    <ClInclude Include="Rank.h" />
     <ClInclude Include="Word.h" />
     <ClInclude Include="WordManager.h" />
   </ItemGroup>

@@ -1,13 +1,10 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include"MapDraw.h"
 using namespace std;
 
-#define STARTY 1
-#define ENDY 50
-
-#define STARTX 5
-#define ENDX 45
+#define GAP 10
 
 enum EFFECT
 {

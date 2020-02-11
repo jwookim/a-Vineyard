@@ -5,6 +5,37 @@
 Play::Play()
 {
 	Init();
+	char Buff[50];
+	sprintf(Buff, "mode con: cols=%d lines=%d", WIDTH * 2, HEIGHT + 4);
+	system(Buff);
+}
+
+void Play::Menu()
+{
+	int Select = 0;
+	while (Select != 3)
+	{
+		DrawMap();
+		ShowAll();
+
+		BLUE
+			DrawManager.DrawMidText("☆ ★ 베네치아 ★ ☆", WIDTH, HEIGHT / 5);
+		DrawManager.DrawMidText("1. Game Start", WIDTH, HEIGHT / 3 + 3);
+		DrawManager.DrawMidText("2. Rank", WIDTH, HEIGHT / 3 + 6);
+		DrawManager.DrawMidText("3. Exit", WIDTH, HEIGHT / 3 + 9);
+
+		Select = DrawManager.MenuSelectCursor(3, 3, WIDTH / 2 - 5, HEIGHT / 3 + 3);
+
+		switch (Select)
+		{
+		case 1:
+			Story();
+			Game();
+			break;
+		case 2:
+			break;
+		}
+	}
 }
 
 void Play::Story()
@@ -14,6 +45,11 @@ void Play::Story()
 	int line = 0;
 	int time;
 	char skip = NULL;
+
+	DrawMap();
+	DrawAnswer();
+	DrawManager.DrawMidText("Skip : s", WIDTH, 26);
+	getch();
 
 	load.open("베네치아_스토리.txt");
 
@@ -190,6 +226,79 @@ void Play::Init()
 		m_strStory[i] = "";
 
 	WordInit();
+}
+
+void Play::DrawMap()
+{
+	BLUE_GREEN
+		DrawManager.BoxDraw(0, 0, WIDTH, HEIGHT);
+	ORIGINAL
+}
+
+void Play::DrawAnswer()
+{
+	BLUE
+		DrawManager.BoxDraw(WIDTH , 24, 20, 5);
+}
+
+
+void Play::ShowAll()
+{
+	ShowLife();
+	ShowScore();
+	ShowName();
+}
+
+void Play::ShowLife()
+{
+	RED
+		EraseLife();
+	string life;
+	for (int i = 0; i < m_iLife; i++)
+		life += "♥";
+	DrawManager.TextDraw("Life : " + life, 1, HEIGHT + 1);
+}
+
+void Play::ShowScore()
+{
+	RED
+		EraseScore();
+	DrawManager.DrawMidText("Score : " + to_string(m_iScore), WIDTH, HEIGHT + 1);
+}
+
+void Play::ShowName()
+{
+	RED
+		EraseName();
+
+	DrawManager.TextDraw("Name : " + m_strName, 112, HEIGHT + 1);
+}
+
+void Play::EraseLife()
+{
+	RED
+		string erase;
+	for (int i = 0; i < 12; i++)
+		erase += "  ";
+	DrawManager.TextDraw(erase, 1, HEIGHT + 1);
+}
+
+void Play::EraseScore()
+{
+	RED
+		string erase;
+	for (int i = 0; i < 12; i++)
+		erase += "  ";
+	DrawManager.DrawMidText(erase, WIDTH, HEIGHT + 1);
+}
+
+void Play::EraseName()
+{
+	RED
+		string erase;
+	for (int i = 0; i < 9; i++)
+		erase += "  ";
+	DrawManager.TextDraw(erase, 112, HEIGHT + 1);
 }
 
 Play::~Play()

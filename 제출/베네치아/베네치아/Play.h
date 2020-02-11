@@ -1,5 +1,6 @@
 #pragma once
 #include"WordManager.h"
+#include"MapDraw.h"
 #include<fstream>
 #include<time.h>
 #include<conio.h>
@@ -26,6 +27,7 @@ private:
 	bool m_bStun;
 	EFFECT m_Effect;
 	string m_strStory[LINE];
+	MapDraw DrawManager;
 public:
 	void Menu();
 	void Story();
@@ -35,6 +37,15 @@ public:
 	int DelayCheck(int delay);
 	void EffectCheck();
 	void Init();
+	void DrawMap();
+	void DrawAnswer();
+	void ShowAll();
+	void ShowLife();
+	void ShowScore();
+	void ShowName();
+	void EraseLife();
+	void EraseScore();
+	void EraseName();
 	Play();
 	~Play();
 };

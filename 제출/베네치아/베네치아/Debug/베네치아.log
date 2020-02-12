@@ -1,16 +1,17 @@
 ﻿  Play.cpp
-c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(50): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(52): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\mapdraw.h(49): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.h(13): warning C4005: 'GAP': 매크로 재정의
+  c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\word.h(7): note: 'GAP'의 이전 정의를 참조하십시오.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(52): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(80): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(86): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\sos\jeongwookim\제출\베네치아\베네치아\play.cpp(82): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(88): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-  Word.cpp
-  WordManager.cpp
-  소스.cpp
-c:\sos\jeongwookim\제출\베네치아\베네치아\소스.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  코드를 생성하고 있습니다...
-  LINK : C:\sos\jeongwookim\제출\베네치아\Debug\베네치아.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  베네치아.vcxproj -> C:\sos\jeongwookim\제출\베네치아\Debug\베네치아.exe
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(116): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
+c:\users\a03\documents\github\jeongwookim\제출\베네치아\베네치아\play.cpp(118): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  베네치아.vcxproj -> C:\Users\A03\Documents\GitHub\jeongwookim\제출\베네치아\Debug\베네치아.exe

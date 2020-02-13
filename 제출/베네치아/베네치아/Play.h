@@ -31,12 +31,14 @@ private:
 public:
 	void Menu();
 	void Story();
+	void SetName();
 	void Game();
 	void Goal(int len);
 	void WordCheck(EFFECT check);
 	int DelayCheck(int delay);
 	void EffectCheck();
 	void Init();
+	bool InputWord();
 	void DrawMap();
 	void DrawAnswer();
 	void ShowAll();
@@ -46,6 +48,7 @@ public:
 	void EraseLife();
 	void EraseScore();
 	void EraseName();
+	void EraseAnswer();
 	Play();
 	~Play();
 };

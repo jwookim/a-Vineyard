@@ -42,9 +42,9 @@ int WordManager::DropWord()
 
 	if (m_Word != NULL)
 	{
-		m_Word++;
+		m_Word->Drop();
 
-		if (m_Word->Gety() >= HEIGHT)
+		if (m_Word->Gety() > HEIGHT)
 		{
 			Word* tmp = m_Word->GetNextWord();
 			delete m_Word;
@@ -65,9 +65,9 @@ int WordManager::DropWord(Word* nextWord)
 
 	if (nextWord != NULL)
 	{
-		nextWord++;
+		nextWord->Drop();
 
-		if (nextWord->Gety() >= HEIGHT)
+		if (nextWord->Gety() > HEIGHT)
 		{
 			Word* tmp = nextWord->GetNextWord();
 			delete nextWord;

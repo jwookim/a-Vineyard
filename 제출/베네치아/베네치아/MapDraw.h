@@ -11,7 +11,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////
 #define col GetStdHandle(STD_OUTPUT_HANDLE) 
-#define BLACK SetConsoleTextAttribute( col,0x0000 | 0x0008 << 4 );
+#define BLACK SetConsoleTextAttribute( col,0x0000/* | 0x0008 << 4 */);
 #define DARK_BLUE SetConsoleTextAttribute( col,0x0001 | 0x0008 << 4 );
 #define GREEN SetConsoleTextAttribute( col,0x0002 | 0x0008 << 4 );
 #define BLUE_GREEN SetConsoleTextAttribute( col,0x0003 | 0x0008 << 4 );

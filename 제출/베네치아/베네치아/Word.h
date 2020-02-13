@@ -4,7 +4,7 @@
 #include"MapDraw.h"
 using namespace std;
 
-#define GAP 10
+#define GAP 15
 
 enum EFFECT
 {
@@ -25,7 +25,8 @@ private:
 	int m_ix;
 	int m_iy;
 	EFFECT m_Effect;
-	Word* m_NextWord;
+	Word* m_NextWord = NULL;
+	MapDraw DrawManager;
 public:
 	inline string GetName()
 	{
@@ -50,11 +51,9 @@ public:
 	void SetName(string name);
 	void SetNextWord(Word* nextWord);
 	void Drop();
+	void Draw();
+	void Erase();
 	void Delete();
-	void operator ++ ()
-	{
-		m_iy++;
-	}
 	Word();
 	~Word();
 };

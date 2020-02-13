@@ -30,6 +30,7 @@ void Play::Menu()
 		{
 		case 1:
 			Story();
+			SetName();
 			Game();
 			break;
 		case 2:
@@ -44,12 +45,13 @@ void Play::Story()
 	int lineMax;
 	int line = 0;
 	int time;
+	string tmp;
 	char skip = NULL;
 
 	DrawMap();
 	DrawAnswer();
-	DrawManager.DrawMidText("Skip : s", WIDTH, 26);
-	getch();
+	BLUE
+		DrawManager.DrawMidText("Skip : s", WIDTH, 26);
 
 	load.open("베네치아_스토리.txt");
 
@@ -60,8 +62,19 @@ void Play::Story()
 
 		for (int i = 0; i < lineMax && skip != 's'; i++)
 		{
-			system("cls");
 			time = clock();
+
+			for (int j = 0; j < LINE; j++)
+			{
+				if (m_strStory[j] != "")
+				{
+					tmp = "";
+					for (int k = 0; k < m_strStory[j].length(); k++)
+						tmp += "  ";
+					DrawManager.DrawMidText(tmp, WIDTH, HEIGHT / 5 + j);
+				}
+			}
+
 			if (line >= LINE)
 			{
 				for (int j = 0; j < LINE - 1; j++)
@@ -74,7 +87,7 @@ void Play::Story()
 			for (int j = 0; j < LINE; j++)
 			{
 				/*Draw*/
-				cout << m_strStory[j] << endl;
+				DrawManager.DrawMidText(m_strStory[j], WIDTH, HEIGHT / 5 + j);
 			}
 			
 
@@ -93,12 +106,36 @@ void Play::Story()
 			}
 		}
 	}
+	ORIGINAL
+}
+
+void Play::SetName()
+{
+	DrawMap();
+	BLUE
+		DrawManager.DrawMidText("이름 입력", WIDTH, HEIGHT / 2);
+	ORIGINAL
+		DrawAnswer();
+
+
+
+	while (!InputWord())
+	{
+	}
+
+	m_strName = m_strInput;
+
+	m_strInput = "";
+
+	ShowName();
 }
 
 void Play::Game()
 {
+	DrawMap();
+	DrawAnswer();
+
 	int time = clock();
-	char input;
 	int totalScore = 0;
 	int Delay = DELAY;
 
@@ -107,25 +144,19 @@ void Play::Game()
 
 		if (clock() - time >= DelayCheck(Delay))
 		{
-			AddWord();
 			m_iLife -= DropWord();
+			AddWord();
 
 			time = clock();
+
+			ShowLife();
+			DrawAnswer();
 		}
 
-		if (kbhit() && !m_bStun)
+		if (!m_bStun)
 		{
-			input = getch();
-
-			if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'A'))
-				m_strInput += input;
-			else if (m_strInput != "")
-			{
-				if (input == 8)
-					m_strInput[m_strInput.length() - 1] = NULL;
-				else if (input == 13) // ENTER
-					WordCheck(CheckWord(m_strInput));
-			}
+			if (InputWord())
+				WordCheck(CheckWord(m_strInput));
 		}
 
 		EffectCheck();
@@ -165,11 +196,17 @@ void Play::WordCheck(EFFECT check)
 			break;
 		}
 		Goal(m_strInput.length());
+		ShowScore();
 	}
 	else
 	{
+		EraseAnswer();
 		m_bStun = true;
 		m_iStunTime = clock();
+
+		RED
+			DrawManager.DrawMidText("Failed Compare!!", WIDTH, 26);
+		ORIGINAL
 	}
 
 	m_strInput = "";
@@ -228,6 +265,40 @@ void Play::Init()
 	WordInit();
 }
 
+bool Play::InputWord()
+{
+	BLUE
+		if (kbhit())
+		{
+			int input = getch();
+
+			if (((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z')) && m_strInput.length() < 20)
+			{
+				m_strInput += input;
+
+				EraseAnswer();
+				DrawManager.DrawMidText(m_strInput, WIDTH, 26);
+			}
+			else if (m_strInput != "")
+			{
+				if (input == 8)
+				{
+					m_strInput.pop_back();
+
+					EraseAnswer();
+					DrawManager.DrawMidText(m_strInput, WIDTH, 26);
+				}
+				else if (input == 13) // ENTER
+				{
+					ORIGINAL
+						return true;
+				}
+			}
+		}
+	ORIGINAL
+		return false;
+}
+
 void Play::DrawMap()
 {
 	BLUE_GREEN
@@ -239,6 +310,15 @@ void Play::DrawAnswer()
 {
 	BLUE
 		DrawManager.BoxDraw(WIDTH , 24, 20, 5);
+	ORIGINAL
+		if (!m_bStun)
+			DrawManager.DrawMidText(m_strInput, WIDTH, 26);
+		else
+		{
+			RED
+				DrawManager.DrawMidText("Failed Compare!!", WIDTH, 26);
+			ORIGINAL
+		}
 }
 
 
@@ -299,6 +379,11 @@ void Play::EraseName()
 	for (int i = 0; i < 9; i++)
 		erase += "  ";
 	DrawManager.TextDraw(erase, 112, HEIGHT + 1);
+}
+
+void Play::EraseAnswer()
+{
+	DrawManager.DrawMidText("                                    ", WIDTH, 26);
 }
 
 Play::~Play()

@@ -14,6 +14,8 @@ Word::Word()
 	}
 	else
 		m_Effect = EFFECT_NORMAL;
+
+	Draw();
 }
 
 void Word::SetName(string name)
@@ -28,9 +30,31 @@ void Word::SetNextWord(Word* nextWord)
 
 void Word::Drop()
 {
+	Erase();
 	m_iy++;
+	Draw();
+}
+
+void Word::Draw()
+{
+	if (m_iy < HEIGHT)
+	{
+		if (m_Effect == EFFECT_NORMAL)
+			BLUE
+		else
+			PUPPLE
+
+			DrawManager.DrawMidText(m_strName, m_ix, m_iy);
+	}
+}
+
+void Word::Erase()
+{
+	GRAY
+		DrawManager.DrawMidText(m_strName, m_ix, m_iy);;
 }
 
 Word::~Word()
 {
+	Erase();
 }

@@ -5,12 +5,11 @@
 class WordManager
 {
 protected:
+	int m_iSize;
 	Word* m_Word = NULL;
-	string* m_strList = NULL;
-	int m_iListSize;
 	string m_strInput;
 public:
-	void AddWord();
+	/*void AddWord();
 	void AddWord(string name, Word* nextWord);
 	int DropWord();
 	int DropWord(Word* nextWord);
@@ -21,7 +20,12 @@ public:
 	int Clear();
 	int Clear(Word* nextWord);
 	void WordLoad();
-	void WordInit();
+	void WordInit();*/
+	void WordLoad();
+	void AddWord();
+	bool DropWord();
+	int Clear();
+	EFFECT CheckWord(string name);
 	WordManager();
 	~WordManager();
 };

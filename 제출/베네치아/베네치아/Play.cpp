@@ -144,7 +144,8 @@ void Play::Game()
 
 		if (clock() - time >= DelayCheck(Delay))
 		{
-			m_iLife -= DropWord();
+			if (DropWord())
+				m_iLife--;
 			AddWord();
 
 			time = clock();
@@ -190,6 +191,7 @@ void Play::WordCheck(EFFECT check)
 		case EFFECT_PAUSE:
 		case EFFECT_HIDE:
 			m_Effect = check;
+			m_iEffectTime = clock();
 			break;
 		case EFFECT_CLEAR:
 			Goal(Clear());
@@ -197,6 +199,8 @@ void Play::WordCheck(EFFECT check)
 		}
 		Goal(m_strInput.length());
 		ShowScore();
+
+		EraseAnswer();
 	}
 	else
 	{
@@ -262,7 +266,7 @@ void Play::Init()
 	for (int i = 0; i < LINE; i++)
 		m_strStory[i] = "";
 
-	WordInit();
+	//WordInit();
 }
 
 bool Play::InputWord()
@@ -312,7 +316,11 @@ void Play::DrawAnswer()
 		DrawManager.BoxDraw(WIDTH , 24, 20, 5);
 	ORIGINAL
 		if (!m_bStun)
-			DrawManager.DrawMidText(m_strInput, WIDTH, 26);
+		{
+			BLUE
+				DrawManager.DrawMidText(m_strInput, WIDTH, 26);
+			ORIGINAL
+		}
 		else
 		{
 			RED

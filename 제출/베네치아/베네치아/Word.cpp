@@ -4,8 +4,17 @@
 
 Word::Word()
 {
-	m_NextWord = NULL;
-	m_ix = rand() % (WIDTH * 2 - (GAP * 2)) - GAP;
+	m_bState = false;
+}
+
+void Word::SetName(string name)
+{
+	m_strName = name;
+}
+
+void Word::Live()
+{
+	m_ix = rand() % ((WIDTH * 2) - (GAP * 2)) + GAP;
 	m_iy = 1;
 
 	if (rand() % 10 == 0)
@@ -14,25 +23,21 @@ Word::Word()
 	}
 	else
 		m_Effect = EFFECT_NORMAL;
+	
+	m_bState = true;
 
 	Draw();
 }
 
-void Word::SetName(string name)
+void Word::Dead()
 {
-	m_strName = name;
-}
-
-void Word::SetNextWord(Word* nextWord)
-{
-	m_NextWord = nextWord;
+	Erase();
+	Init();
 }
 
 void Word::Drop()
 {
-	Erase();
 	m_iy++;
-	Draw();
 }
 
 void Word::Draw()
@@ -52,6 +57,16 @@ void Word::Erase()
 {
 	GRAY
 		DrawManager.DrawMidText(m_strName, m_ix, m_iy);;
+}
+
+void Word::Init()
+{
+	m_ix = 0;
+	m_iy = 0;
+
+	m_Effect = EFFECT_NORMAL;
+
+	m_bState = false;
 }
 
 Word::~Word()

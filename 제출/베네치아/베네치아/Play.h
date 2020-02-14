@@ -1,6 +1,7 @@
 #pragma once
 #include"WordManager.h"
 #include"MapDraw.h"
+#include"Rank.h"
 #include<fstream>
 #include<time.h>
 #include<conio.h>
@@ -28,6 +29,7 @@ private:
 	EFFECT m_Effect;
 	string m_strStory[LINE];
 	MapDraw DrawManager;
+	Rank m_Rank;
 public:
 	void Menu();
 	void Story();
@@ -37,6 +39,9 @@ public:
 	void WordCheck(EFFECT check);
 	int DelayCheck(int delay);
 	void EffectCheck();
+	void LevelUp();
+	void GameOver();
+	void Save();
 	void Init();
 	bool InputWord();
 	void DrawMap();

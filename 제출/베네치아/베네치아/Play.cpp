@@ -15,6 +15,7 @@ void Play::Menu()
 	int Select = 0;
 	while (Select != 3)
 	{
+		system("cls");
 		DrawMap();
 		ShowAll();
 
@@ -41,6 +42,7 @@ void Play::Menu()
 
 void Play::Story()
 {
+	system("cls");
 	ifstream load;
 	int lineMax;
 	int line = 0;
@@ -49,6 +51,7 @@ void Play::Story()
 	char skip = NULL;
 
 	DrawMap();
+	ShowAll();
 	DrawAnswer();
 	BLUE
 		DrawManager.DrawMidText("Skip : s", WIDTH, 26);
@@ -111,7 +114,9 @@ void Play::Story()
 
 void Play::SetName()
 {
+	system("cls");
 	DrawMap();
+	ShowAll();
 	BLUE
 		DrawManager.DrawMidText("이름 입력", WIDTH, HEIGHT / 2);
 	ORIGINAL
@@ -132,12 +137,16 @@ void Play::SetName()
 
 void Play::Game()
 {
+	LevelUp();
+	system("cls");
 	DrawMap();
+	ShowAll();
 	DrawAnswer();
 
 	int time = clock();
 	int totalScore = 0;
 	int Delay = DELAY;
+
 
 	while (m_iLife > 0)
 	{
@@ -146,7 +155,8 @@ void Play::Game()
 		{
 			if (DropWord())
 				m_iLife--;
-			AddWord();
+			if(rand() % 2 == 0)
+				AddWord();
 
 			time = clock();
 
@@ -168,11 +178,15 @@ void Play::Game()
 		}
 		if (m_iScore >= SCOREMAX - ((m_iStage - 1) * LVSCORE))
 		{
-			totalScore += m_iScore;
-			m_iScore = 0;
-			m_iStage++;
+			LevelUp();
+			system("cls");
+			DrawMap();
+			ShowAll();
+			DrawAnswer();
 		}
 	}
+
+	GameOver();
 }
 
 void Play::Goal(int len)
@@ -253,12 +267,54 @@ void Play::EffectCheck()
 	}
 }
 
+void Play::LevelUp()
+{
+	Clear();
+	int delay = clock();
+	m_iScore = 0;
+	m_iStage++;
+
+	system("cls");
+	DrawMap();
+	ShowAll();
+
+	BLUE
+		DrawManager.DrawMidText("★ " + to_string(m_iStage) + " Stage ★", WIDTH, HEIGHT / 2);
+	ORIGINAL
+
+		while (clock() - delay < 1500)
+		{
+
+		}
+}
+
+void Play::GameOver()
+{
+	int delay = clock();
+	RED
+		DrawManager.DrawMidText("♨ Game Over ♨", WIDTH, HEIGHT / 2);
+	ORIGINAL
+
+		while (clock() - delay < 1500)
+		{
+
+		}
+	Clear();
+	Save();
+	Init();
+}
+
+void Play::Save()
+{
+	m_Rank.Save(m_strName, m_iStage, m_iScore);
+}
+
 void Play::Init()
 {
 	m_strName = "? ? ?";
 	m_iScore = 0;
 	m_iLife = LIFE;
-	m_iStage = 1;
+	m_iStage = 0;
 	m_bStun = false;
 	m_Effect = EFFECT_NORMAL;
 

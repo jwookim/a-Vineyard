@@ -278,8 +278,13 @@ bool WordManager::DropWord()
 				m_Word[i].Init();
 				check = true;
 			}
-			else
-				m_Word[i].Draw();
+		}
+	}
+	for (int i = 0; i < m_iSize; i++)
+	{
+		if (m_Word[i].GetState())
+		{
+			m_Word[i].Draw();
 		}
 	}
 	return check;

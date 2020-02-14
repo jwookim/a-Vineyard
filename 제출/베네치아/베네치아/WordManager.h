@@ -24,6 +24,7 @@ public:
 	void WordLoad();
 	void AddWord();
 	bool DropWord();
+	void HideWord();
 	int Clear();
 	EFFECT CheckWord(string name);
 	WordManager();

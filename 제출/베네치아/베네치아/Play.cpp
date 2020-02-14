@@ -35,6 +35,7 @@ void Play::Menu()
 			Game();
 			break;
 		case 2:
+			ShowRank();
 			break;
 		}
 	}
@@ -151,18 +152,23 @@ void Play::Game()
 	while (m_iLife > 0)
 	{
 
-		if (clock() - time >= DelayCheck(Delay))
+		if (clock() - time >= DelayCheck(DELAY))
 		{
 			if (DropWord())
 				m_iLife--;
 			if(rand() % 2 == 0)
 				AddWord();
 
+			if (m_Effect == EFFECT_HIDE)
+				HideWord();
+
 			time = clock();
 
 			ShowLife();
 			DrawAnswer();
 		}
+
+		
 
 		if (!m_bStun)
 		{
@@ -179,6 +185,7 @@ void Play::Game()
 		if (m_iScore >= SCOREMAX - ((m_iStage - 1) * LVSCORE))
 		{
 			LevelUp();
+			Delay -= Delay / 3;
 			system("cls");
 			DrawMap();
 			ShowAll();
@@ -200,10 +207,11 @@ void Play::WordCheck(EFFECT check)
 	{
 		switch (check)
 		{
+		case EFFECT_HIDE:
+			HideWord();
 		case EFFECT_FAST:
 		case EFFECT_SLOW:
 		case EFFECT_PAUSE:
-		case EFFECT_HIDE:
 			m_Effect = check;
 			m_iEffectTime = clock();
 			break;
@@ -448,6 +456,27 @@ void Play::EraseName()
 void Play::EraseAnswer()
 {
 	DrawManager.DrawMidText("                                    ", WIDTH, 26);
+}
+
+void Play::ShowRank()
+{
+	int line = 3;
+	system("cls");
+	DrawMap();
+	BLUE
+		DrawManager.BoxDraw(WIDTH, line, 20, 5);
+	DrawManager.DrawMidText("Ranking", WIDTH, line + 2);
+
+	string Fence;
+	for (int i = 0; i < (WIDTH * 2) - 2; i++)
+		Fence += "=";
+	DrawManager.DrawMidText(Fence, WIDTH, line + 5);
+
+
+	DrawManager.TextDraw("Name", WIDTH - (WIDTH / 3), line + 7);
+	DrawManager.TextDraw("Score", WIDTH, line + 7);
+	DrawManager.TextDraw("Stage", WIDTH + (WIDTH / 3), line + 7);
+	m_Rank.Show(line + 8);
 }
 
 Play::~Play()

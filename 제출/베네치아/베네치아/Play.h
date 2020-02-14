@@ -54,6 +54,7 @@ public:
 	void EraseScore();
 	void EraseName();
 	void EraseAnswer();
+	void ShowRank();
 	Play();
 	~Play();
 };

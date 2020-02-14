@@ -16,10 +16,11 @@ class Rank
 {
 private:
 	Info m_Info[10];
+	MapDraw DrawManager;
 public:
-	void Show();
+	void Show(int line);
 	void Load();
-	void ListDown();
+	void ListDown(int num);
 	void Save(string name, int level, int score);
 	Rank();
 	~Rank();

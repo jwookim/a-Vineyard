@@ -17,7 +17,7 @@ void Word::Live()
 	m_ix = rand() % ((WIDTH * 2) - (GAP * 2)) + GAP;
 	m_iy = 1;
 
-	if (rand() % 10 == 0)
+	if (rand() % 5 == 0)
 	{
 		m_Effect = (EFFECT)(rand() % 5 + 2);
 	}
@@ -50,6 +50,22 @@ void Word::Draw()
 			PUPPLE
 
 			DrawManager.DrawMidText(m_strName, m_ix, m_iy);
+	}
+}
+
+void Word::Hide()
+{
+	string hide;
+	for (int i = 0; i < m_strName.length(); i++)
+		hide += "=";
+	if (m_iy < HEIGHT)
+	{
+		if (m_Effect == EFFECT_NORMAL)
+			BLUE
+		else
+			PUPPLE
+
+			DrawManager.DrawMidText(hide, m_ix, m_iy);
 	}
 }
 

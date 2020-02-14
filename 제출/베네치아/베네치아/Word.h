@@ -53,6 +53,7 @@ public:
 	void Dead();
 	void Drop();
 	void Draw();
+	void Hide();
 	void Erase();
 	void Init();
 	Word();

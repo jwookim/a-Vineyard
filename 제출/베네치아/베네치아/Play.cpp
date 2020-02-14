@@ -152,7 +152,7 @@ void Play::Game()
 	while (m_iLife > 0)
 	{
 
-		if (clock() - time >= DelayCheck(DELAY))
+		if (clock() - time >= DelayCheck(Delay))
 		{
 			if (DropWord())
 				m_iLife--;
@@ -182,10 +182,10 @@ void Play::Game()
 		{
 			m_bStun = false;
 		}
-		if (m_iScore >= SCOREMAX - ((m_iStage - 1) * LVSCORE))
+		if (m_iScore >= SCOREMAX + ((m_iStage - 1) * LVSCORE))
 		{
 			LevelUp();
-			Delay -= Delay / 3;
+			Delay -= Delay / 5;
 			system("cls");
 			DrawMap();
 			ShowAll();

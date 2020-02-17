@@ -1,13 +1,10 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include"MapDraw.h"
 using namespace std;
 
-#define STARTY 1
-#define ENDY 50
-
-#define STARTX 5
-#define ENDX 45
+#define GAP 5
 
 enum EFFECT
 {
@@ -27,8 +24,9 @@ private:
 	string m_strName;
 	int m_ix;
 	int m_iy;
+	bool m_bState;
 	EFFECT m_Effect;
-	Word* m_NextWord;
+	MapDraw DrawManager;
 public:
 	inline string GetName()
 	{
@@ -42,18 +40,22 @@ public:
 	{
 		return m_iy;
 	}
-	inline Word* GetNextWord()
+	inline bool GetState()
 	{
-		return m_NextWord;
+		return m_bState;
+	}
+	inline EFFECT GetEffect()
+	{
+		return m_Effect;
 	}
 	void SetName(string name);
-	void SetNextWord(Word* nextWord);
+	void Live();
+	void Dead();
 	void Drop();
-	void Delete();
-	void operator ++ ()
-	{
-		m_iy++;
-	}
+	void Draw();
+	void Hide();
+	void Erase();
+	void Init();
 	Word();
 	~Word();
 };

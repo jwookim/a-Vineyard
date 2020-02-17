@@ -1,5 +1,7 @@
 #pragma once
 #include"WordManager.h"
+#include"MapDraw.h"
+#include"Rank.h"
 #include<fstream>
 #include<time.h>
 #include<conio.h>
@@ -12,7 +14,7 @@
 #define GAP 5
 #define STUN 3000
 #define SCOREMAX 1000
-#define LVSCORE 200
+#define LVSCORE 800
 
 class Play : public WordManager
 {
@@ -22,15 +24,37 @@ private:
 	int m_iLife;
 	int m_iStage;
 	int m_iStunTime;
+	int m_iEffectTime;
 	bool m_bStun;
+	EFFECT m_Effect;
 	string m_strStory[LINE];
+	MapDraw DrawManager;
+	Rank m_Rank;
 public:
 	void Menu();
 	void Story();
+	void SetName();
 	void Game();
 	void Goal(int len);
-	void WordCheck(bool check);
+	void WordCheck(EFFECT check);
+	int DelayCheck(int delay);
+	void EffectCheck();
+	void LevelUp();
+	void GameOver();
+	void Save();
 	void Init();
+	bool InputWord();
+	void DrawMap();
+	void DrawAnswer();
+	void ShowAll();
+	void ShowLife();
+	void ShowScore();
+	void ShowName();
+	void EraseLife();
+	void EraseScore();
+	void EraseName();
+	void EraseAnswer();
+	void ShowRank();
 	Play();
 	~Play();
 };

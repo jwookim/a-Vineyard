@@ -290,6 +290,17 @@ bool WordManager::DropWord()
 	return check;
 }
 
+void WordManager::HideWord()
+{
+	for (int i = 0; i < m_iSize; i++)
+	{
+		if (m_Word[i].GetState())
+		{
+			m_Word[i].Hide();
+		}
+	}
+}
+
 int WordManager::Clear()
 {
 	int score = 0;
@@ -324,7 +335,6 @@ EFFECT WordManager::CheckWord(string name)
 
 WordManager::~WordManager()
 {
-	/*Clear();
-	if(m_strList != NULL)
-		delete m_strList;*/
+	if(m_Word != NULL)
+		delete[] m_Word;
 }

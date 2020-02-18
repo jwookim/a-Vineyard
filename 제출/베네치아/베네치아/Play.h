@@ -14,7 +14,7 @@
 #define GAP 5
 #define STUN 3000
 #define SCOREMAX 1000
-#define LVSCORE 200
+#define LVSCORE 800
 
 class Play : public WordManager
 {
@@ -54,6 +54,7 @@ public:
 	void EraseScore();
 	void EraseName();
 	void EraseAnswer();
+	void ShowRank();
 	Play();
 	~Play();
 };

@@ -6,7 +6,7 @@ void ListInit(List* plist)
 {
 	plist->head = (Node*)malloc(sizeof(Node));
 	plist->head->next = NULL;
-	plist->comp = NULL;
+	//plist->comp = NULL;
 	plist->numOfData = 0;
 }
 

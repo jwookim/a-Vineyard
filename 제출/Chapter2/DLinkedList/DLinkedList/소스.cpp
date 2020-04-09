@@ -97,6 +97,7 @@ void main()
 
 		LRemove(list);
 	}
+	free(list->head);
 
 	delete list;
 }

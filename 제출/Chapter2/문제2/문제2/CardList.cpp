@@ -6,14 +6,14 @@ void ListInit(List* plist)
 	(plist->curPosition) = -1;
 }
 
-void LInsert(List* plist, LData* data)
+void LInsert(List* plist, LData data)
 {
 	if (plist->numOfData >= LIST_LEN)
 	{
 		puts("저장이 불가능합니다.");
 		return;
 	}
-	plist->arr[plist->numOfData] = *data;
+	plist->arr[plist->numOfData] = data;
 	(plist->numOfData)++;
 }
 
@@ -35,16 +35,15 @@ int LNext(List* plist, LData* pdata)
 	return TRUE;
 }
 
-LData LRemove(List* plist)
+void LRemove(List* plist)
 {
 	int rpos = plist->curPosition; // 삭제할 데이터의 인덱스 값 참조
 	int num = plist->numOfData;
-	LData rdata = plist->arr[rpos];
+	delete plist->arr[rpos];
 	for (int i = rpos; i < num - 1; i++)
 		plist->arr[i] = plist->arr[i + 1];
 	(plist->numOfData)--;
 	(plist->curPosition)--;
-	return rdata;
 }
 
 int LCount(List* plist)

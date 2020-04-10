@@ -1,5 +1,6 @@
-﻿  DLinkedList.cpp
-  소스.cpp
-c:\users\a05\desktop\github\jeongwookim\제출\chapter2\dlinkedlist\dlinkedlist\소스.cpp(11): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  코드를 생성하고 있습니다...
-  DLinkedList.vcxproj -> C:\Users\A05\Desktop\GitHub\jeongwookim\제출\Chapter2\DLinkedList\Debug\DLinkedList.exe
+﻿  소스.cpp
+c:\users\a05\desktop\github\jeongwookim\제출\chapter2\dlinkedlist\dlinkedlist\소스.cpp(12): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+소스.obj : error LNK2019: "void __cdecl LInsert<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >(struct _linkedList *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??$LInsert@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAXPAU_linkedList@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다.
+소스.obj : error LNK2019: "int __cdecl LFirst<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >(struct _linkedList *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *)" (??$LFirst@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAHPAU_linkedList@@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다.
+소스.obj : error LNK2019: "int __cdecl LNext<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >(struct _linkedList *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *)" (??$LNext@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YAHPAU_linkedList@@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다.
+C:\Users\A05\Desktop\GitHub\jeongwookim\제출\Chapter2\DLinkedList\Debug\DLinkedList.exe : fatal error LNK1120: 3개의 확인할 수 없는 외부 참조입니다.

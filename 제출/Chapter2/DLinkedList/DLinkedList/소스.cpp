@@ -7,24 +7,25 @@ using namespace std;
 
 #define LISTSIZE 100
 
+
 void main()
 {
 	srand((unsigned)time(NULL));
 
 	List* list = new List;
 	LData num;
-	int sum = 0;
+	LData sum = 0;
 
 	ListInit(list);
 
 	for (int i = 1; i <= LISTSIZE; i++)
-		LInsert(list, i);
+		LInsert<string>(list, to_string(i));
 
-	if (LFirst(list, &num))
+	if (LFirst<string>(list, &num))
 	{
 		sum += num;
 
-		while (LNext(list, &num))
+		while (LNext<string>(list, &num))
 			sum += num;
 	}
 
@@ -45,9 +46,9 @@ void main()
 			LFirst(list, &num);
 
 			for (int k = 0; k < pos; k++)
-				LNext(list, &num);
+				LNext<>(list, &num);
 
-			LInsert(list, LRemove(list));
+			LInsert<>(list, LRemove(list));
 		}
 	}
 
@@ -55,16 +56,16 @@ void main()
 
 	cout << "리스트 전체 데이터 출력" << endl;
 
-	if (LFirst(list, &num))
+	if (LFirst<string>(list, &num))
 	{
 		cout << num << endl;
 
-		while (LNext(list, &num))
+		while (LNext<string>(list, &num))
 			cout << num << endl;
 	}
 
 
-	if (LFirst(list, &num))
+	/*if (LFirst(list, &num))
 	{
 		if (num % 2 == 0 || num % 3 == 0)
 			LRemove(list);
@@ -74,26 +75,26 @@ void main()
 			if (num % 2 == 0 || num % 3 == 0)
 				LRemove(list);
 		}
-	}
+	}*/
 
 
-	system("pause");
+	/*system("pause");
 	system("cls");
 
-	cout << "2와 3의 배수를 삭제한 리스트 전체 데이터 출력" << endl;
+	cout << "2와 3의 배수를 삭제한 리스트 전체 데이터 출력" << endl;*/
 
-	if (LFirst(list, &num))
+	/*if (LFirst(list, &num))
 	{
 		cout << num << endl;
 
 		while (LNext(list, &num))
 			cout << num << endl;
-	}
+	}*/
 
 
 	while (list->numOfData > 0)
 	{
-		LFirst(list, &num);
+		LFirst<string>(list, &num);
 
 		LRemove(list);
 	}

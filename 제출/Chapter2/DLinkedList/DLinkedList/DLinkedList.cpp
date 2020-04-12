@@ -10,7 +10,8 @@ void ListInit(List* plist)
 	plist->numOfData = 0;
 }
 
-void LInsert(List* plist, LData data)
+template <typename Type>
+void LInsert(List* plist, Type data)
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	newNode->data = data;
@@ -22,7 +23,8 @@ void LInsert(List* plist, LData data)
 	(plist->numOfData)++;
 }
 
-int LFirst(List* plist, LData* pdata)
+template <typename Type>
+int LFirst(List* plist, Type* pdata)
 {
 	if (plist->head->next == NULL)
 		return FALSE;
@@ -32,7 +34,8 @@ int LFirst(List* plist, LData* pdata)
 	return TRUE;
 }
 
-int LNext(List* plist, LData* pdata)
+template <typename Type>
+int LNext(List* plist, Type* pdata)
 {
 	if (plist->cur->next == NULL)
 		return FALSE;
@@ -45,7 +48,7 @@ int LNext(List* plist, LData* pdata)
 LData LRemove(List* plist)
 {
 	Node* rpos = plist->cur;
-	int rdata = plist->cur->data;
+	LData rdata = plist->cur->data;
 
 	plist->before->next = plist->cur->next;
 	plist->cur = plist->before;

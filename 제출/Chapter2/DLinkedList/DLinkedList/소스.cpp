@@ -14,12 +14,12 @@ void main()
 
 	List* list = new List;
 	LData num;
-	LData sum = 0;
+	LData sum;
 
 	ListInit(list);
 
-	for (float i = 1.5f; i <= LISTSIZE; i++)
-		LInsert(list, i);
+	for (int i = 1; i <= LISTSIZE; i++)
+		LInsert(list, to_string(i));
 
 	if (LFirst(list, &num))
 	{
@@ -48,7 +48,7 @@ void main()
 			for (int k = 0; k < pos; k++)
 				LNext(list, &num);
 
-			LInsert<>(list, LRemove(list));
+			LInsert(list, LRemove(list));
 		}
 	}
 

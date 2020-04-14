@@ -14,12 +14,12 @@ void main()
 
 	List* list = new List;
 	LData num;
-	LData sum;
+	LData sum = 0;
 
 	ListInit(list);
 
-	for (int i = 1; i <= LISTSIZE; i++)
-		LInsert(list, to_string(i));
+	for (char i = 'a'; i <= 'z'; i += 1.1f)
+		LInsert(list, i);
 
 	if (LFirst(list, &num))
 	{

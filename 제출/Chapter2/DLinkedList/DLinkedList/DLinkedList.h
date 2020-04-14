@@ -10,7 +10,7 @@ using namespace std;
 #define FALSE 0
 #define LIST_LEN 100
 
-typedef string LData;
+typedef char LData;
 typedef struct _node
 {
 	LData data;

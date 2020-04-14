@@ -1,3 +1,3 @@
 ﻿  소스.cpp
-c:\users\a05\desktop\github\jeongwookim\제출\chapter2\linkedlist\linkedlist\소스.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  LinkedList.vcxproj -> C:\Users\A05\Desktop\GitHub\jeongwookim\제출\Chapter2\LinkedList\Debug\LinkedList.exe
+c:\users\admin\documents\github\jeongwookim\제출\chapter2\linkedlist\linkedlist\소스.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  LinkedList.vcxproj -> C:\Users\Admin\Documents\GitHub\jeongwookim\제출\Chapter2\LinkedList\Debug\LinkedList.exe

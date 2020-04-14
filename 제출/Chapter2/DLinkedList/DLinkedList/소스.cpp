@@ -18,14 +18,14 @@ void main()
 
 	ListInit(list);
 
-	for (int i = 1; i <= LISTSIZE; i++)
-		LInsert<string>(list, to_string(i));
+	for (float i = 1.5f; i <= LISTSIZE; i++)
+		LInsert(list, i);
 
-	if (LFirst<string>(list, &num))
+	if (LFirst(list, &num))
 	{
 		sum += num;
 
-		while (LNext<string>(list, &num))
+		while (LNext(list, &num))
 			sum += num;
 	}
 
@@ -46,7 +46,7 @@ void main()
 			LFirst(list, &num);
 
 			for (int k = 0; k < pos; k++)
-				LNext<>(list, &num);
+				LNext(list, &num);
 
 			LInsert<>(list, LRemove(list));
 		}
@@ -56,11 +56,11 @@ void main()
 
 	cout << "리스트 전체 데이터 출력" << endl;
 
-	if (LFirst<string>(list, &num))
+	if (LFirst(list, &num))
 	{
 		cout << num << endl;
 
-		while (LNext<string>(list, &num))
+		while (LNext(list, &num))
 			cout << num << endl;
 	}
 
@@ -94,7 +94,7 @@ void main()
 
 	while (list->numOfData > 0)
 	{
-		LFirst<string>(list, &num);
+		LFirst(list, &num);
 
 		LRemove(list);
 	}

@@ -1,17 +1,6 @@
 #include "LinkedList.h"
 
 
-void LInsert(Node** head, Node** tail, int Data)
-{
-	Node* newNode = (Node*)malloc(sizeof(Node));
-	newNode->data = Data;
-	newNode->next = NULL;
-	if (*tail == NULL)
-		*tail = newNode;
-	else
-		newNode->next = *head;
-	*head = newNode;
-}
 
 void LRead(Node* head)
 {
@@ -22,13 +11,13 @@ void LRead(Node* head)
 	else
 	{
 		Node* cur = head;
-		printf("%d ", cur->data);
+		cout<< cur->data;
 		while (cur->next != NULL)
 		{
 			cur = cur->next;
-			printf("%d ", cur->data);
+			cout << cur->data;
 		}
-		printf("\n");
+		cout << endl;
 	}
 }
 

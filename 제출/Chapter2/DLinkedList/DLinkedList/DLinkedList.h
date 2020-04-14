@@ -8,7 +8,7 @@ using namespace std;
 #define FALSE 0
 #define LIST_LEN 100
 
-typedef string LData;
+typedef float LData;
 typedef struct _node
 {
 	LData data;
@@ -24,11 +24,42 @@ typedef struct _linkedList
 } LinkedList;
 typedef LinkedList List;
 void ListInit(List* plist); // 초기화
+
 template <typename Type>
-void LInsert(List* plist, Type data); // 데이터 저장
+void LInsert(List* plist, Type data)
+{
+	Node* newNode = (Node*)malloc(sizeof(Node));
+	newNode->data = data;
+
+	newNode->next = plist->head->next;
+
+	plist->head->next = newNode;
+
+	(plist->numOfData)++;
+}
+
+
 template <typename Type>
-int LFirst(List* plist, Type* pdata); // 첫 데이터 참조
+int LFirst(List* plist, Type* pdata)
+{
+	if (plist->head->next == NULL)
+		return FALSE;
+	plist->before = plist->head;
+	plist->cur = plist->head->next;
+	*pdata = plist->cur->data;
+	return TRUE;
+}
+
 template <typename Type>
-int LNext(List* plist, Type* pdata); // 두 번째 이후 데이터 참조
+int LNext(List* plist, Type* pdata)
+{
+	if (plist->cur->next == NULL)
+		return FALSE;
+	plist->before = plist->cur;
+	plist->cur = plist->cur->next;
+	*pdata = plist->cur->data;
+	return TRUE;
+}
+
 LData LRemove(List* plist); // 참조한 데이터 삭제
 int LCount(List* plist); // 저장된 데이터의 수 반환

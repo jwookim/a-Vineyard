@@ -18,7 +18,7 @@ void main()
 
 	ListInit(list);
 
-	for (float i = 1.5f; i <= LISTSIZE; i++)
+	for (char i = 'a'; i <= 'z'; i += 1.1f)
 		LInsert(list, i);
 
 	if (LFirst(list, &num))
@@ -48,7 +48,7 @@ void main()
 			for (int k = 0; k < pos; k++)
 				LNext(list, &num);
 
-			LInsert<>(list, LRemove(list));
+			LInsert(list, LRemove(list));
 		}
 	}
 

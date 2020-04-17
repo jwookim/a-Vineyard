@@ -1,6 +1,8 @@
 #pragma once
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
+#include<string.h>
 #include<string>
 using namespace std;
 
@@ -8,7 +10,7 @@ using namespace std;
 #define FALSE 0
 #define LIST_LEN 100
 
-typedef float LData;
+typedef char LData;
 typedef struct _node
 {
 	LData data;
@@ -29,6 +31,7 @@ template <typename Type>
 void LInsert(List* plist, Type data)
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
+
 	newNode->data = data;
 
 	newNode->next = plist->head->next;

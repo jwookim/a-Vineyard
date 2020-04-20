@@ -1,30 +1,3 @@
-﻿  DLinkedList.cpp
-  소스.cpp
-c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\소스.cpp(9): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\dlinkedlist.h(78): error C2679: 이항 '=': 오른쪽 피연산자로 'LData *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\point.h(9): note: '_point &_point::operator =(_point &&)'일 수 있습니다.
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\point.h(9): note: 또는       '_point &_point::operator =(const _point &)'
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\dlinkedlist.h(78): note: 인수 목록 '(Type, LData *)'을(를) 일치시키는 동안
-          with
-          [
-              Type=Point
-          ]
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\소스.cpp(29): note: 컴파일 중인 함수 템플릿 인스턴스화 'int LFirst<Point>(List *,Type *)'에 대한 참조를 확인하십시오.
-          with
-          [
-              Type=Point
-          ]
-c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\dlinkedlist.h(89): error C2679: 이항 '=': 오른쪽 피연산자로 'LData *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\point.h(9): note: '_point &_point::operator =(_point &&)'일 수 있습니다.
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\point.h(9): note: 또는       '_point &_point::operator =(const _point &)'
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\dlinkedlist.h(89): note: 인수 목록 '(Type, LData *)'을(를) 일치시키는 동안
-          with
-          [
-              Type=Point
-          ]
-  c:\users\admin\documents\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\소스.cpp(32): note: 컴파일 중인 함수 템플릿 인스턴스화 'int LNext<Point>(List *,Type *)'에 대한 참조를 확인하십시오.
-          with
-          [
-              Type=Point
-          ]
-  코드를 생성하고 있습니다...
+﻿  소스.cpp
+c:\users\a05\desktop\github\jeongwookim\제출\chapter2\dlinkedlist2\dlinkedlist2\소스.cpp(9): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  DLinkedList2.vcxproj -> C:\Users\A05\Desktop\GitHub\jeongwookim\제출\Chapter2\DLinkedList2\Debug\DLinkedList2.exe

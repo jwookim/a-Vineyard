@@ -3,13 +3,14 @@
 #include"Point.h"
 #include<time.h>
 #include<stdlib.h>
-#define LISTSIZE 30
+#define LISTSIZE 50
 
 void main()
 {
 	srand((unsigned)time(NULL));
 
-	Point* rnum = new Point;
+	Point* rnum;
+	int x, y;
 
 	List* list = new List;
 
@@ -19,20 +20,27 @@ void main()
 
 	for (int i = 0; i < LISTSIZE; i++)
 	{
-		SetPointPos(rnum, rand() % LISTSIZE + 1, rand() % LISTSIZE + 1);
+		rnum = new Point;
+		x = rand() % LISTSIZE + 1;
+		y = rand() % LISTSIZE + 1;
+		SetPointPos(rnum, x, y);
 
 		LInsert(list, rnum);
+		rnum = NULL;
 	}
 
-	delete rnum;
 
-	LFirst(list, rnum);
-	ShowPointPos(rnum);
+	Point* tmp;
+	LFirst(list, &tmp);
+	ShowPointPos(tmp);
 
-	while (LNext(list, rnum) != FALSE)
-		ShowPointPos(rnum);
+	while (LNext(list, &tmp) != FALSE)
+		ShowPointPos(tmp);
 
-	LFirst(list, rnum);
+	
 	while (list->numOfData > 0)
+	{
+		LFirst(list, &tmp);
 		LRemove(list);
+	}
 }

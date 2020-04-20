@@ -57,7 +57,7 @@ void SInsert(List* plist, Type data)
 	Node * newNode = (Node*)malloc(sizeof(Node));
 	Node * pred = plist->head;
 	newNode->data = data;
-	while(pred->next != NULL & plist->comp(data, pred->next->data) != 0)
+	while(pred->next != NULL && plist->comp(data, pred->next->data) != 0)
 	{
 		pred = pred->next;
 	}
@@ -75,7 +75,7 @@ int LFirst(List* plist, Type* pdata)
 		return FALSE;
 	plist->before = plist->head;
 	plist->cur = plist->head->next;
-	*pdata = &(plist->cur->data);
+	*pdata = plist->cur->data;
 	return TRUE;
 }
 
@@ -86,7 +86,7 @@ int LNext(List* plist, Type* pdata)
 		return FALSE;
 	plist->before = plist->cur;
 	plist->cur = plist->cur->next;
-	*pdata = &(plist->cur->data);
+	*pdata = plist->cur->data;
 	return TRUE;
 }
 

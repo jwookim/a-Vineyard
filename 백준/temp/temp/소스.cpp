@@ -3,13 +3,12 @@ using namespace std;
 
 int main()
 {
-	int num;
-	int exp = 1;
+	int A, B, V;
+	cin >> A >> B >> V;
 
-	cin >> num;
-
-	for (int i = 1; exp < num; i++)
-	{
-		exp += (i * 6) - 5;
-	}
+	if ((V - A) % (A - B) == 0)
+		cout << (V - A) / (A - B) + 1;
+	else
+		cout << (V - A) / (A - B) + 2;
+	return 0;
 }

@@ -1,34 +1,48 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<iostream>
+using namespace std;
 
 int main()
 {
-	int m, n;
-	scanf_s("%d %d", &m, &n);
+	int x[4], y[4];
 
-	bool* eratos = (bool*)malloc(sizeof(bool) * n);
+	for (int i = 0; i < 3; i++)
+		cin >> x[i] >> y[i];
 
-	for (int i = 0; i < n; i++)
-		eratos[i] = true;
+	int check;
 
-	eratos[0] = false;
-
-	for (int i = 1; i <= n; i++)
+	for (int i = 0; i < 3; i++)
 	{
-		if (eratos[i - 1] == false)
-			continue;
+		check = 0;
+		for (int j = i + 1; j < 3 && check == 0; j++)
+		{
+			if (x[i] == x[j])
+				check++;
+		}
 
-		for (int j = 2; j*i <= n; j++)
-			eratos[i*j - 1] = false;
+		if (check == 0)
+		{
+			x[3] = x[i];
+			break;
+		}
 	}
 
-	for (; m <= n; m++)
+	for (int i = 0; i < 3; i++)
 	{
-		if (eratos[m - 1] == true)
-			printf("%d\n", m);
-	}
+		check = 0;
+		for (int j = i + 1; j < 3 && check == 0; j++)
+		{
+			if (y[i] == y[j])
+				check++;
+		}
 
-	free(eratos);
+		if (check == 0)
+		{
+			y[3] = y[i];
+			break;
+		}
+	}
+	
+	cout << x[3] << " " << y[3];
 
 	return 0;
 }

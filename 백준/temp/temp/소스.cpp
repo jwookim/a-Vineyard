@@ -1,48 +1,13 @@
 #include<iostream>
 using namespace std;
+#define PI 3.14159265358979
 
 int main()
 {
-	int x[4], y[4];
+	double r;
+	cin >> r;
 
-	for (int i = 0; i < 3; i++)
-		cin >> x[i] >> y[i];
-
-	int check;
-
-	for (int i = 0; i < 3; i++)
-	{
-		check = 0;
-		for (int j = i + 1; j < 3 && check == 0; j++)
-		{
-			if (x[i] == x[j])
-				check++;
-		}
-
-		if (check == 0)
-		{
-			x[3] = x[i];
-			break;
-		}
-	}
-
-	for (int i = 0; i < 3; i++)
-	{
-		check = 0;
-		for (int j = i + 1; j < 3 && check == 0; j++)
-		{
-			if (y[i] == y[j])
-				check++;
-		}
-
-		if (check == 0)
-		{
-			y[3] = y[i];
-			break;
-		}
-	}
-	
-	cout << x[3] << " " << y[3];
-
+	printf("%.6lf\n", r*r*PI);
+	printf("%.6lf\n", (r*r) * 2);
 	return 0;
 }

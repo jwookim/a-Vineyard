@@ -1,11 +1,1 @@
-﻿  InfixCalculator.cpp
-c:\users\admin\documents\github\jeongwookim\참고코드\c_database\활용코드\chapter_3\infixcalculator\infixcalculator.cpp(11): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(132): note: 'strcpy' 선언을 참조하십시오.
-  infixCalculatorMain.cpp
-  InfixToPostfix.cpp
-c:\users\admin\documents\github\jeongwookim\참고코드\c_database\활용코드\chapter_3\infixcalculator\infixtopostfix.cpp(88): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(132): note: 'strcpy' 선언을 참조하십시오.
-  ListBaseStack.cpp
-  PostCalculator.cpp
-  코드를 생성하고 있습니다...
-  InfixCalculator.vcxproj -> C:\Users\Admin\Documents\GitHub\jeongwookim\참고코드\C_DataBase\활용코드\Chapter_3\InfixCalculator\Debug\InfixCalculator.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: Windows SDK 버전 10.0.16299.0을(를) 찾을 수 없습니다. 필요한 버전의 Windows SDK를 설치하거나, 솔루션을 마우스 오른쪽 단추로 클릭하고 [솔루션 대상 변경]을 선택하거나 프로젝트 속성 페이지에서 SDK 버전을 변경하세요.

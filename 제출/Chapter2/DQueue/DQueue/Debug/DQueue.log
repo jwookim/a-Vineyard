@@ -1,0 +1,6 @@
+﻿  Deque.cpp
+  Queue.cpp
+  소스.cpp
+c:\users\a05\desktop\github\jeongwookim\제출\chapter2\dqueue\dqueue\소스.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...
+  DQueue.vcxproj -> C:\Users\A05\Desktop\GitHub\jeongwookim\제출\Chapter2\DQueue\Debug\DQueue.exe

@@ -148,6 +148,10 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameManage.cpp" />
     <ClCompile Include="Garen.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="StageManage.cpp" />
     <ClCompile Include="Teemo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +160,11 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameManage.h" />
     <ClInclude Include="Garen.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Skill.h" />
+    <ClInclude Include="StageManage.h" />
     <ClInclude Include="Teemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

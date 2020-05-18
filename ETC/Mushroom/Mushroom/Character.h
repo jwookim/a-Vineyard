@@ -28,5 +28,8 @@ public:
 	void MoveDown();
 	void MoveLeft();
 	void MoveRight();
+	void Attack(Character* enemy);
+	void Damage(int damage);
+	void Death();
 };
 

@@ -2,6 +2,8 @@
 #define __BINARY_SEARCH_TREE_H__
 
 #include "BinaryTree.h"
+#include<iostream>
+using namespace std;
 
 typedef BTData	BSTData;
 
@@ -16,5 +18,7 @@ void BSTInsert(BTreeNode ** pRoot, BSTData data);
 
 // BST를 대상으로 데이터 탐색
 BTreeNode * BSTSearch(BTreeNode * bst, BSTData target);
+
+void DeleteNode(BTreeNode ** bst);
 
 #endif

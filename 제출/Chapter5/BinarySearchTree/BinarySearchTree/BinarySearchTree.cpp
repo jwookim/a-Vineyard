@@ -69,3 +69,20 @@ BTreeNode * BSTSearch(BTreeNode * bst, BSTData target)
 
 	return NULL;
 }
+
+
+void DeleteNode(BTreeNode ** bst)
+{
+	if (*bst != NULL)
+	{
+		if ((*bst)->left != NULL)
+			DeleteNode(&((*bst)->left));
+		if ((*bst)->right != NULL)
+			DeleteNode(&((*bst)->right));
+
+		cout << (*bst)->data << " »èÁ¦µÊ" << endl;
+
+		free(*bst);
+		(*bst) = NULL;
+	}
+}

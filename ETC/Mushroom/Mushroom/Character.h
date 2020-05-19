@@ -2,13 +2,7 @@
 #include"Object.h"
 #include"Skill.h"
 
-enum Direct
-{
-	DIRECT_UP,
-	DIRECT_DOWN,
-	DIRECT_LEFT,
-	DIRECT_RIGHT
-};
+typedef Position Direct;
 
 class Character : public Object
 {
@@ -24,10 +18,6 @@ private:
 	Skill* m_R;
 public:
 	Character();
-	void MoveUp();
-	void MoveDown();
-	void MoveLeft();
-	void MoveRight();
 	void Attack(Character* enemy);
 	void Damage(int damage);
 	void Death();

@@ -13,37 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="헤더 파일\char">
+    <Filter Include="헤더 파일\object">
       <UniqueIdentifier>{6486d9f2-a357-47d6-98b7-d81cdcbeb4c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\char">
+    <Filter Include="소스 파일\object">
       <UniqueIdentifier>{59cb3061-2dc0-4a97-9568-0eb0056799bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\object\char">
+      <UniqueIdentifier>{13ca36a0-35d4-40b4-9682-e5fa14f6f90d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\char">
+      <UniqueIdentifier>{7fd25238-18df-45e9-9c07-833dff20e81f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameManage.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>소스 파일\char</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>소스 파일\char</Filter>
-    </ClCompile>
-    <ClCompile Include="Garen.cpp">
-      <Filter>소스 파일\char</Filter>
-    </ClCompile>
-    <ClCompile Include="Teemo.cpp">
-      <Filter>소스 파일\char</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Skill.cpp">
-      <Filter>소스 파일\char</Filter>
     </ClCompile>
     <ClCompile Include="StageManage.cpp">
       <Filter>소스 파일</Filter>
@@ -51,37 +36,34 @@
     <ClCompile Include="Queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Teemo.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>소스 파일\char</Filter>
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Garen.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManage.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>헤더 파일\char</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>헤더 파일\char</Filter>
-    </ClInclude>
-    <ClInclude Include="Garen.h">
-      <Filter>헤더 파일\char</Filter>
-    </ClInclude>
-    <ClInclude Include="Teemo.h">
-      <Filter>헤더 파일\char</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Skill.h">
-      <Filter>헤더 파일\char</Filter>
     </ClInclude>
     <ClInclude Include="StageManage.h">
       <Filter>헤더 파일</Filter>
@@ -89,8 +71,32 @@
     <ClInclude Include="Queue.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Garen.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Teemo.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\object\char</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

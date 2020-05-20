@@ -4,12 +4,9 @@ class Object
 {
 private:
 	Position m_Position;
+	char m_chShape;
 	/*int m_iWidth;
 	int m_iHeight;*/
 public:
-	void MoveUp();
-	void MoveDown();
-	void MoveLeft();
-	void MoveRight();
 };
 

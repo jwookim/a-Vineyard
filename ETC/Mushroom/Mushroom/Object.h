@@ -8,5 +8,9 @@ private:
 	/*int m_iWidth;
 	int m_iHeight;*/
 public:
+	inline Position GetPosition()
+	{
+		return m_Position;
+	}
 };
 

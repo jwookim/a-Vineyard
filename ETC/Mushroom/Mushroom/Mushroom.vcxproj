@@ -172,6 +172,7 @@
     <ClInclude Include="StageManage.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Teemo.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

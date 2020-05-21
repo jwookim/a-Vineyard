@@ -2,6 +2,13 @@
 #include"MovingObject.h"
 #include"Skill.h"
 #include"State.h"
+#include<conio.h>
+
+#define ARROW 224
+#define ARROW_UP 72
+#define ARROW_DOWN 80
+#define ARROW_LEFT 75
+#define ARROW_RIGHT 77
 
 enum RANGE
 {
@@ -9,7 +16,6 @@ enum RANGE
 	RANGE_LONG
 };
 
-typedef Position Direct;
 
 class Character : public MovingObject
 {
@@ -27,6 +33,7 @@ private:
 public:
 	Character();
 	void TimeCheck();
+	bool MoveInput();
 	void Attack(/*Character* enemy*/);
 	void Damage(int damage);
 	void Death();

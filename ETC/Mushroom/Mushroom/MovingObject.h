@@ -3,6 +3,7 @@
 class MovingObject : public Object
 {
 private:
+	Position m_NextPos;
 	Direct m_Direct;
 	int m_iSpeed;
 public:

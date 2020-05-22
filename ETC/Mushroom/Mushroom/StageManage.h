@@ -1,4 +1,5 @@
 #pragma once
+#include"List.h"
 #include"Block.h"
 class StageManage
 {

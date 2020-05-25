@@ -1,4 +1,7 @@
-﻿  Character.cpp
+﻿  Bush.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Character.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.cpp(12): error C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.cpp(14): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
@@ -6,6 +9,7 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.cpp(14):
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.cpp(16): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
   Enemy.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(9): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(9): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(9): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
@@ -13,6 +17,28 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(10): error
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(10): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
   Garen.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  MapDraw.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(26): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(92): error C2065: 'UP': 선언되지 않은 식별자입니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(92): error C2131: 식이 상수로 계산되지 않았습니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(92): note: 상수가 아닌 식 또는 부분식이 있습니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(100): error C2065: 'DOWN': 선언되지 않은 식별자입니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(100): error C2131: 식이 상수로 계산되지 않았습니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(100): note: 상수가 아닌 식 또는 부분식이 있습니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(90): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(92): error C2051: case 식이 상수가 아닙니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(100): error C2051: case 식이 상수가 아닙니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(121): error C2065: 'WIDTH': 선언되지 않은 식별자입니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(121): error C2065: 'HEIGHT': 선언되지 않은 식별자입니다.
+  MovingObject.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Object.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Projectile.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Queue.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(9): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(9): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
@@ -46,7 +72,11 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.cpp(41): err
   c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(6): note: 'NODE' 선언을 참조하십시오.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.cpp(56): error C2039: 'preNode': 'NODE'의 멤버가 아닙니다.
   c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\queue.h(6): note: 'NODE' 선언을 참조하십시오.
+  StageManage.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(121): error C3861: 'm_CureNode': 식별자를 찾을 수 없습니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(144): error C2760: 구문 오류: '}'은(는) 예기치 않은 토큰입니다. 필요한 토큰은 ';'입니다.
   State.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(44): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(32): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(32): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(32): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.

@@ -5,6 +5,6 @@ class Projectile : public MovingObject
 private:
 	int m_iPower;
 public:
-	void TimeCheck();
+	bool MoveCheck();
 };
 

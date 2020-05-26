@@ -72,6 +72,18 @@
     <ClCompile Include="Bush.cpp">
       <Filter>소스 파일\object</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\object\char</Filter>
+    </ClCompile>
+    <ClCompile Include="Trap.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Mushroom.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="Switch.cpp">
+      <Filter>소스 파일\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManage.h">
@@ -127,6 +139,24 @@
     </ClInclude>
     <ClInclude Include="List.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="AllChamp.h">
+      <Filter>헤더 파일\object\char</Filter>
+    </ClInclude>
+    <ClInclude Include="Trap.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Mushroom.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="Switch.h">
+      <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="AllObj.h">
+      <Filter>헤더 파일\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@ class Enemy : public Character
 {
 private:
 	Character* m_Target;
-	Queue m_DestPos;
+	Queue<Position> m_DestPos;
 	int m_iSight;
 public:
 	Enemy();

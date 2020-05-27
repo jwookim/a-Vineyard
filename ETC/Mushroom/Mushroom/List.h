@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include"Position.h"
 using namespace std;
 
 #define TRUE 1

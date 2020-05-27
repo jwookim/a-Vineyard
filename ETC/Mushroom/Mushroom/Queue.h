@@ -1,27 +1,65 @@
 #pragma once
-#include"Position.h"
+#include"List.h"
 
-typedef Position Data;
 
-typedef struct NODE
-{
-	Data data;
-	Node* nextNode;
-	Node* preNode;
-}Node;
-
+template<typename T>
 class Queue
 {
 private:
-	Node* m_Head;
-	Node* m_Tail;
-	int m_iNumOfData;
+	List<T> m_Queue;
 public:
-	Queue();
-	void Push(Data data);
-	Data Pop();
-	Data Peek();
+	void Push(T data);
+	T Pop();
+	T Peek();
 	void Init();
-	~Queue();
 };
+
+
+
+template<typename T>
+void Queue<T>::Push(T data)
+{
+	m_Queue.Insert(data);
+}
+
+template<typename T>
+T Queue<T>::Pop()
+{
+	if (m_Queue.ToTail())
+		return m_Queue.Remove();
+
+	return NULL;
+}
+
+Position Queue<Position>::Pop()
+{
+	if (m_Queue.ToTail())
+		return m_Queue.Remove();
+
+	return { -1, -1 };
+}
+
+template<typename T>
+T Queue<T>::Peek()
+{
+	if (m_Queue.ToTail())
+		return m_Queue.ViewNode();
+
+	return NULL;
+}
+
+Position Queue<Position>::Peek()
+{
+	if (m_Queue.ToTail())
+		return m_Queue.ViewNode();
+
+	return { -1, -1 };
+}
+
+template<typename T>
+void Queue<T>::Init()
+{
+	while (m_Queue.GetNumOfData() > 0)
+		Pop();
+}
 

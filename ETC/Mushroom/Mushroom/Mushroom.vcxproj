@@ -151,15 +151,21 @@
     <ClCompile Include="Garen.cpp" />
     <ClCompile Include="MapDraw.cpp" />
     <ClCompile Include="MovingObject.cpp" />
+    <ClCompile Include="Mushroom.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="StageManage.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="Switch.cpp" />
     <ClCompile Include="Teemo.cpp" />
+    <ClCompile Include="Trap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllChamp.h" />
+    <ClInclude Include="AllObj.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Bush.h" />
     <ClInclude Include="Character.h" />
@@ -169,15 +175,19 @@
     <ClInclude Include="List.h" />
     <ClInclude Include="MapDraw.h" />
     <ClInclude Include="MovingObject.h" />
+    <ClInclude Include="Mushroom.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="StageManage.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Switch.h" />
     <ClInclude Include="Teemo.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="Trap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

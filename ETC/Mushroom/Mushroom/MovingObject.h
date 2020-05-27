@@ -15,9 +15,18 @@ private:
 	int m_iSpeed;
 	int m_iMoveTime;
 public:
-	virtual void TimeCheck() = 0;
-	bool MoveCheck();
+	virtual void TimeCheck();
+	virtual bool MoveCheck();
+	bool MoveTimeCheck();
 	void Move(Direct direct);
 	void MoveCancle();
+	inline int GetSpeed()
+	{
+		return m_iSpeed;
+	}
+	inline Direct GetDirect()
+	{
+		return m_Direct;
+	}
 };
 

@@ -1,5 +1,6 @@
 #pragma once
-class Teemo
+#include "Player.h"
+class Teemo : public Player
 {
 private:
 

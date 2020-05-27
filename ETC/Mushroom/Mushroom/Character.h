@@ -33,7 +33,6 @@ private:
 public:
 	Character();
 	void TimeCheck();
-	bool MoveInput();
 	void Attack(/*Character* enemy*/);
 	void Damage(int damage);
 	void Death();

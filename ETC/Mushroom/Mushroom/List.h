@@ -141,5 +141,5 @@ List<T>::~List()
 		Remove();
 	}
 
-	delete m_Head, m_Tail
+	delete m_Head, m_Tail;
 }

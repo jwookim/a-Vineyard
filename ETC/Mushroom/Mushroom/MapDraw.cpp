@@ -89,7 +89,7 @@ int MapDraw::MenuSelectCursor(int MenuLen, int AddCol, int x, int y)
 		{
 			switch (getch())
 			{
-			case UP:
+			case 'w':
 				if (Select - 1 >= 1)
 				{
 					ErasePoint(x, y);
@@ -97,7 +97,7 @@ int MapDraw::MenuSelectCursor(int MenuLen, int AddCol, int x, int y)
 					Select--;
 				}
 				break;
-			case DOWN:
+			case 's':
 				if (Select + 1 <= MenuLen)
 				{
 					ErasePoint(x, y);

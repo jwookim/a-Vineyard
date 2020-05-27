@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BSTree.cpp" />
     <ClCompile Include="Bush.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -155,7 +156,6 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
-    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="StageManage.cpp" />
     <ClCompile Include="State.cpp" />
@@ -167,6 +167,7 @@
     <ClInclude Include="AllChamp.h" />
     <ClInclude Include="AllObj.h" />
     <ClInclude Include="Block.h" />
+    <ClInclude Include="BSTree.h" />
     <ClInclude Include="Bush.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />

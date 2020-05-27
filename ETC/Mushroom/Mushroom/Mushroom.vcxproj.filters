@@ -33,9 +33,6 @@
     <ClCompile Include="StageManage.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Queue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Teemo.cpp">
       <Filter>소스 파일\object\char</Filter>
     </ClCompile>
@@ -83,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="Switch.cpp">
       <Filter>소스 파일\object</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTree.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="AllObj.h">
       <Filter>헤더 파일\object</Filter>
+    </ClInclude>
+    <ClInclude Include="BSTree.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

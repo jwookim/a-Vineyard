@@ -6,6 +6,8 @@
 using namespace std;
 
 #define ENTER 13
+#define WIDTH 800
+#define HEIGHT 600
 
 //////////////////////////////////////////////////////
 #define col GetStdHandle(STD_OUTPUT_HANDLE) 

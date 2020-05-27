@@ -16,6 +16,7 @@ public:
 	void TimeCheck();
 	void MoveCheck();
 	void SwitchCheck();
+	void TrapCheck();
 };
 
 //버섯을 올려놓는 것으로 스위치 작동 가능

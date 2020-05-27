@@ -2,6 +2,7 @@
 #include"MovingObject.h"
 #include"Skill.h"
 #include"State.h"
+#include"List.h"
 #include<conio.h>
 
 #define ARROW 224
@@ -29,12 +30,21 @@ private:
 	Skill* m_W;
 	Skill* m_E;
 	Skill* m_R;
-	State* m_State;
+	List<State*> m_State;
 public:
 	Character();
 	void TimeCheck();
 	void Attack(/*Character* enemy*/);
-	void Damage(int damage);
+	void Damage(int damage, State* state = NULL);
 	void Death();
+	void SetP();
+	void SetQ();
+	void SetW();
+	void SetE();
+	void SetR();
+	void SetAtk();
+	void SetHealth();
+	void SetRegen();
+	void SetRange();
 };
 

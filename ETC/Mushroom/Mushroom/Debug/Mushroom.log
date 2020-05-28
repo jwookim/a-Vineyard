@@ -6,8 +6,50 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(9): error
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(10): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(10): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
-  Bush.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(15): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(16): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(25): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(26): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(29): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(30): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(31): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(36): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(37): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(40): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(41): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(42): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(64): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(66): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(80): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(82): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(83): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(84): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(87): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(94): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(95): error C2039: 'LNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(99): error C2039: 'RNode': 'BSTNode'의 멤버가 아닙니다.
+  c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\bstree.h(6): note: 'BSTNode' 선언을 참조하십시오.
   Character.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(122): error C3861: 'm_CureNode': 식별자를 찾을 수 없습니다.
@@ -22,10 +64,6 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): war
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(26): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(90): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-  MovingObject.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  Object.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Player.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(122): error C3861: 'm_CureNode': 식별자를 찾을 수 없습니다.
@@ -35,8 +73,6 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\player.cpp(9): err
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\player.cpp(11): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-  Projectile.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   StageManage.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(122): error C3861: 'm_CureNode': 식별자를 찾을 수 없습니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
@@ -46,8 +82,6 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(122): error
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(33): error C2065: 'State': 선언되지 않은 식별자입니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(33): error C2059: 구문 오류: '>'
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.h(38): error C2061: 구문 오류: 식별자 'State'
-  Switch.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Teemo.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(46): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\list.h(122): error C3861: 'm_CureNode': 식별자를 찾을 수 없습니다.

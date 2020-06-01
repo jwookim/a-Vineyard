@@ -58,21 +58,26 @@ bool BSTree::Search(Position target)
 
 bool BSTree::Search(Node* snode, Position target)
 {
-	if (snode->data->GetPosition() == target)
-		return true;
-	else if (snode->data->GetPosition() > target)
-		return Search(snode->LNode, target);
-	else if (snode->data->GetPosition() < target)
-		return Search(snode->RNode, target);
+	if (snode != NULL)
+	{
+		if (snode->data->GetPosition() == target)
+			return true;
+		else if (snode->data->GetPosition() > target)
+			return Search(snode->LNode, target);
+		else if (snode->data->GetPosition() < target)
+			return Search(snode->RNode, target);
+	}
+	else
+		return false;
 }
 
 void BSTree::Init()
 {
 	while (m_RootNode != NULL)
-		Remove();
+		delete Remove();
 }
 
-void BSTree::Remove()
+Data BSTree::Remove()
 {
 	Node* rnode = m_RootNode;
 	Data rdata = m_RootNode->data;
@@ -86,7 +91,9 @@ void BSTree::Remove()
 	else
 		m_RootNode = m_RootNode->LNode;
 
-	delete rnode, rdata;
+	delete rnode;
+
+	return rdata;
 }
 
 Node* BSTree::RemoveCheck(Node** target)

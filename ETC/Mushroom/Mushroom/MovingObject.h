@@ -28,5 +28,9 @@ public:
 	{
 		return m_Direct;
 	}
+	inline Position GetNextPos()
+	{
+		return m_NextPos;
+	}
 };
 

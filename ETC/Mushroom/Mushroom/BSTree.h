@@ -24,8 +24,8 @@ public:
 	Data GetNodeData();
 	bool Search(Position target);
 	bool Search(Node* snode ,Position target);
-	void Remove();
-	void Remove(Position target);
+	Data Remove();
+	//Data Remove(Position target);
 	Node* RemoveCheck(Node** target);
 	void Init();
 	~BSTree();

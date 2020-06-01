@@ -6,18 +6,22 @@
 class StageManage
 {
 private:
+	int m_istage;
 	Player* m_Player;
 	List<Enemy*> m_Enemy;
+	List<Projectile*> m_Projectile;
 	BSTree m_Block;
 	BSTree m_Bush;
-	List<Switch*> m_Switch;
-	List<Projectile*> m_Projectile;
-	List<Trap*> m_Trap;
+	BSTree m_Switch;
+	BSTree m_Trap;
 public:
-	void TimeCheck();
+	StageManage(int stage);
+	void TimeProgress();
 	void MoveCheck();
+	void StatusCheck();
 	void SwitchCheck();
 	void TrapCheck();
+	~StageManage();
 };
 
 //버섯을 올려놓는 것으로 스위치 작동 가능

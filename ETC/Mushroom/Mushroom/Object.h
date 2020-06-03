@@ -14,6 +14,7 @@ public:
 	{
 		return m_Position;
 	}
+	void SetPosition(Position pos);
 	void Draw();
 	void Erase();
 };

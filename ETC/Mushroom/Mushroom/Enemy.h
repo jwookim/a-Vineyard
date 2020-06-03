@@ -9,6 +9,7 @@ private:
 	int m_iSight;
 public:
 	Enemy();
+	bool MoveCheck();
 	void Chase();
 	void Navigate();
 	Position CheckTargetInSight();

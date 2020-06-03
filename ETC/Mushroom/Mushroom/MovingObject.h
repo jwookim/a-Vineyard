@@ -19,6 +19,7 @@ public:
 	virtual bool MoveCheck();
 	bool MoveTimeCheck();
 	void Move(Direct direct);
+	void Move();
 	void MoveCancle();
 	inline int GetSpeed()
 	{

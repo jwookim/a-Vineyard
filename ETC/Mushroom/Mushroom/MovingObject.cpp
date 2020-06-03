@@ -13,6 +13,11 @@ void MovingObject::Move(Direct direct)
 	m_NextPos = GetPosition() + direct;
 }
 
+void MovingObject::Move()
+{
+	SetPosition(m_NextPos);
+}
+
 void MovingObject::MoveCancle()
 {
 	m_NextPos = GetPosition();

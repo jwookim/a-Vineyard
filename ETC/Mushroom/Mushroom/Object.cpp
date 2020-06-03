@@ -1,5 +1,9 @@
 #include "Object.h"
 
+void Object::SetPosition(Position pos)
+{
+	m_Position = pos;
+}
 
 void Object::Draw()
 {

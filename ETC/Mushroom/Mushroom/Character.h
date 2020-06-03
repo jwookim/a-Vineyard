@@ -37,6 +37,14 @@ public:
 	void Attack(/*Character* enemy*/);
 	void Damage(int damage, State* state = NULL);
 	void Death();
+	inline int GetAtk()
+	{
+		return m_iAtk;
+	}
+	inline int GetHealth()
+	{
+		return m_iHealth;
+	}
 	void SetP();
 	void SetQ();
 	void SetW();

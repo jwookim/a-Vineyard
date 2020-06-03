@@ -19,8 +19,6 @@ public:
 	BSTree();
 	bool Insert(Data data);
 	bool Insert(Node* node, Data data);
-	void LNodeCheck(Node* node);
-	void RNodeCheck(Node* node);
 	Data GetNodeData();
 	bool Search(Position target);
 	bool Search(Node* snode ,Position target);

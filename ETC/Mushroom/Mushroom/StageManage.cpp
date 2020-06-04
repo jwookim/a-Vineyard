@@ -32,7 +32,7 @@ void StageManage::MoveCheck()
 	{
 		dest = m_Player->GetNextPos();
 
-		if (m_Block.Search(dest))
+		if (m_Block.Search(dest) != NULL)
 			m_Player->MoveCancle();
 		else
 		{
@@ -54,6 +54,7 @@ void StageManage::MoveCheck()
 			}
 		}
 
+		Restoration(m_Player);
 		m_Player->Move();
 	}
 
@@ -66,7 +67,7 @@ void StageManage::MoveCheck()
 			{
 				dest = curNode->GetNextPos();
 
-				if (m_Block.Search(dest))
+				if (m_Block.Search(dest) != NULL)
 					curNode->MoveCancle();
 				else
 				{
@@ -97,6 +98,7 @@ void StageManage::MoveCheck()
 					}
 				}
 
+				Restoration(curNode);
 				curNode->Move();
 			}
 
@@ -108,12 +110,17 @@ void StageManage::MoveCheck()
 	if (m_Projectile.First())
 	{
 		if (m_Projectile.ViewNode()->MoveCheck())
+		{
+			Restoration(m_Projectile.ViewNode());
 			m_Projectile.ViewNode()->Move();
-
+		}
 		while (m_Projectile.Next())
 		{
 			if (m_Projectile.ViewNode()->MoveCheck())
+			{
+				Restoration(m_Projectile.ViewNode());
 				m_Projectile.ViewNode()->Move();
+			}
 		}
 	}
 }
@@ -125,6 +132,39 @@ void StageManage::SwitchCheck()
 
 void StageManage::TrapCheck()
 {
+
+}
+
+void StageManage::Restoration(Object* target)
+{
+
+	Position tpos = target->GetPosition();
+	Object* tmp;
+	if ((tmp = m_Block.Search(tpos)) != NULL)
+	{
+		tmp->Draw();
+		return;
+	}
+
+	if ((tmp = m_Bush.Search(tpos)) != NULL)
+	{
+		tmp->Draw();
+		return;
+	}
+
+	if ((tmp = m_Switch.Search(tpos)) != NULL)
+	{
+		tmp->Draw();
+		return;
+	}
+
+	if ((tmp = m_Trap.Search(tpos)) != NULL)
+	{
+		tmp->Draw();
+		return;
+	}
+
+	target->Erase();
 
 }
 

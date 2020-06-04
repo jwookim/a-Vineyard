@@ -20,8 +20,8 @@ public:
 	bool Insert(Data data);
 	bool Insert(Node* node, Data data);
 	Data GetNodeData();
-	bool Search(Position target);
-	bool Search(Node* snode ,Position target);
+	Data Search(Position target);
+	Data Search(Node* snode ,Position target);
 	Data Remove();
 	//Data Remove(Position target);
 	Node* RemoveCheck(Node** target);

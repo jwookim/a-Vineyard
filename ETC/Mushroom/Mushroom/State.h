@@ -2,7 +2,6 @@
 #include"Time.h"
 #include"Character.h"
 
-#define SECOND 1000
 
 enum B_CATEGORY
 {
@@ -17,7 +16,7 @@ enum D_CATEGORY
 	D_CATEGORY_STUN,
 	D_CATEGORY_BLIND,
 	D_CATEGORY_SLOW,
-
+	D_CATEGORY_SILENCE
 };
 
 class State

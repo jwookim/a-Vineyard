@@ -6,6 +6,11 @@ MapDraw::MapDraw()
 	
 }
 
+void MapDraw::ChangeColor(WORD color)
+{
+	SetConsoleTextAttribute(col, color);
+}
+
 void MapDraw::ErasePoint(int x, int y)
 {
 	gotoxy(x * 2, y);

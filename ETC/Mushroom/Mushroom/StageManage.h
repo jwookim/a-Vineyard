@@ -7,6 +7,7 @@ class StageManage
 {
 private:
 	int m_istage;
+	Position m_Goal;
 	Player* m_Player;
 	List<Enemy*> m_Enemy;
 	List<Projectile*> m_Projectile;
@@ -14,6 +15,7 @@ private:
 	BSTree m_Bush;
 	BSTree m_Switch;
 	BSTree m_Trap;
+	BSTree m_Door;
 public:
 	StageManage(int stage);
 	void TimeProgress();
@@ -21,6 +23,9 @@ public:
 	void StatusCheck();
 	void SwitchCheck();
 	void TrapCheck();
+	void HitCheck();
+	void EndCheck();
+	void Restoration(Object* target);
 	~StageManage();
 };
 

@@ -16,6 +16,7 @@ void MovingObject::Move(Direct direct)
 void MovingObject::Move()
 {
 	SetPosition(m_NextPos);
+	Draw();
 }
 
 void MovingObject::MoveCancle()

@@ -1,6 +1,6 @@
 #pragma once
 #include"Trap.h"
-class Mushroom
+class Mushroom : public Trap
 {
 };
 

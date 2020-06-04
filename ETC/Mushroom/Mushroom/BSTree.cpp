@@ -51,24 +51,24 @@ Data BSTree::GetNodeData()
 
 }
 
-bool BSTree::Search(Position target)
+Data BSTree::Search(Position target)
 {
 	return Search(m_RootNode, target);
 }
 
-bool BSTree::Search(Node* snode, Position target)
+Data BSTree::Search(Node* snode, Position target)
 {
 	if (snode != NULL)
 	{
 		if (snode->data->GetPosition() == target)
-			return true;
+			return snode->data;
 		else if (snode->data->GetPosition() > target)
 			return Search(snode->LNode, target);
 		else if (snode->data->GetPosition() < target)
 			return Search(snode->RNode, target);
 	}
 	else
-		return false;
+		return NULL;
 }
 
 void BSTree::Init()

@@ -1,10 +1,9 @@
 #pragma once
 #include"Object.h"
 
-class Bush
+class Bush : public Object
 {
-private:
-
 public:
+	Bush();
 };
 

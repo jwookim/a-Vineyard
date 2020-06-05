@@ -4,7 +4,18 @@ StageManage::StageManage(int stage)
 {
 	m_istage = stage;
 
+	for (int y = 0; y < HEIGHT; y++)
+	{
+		for (int x = 0; x < WIDTH / 2; x++)
+		{
+			if (x == 0 || y == 0 || x == WIDTH / 2 || y == HEIGHT)
+			{
+				Block* newBlock = new Block({x, y});
+			}
+		}
+	}
 
+	m_Player = new Teemo;
 }
 
 void StageManage::TimeProgress()
@@ -131,6 +142,11 @@ void StageManage::SwitchCheck()
 }
 
 void StageManage::TrapCheck()
+{
+
+}
+
+void StageManage::StatusCheck()
 {
 
 }

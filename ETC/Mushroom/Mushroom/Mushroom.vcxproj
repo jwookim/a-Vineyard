@@ -150,12 +150,15 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameManage.cpp" />
     <ClCompile Include="Garen.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="MapDraw.cpp" />
     <ClCompile Include="MovingObject.cpp" />
     <ClCompile Include="Mushroom.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="StageManage.cpp" />
     <ClCompile Include="State.cpp" />

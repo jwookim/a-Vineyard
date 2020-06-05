@@ -7,81 +7,23 @@ using namespace std;
 #define RIGHT {1, 0}
 
 
-typedef struct POSITION
+class Position
 {
+private:
+
+public:
 	int x;
 	int y;
-}Position;
 
-Position operator +(Position p1, Position p2)
-{
-	return { p1.x + p2.x , p1.y + p2.y };
-}
+	friend Position operator +(Position p1, Position p2);
 
-bool operator >=(Position p1, Position p2)
-{
-	if (p1.x > p2.x)
-		return true;
-	else if (p1.x == p2.x)
-	{
-		if (p1.y >= p2.y)
-			return true;
-		else
-			return false;
-	}
-	else
-		return false;
-}
+	friend bool operator >=(Position p1, Position p2);
 
-bool operator <=(Position p1, Position p2)
-{
-	if (p1.x < p2.x)
-		return true;
-	else if (p1.x == p2.x)
-	{
-		if (p1.y <= p2.y)
-			return true;
-		else
-			return false;
-	}
-	else
-		return false;
-}
+	friend bool operator <=(Position p1, Position p2);
 
-bool operator >(Position p1, Position p2)
-{
-	if (p1.x > p2.x)
-		return true;
-	else if (p1.x == p2.x)
-	{
-		if (p1.y > p2.y)
-			return true;
-		else
-			return false;
-	}
-	else
-		return false;
-}
+	friend bool operator >(Position p1, Position p2);
 
-bool operator <(Position p1, Position p2)
-{
-	if (p1.x < p2.x)
-		return true;
-	else if (p1.x == p2.x)
-	{
-		if (p1.y < p2.y)
-			return true;
-		else
-			return false;
-	}
-	else
-		return false;
-}
+	friend bool operator <(Position p1, Position p2);
 
-bool operator ==(Position p1, Position p2)
-{
-	if (p1.x == p2.x && p1.y == p2.y)
-		return true;
-	else
-		return false;
-}
+	friend bool operator ==(Position p1, Position p2);
+};

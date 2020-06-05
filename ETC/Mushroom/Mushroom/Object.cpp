@@ -1,5 +1,9 @@
 #include "Object.h"
 
+Object::Object()
+{
+}
+
 void Object::SetPosition(Position pos)
 {
 	m_Position = pos;
@@ -25,4 +29,8 @@ void Object::Draw()
 void Object::Erase()
 {
 	DrawManager.ErasePoint(m_Position.x, m_Position.y);
+}
+
+Object::~Object()
+{
 }

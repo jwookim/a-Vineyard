@@ -3,28 +3,27 @@
 
 typedef Object* Data;
 
-typedef struct BSTNode
+struct BSTNode
 {
 	Data data;
-	Node* LNode;
-	Node* RNode;
-}Node;
+	BSTNode* LNode;
+	BSTNode* RNode;
+};
 
 class BSTree
 {
 private:
-	Node* m_RootNode;
+	BSTNode* m_RootNode;
 	//Node* m_CureNode;
 public:
 	BSTree();
 	bool Insert(Data data);
-	bool Insert(Node* node, Data data);
-	Data GetNodeData();
+	bool Insert(BSTNode* node, Data data);
 	Data Search(Position target);
-	Data Search(Node* snode ,Position target);
+	Data Search(BSTNode* snode ,Position target);
 	Data Remove();
 	//Data Remove(Position target);
-	Node* RemoveCheck(Node** target);
+	BSTNode* RemoveCheck(BSTNode** target);
 	void Init();
 	~BSTree();
 };

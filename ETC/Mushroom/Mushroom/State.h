@@ -1,6 +1,5 @@
 #pragma once
 #include"Time.h"
-#include"Character.h"
 
 
 enum B_CATEGORY

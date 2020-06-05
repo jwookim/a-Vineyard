@@ -7,20 +7,20 @@ using namespace std;
 #define FALSE 0
 
 template<typename T>
-struct Node
+struct LNode
 {
 	T data;
-	Node* preNode;
-	Node* nextNode;
+	LNode* preNode;
+	LNode* nextNode;
 };
 
 template<typename T>
 class List
 {
 private:
-	Node<T>* m_Head;
-	Node<T>* m_Tail;
-	Node<T>* m_CurNode;
+	LNode<T>* m_Head;
+	LNode<T>* m_Tail;
+	LNode<T>* m_CurNode;
 	int m_iNumOfData;
 public:
 	List();
@@ -38,11 +38,11 @@ public:
 template<typename T>
 List<T>::List()
 {
-	Node<T>* newHead = new Node<T>;
+	LNode<T>* newHead = new LNode<T>;
 	newHead->preNode = NULL;
 	m_Head = newHead;
 
-	Node<T>* newTail = new Node<T>;
+	LNode<T>* newTail = new LNode<T>;
 	newTail->nextNode = NULL;
 	m_Tail = newTail;
 
@@ -61,7 +61,7 @@ List<T>::List()
 template<typename T>
 void List<T>::Insert(T data)
 {
-	Node<T>* newNode = new Node<T>;
+	LNode<T>* newNode = new LNode<T>;
 	newNode->data = data;
 	newNode->preNode = m_Head;
 	newNode->nextNode = m_Head->nextNode;
@@ -114,12 +114,12 @@ T List<T>::ViewNode()
 template<typename T>
 T List<T>::Remove()
 {
-	Node<T>* rnode = m_CurNode;
+	LNode<T>* rnode = m_CurNode;
 	T rdata = m_CurNode->data;
 
 	m_CurNode->preNode->nextNode = m_CurNode->nextNode;
 	m_CurNode->nextNode->preNode = m_CurNode->preNode;
-	m_CurNode = m_CureNode->preNode;
+	m_CurNode = m_CurNode->preNode;
 
 	delete rnode;
 	m_iNumOfData--;

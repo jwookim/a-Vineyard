@@ -7,6 +7,16 @@ bool MovingObject::MoveTimeCheck()
 	return false;
 }
 
+void MovingObject::TimeCheck()
+{
+
+}
+
+bool MovingObject::MoveCheck()
+{
+	return true;
+}
+
 void MovingObject::Move(Direct direct)
 {
 	m_Direct = direct;

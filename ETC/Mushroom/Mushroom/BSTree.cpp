@@ -10,7 +10,7 @@ bool BSTree::Insert(Data data)
 	if (m_RootNode != NULL)
 		return Insert(m_RootNode, data);
 
-	Node* newNode = new Node;
+	BSTNode* newNode = new BSTNode;
 	newNode->data = data;
 	newNode->LNode = NULL;
 	newNode->RNode = NULL;
@@ -18,13 +18,13 @@ bool BSTree::Insert(Data data)
 	return true;
 }
 
-bool BSTree::Insert(Node* node, Data data)
+bool BSTree::Insert(BSTNode* node, Data data)
 {
 	if (node->data->GetPosition() > data->GetPosition())
 	{
 		if (node->LNode != NULL)
 			return Insert(node->LNode, data);
-		Node* newNode = new Node;
+		BSTNode* newNode = new BSTNode;
 		newNode->data = data;
 		newNode->LNode = NULL;
 		newNode->RNode = NULL;
@@ -35,7 +35,7 @@ bool BSTree::Insert(Node* node, Data data)
 	{
 		if (node->RNode != NULL)
 			return Insert(node->RNode, data);
-		Node* newNode = new Node;
+		BSTNode* newNode = new BSTNode;
 		newNode->data = data;
 		newNode->LNode = NULL;
 		newNode->RNode = NULL;
@@ -46,17 +46,13 @@ bool BSTree::Insert(Node* node, Data data)
 		return false;
 }
 
-Data BSTree::GetNodeData()
-{
-
-}
 
 Data BSTree::Search(Position target)
 {
 	return Search(m_RootNode, target);
 }
 
-Data BSTree::Search(Node* snode, Position target)
+Data BSTree::Search(BSTNode* snode, Position target)
 {
 	if (snode != NULL)
 	{
@@ -79,7 +75,7 @@ void BSTree::Init()
 
 Data BSTree::Remove()
 {
-	Node* rnode = m_RootNode;
+	BSTNode* rnode = m_RootNode;
 	Data rdata = m_RootNode->data;
 
 	if (m_RootNode->RNode != NULL)
@@ -96,13 +92,13 @@ Data BSTree::Remove()
 	return rdata;
 }
 
-Node* BSTree::RemoveCheck(Node** target)
+BSTNode* BSTree::RemoveCheck(BSTNode** target)
 {
 	if ((*target)->LNode != NULL)
 		return RemoveCheck(&((*target)->LNode));
 	else
 	{
-		Node* tnode = *target;
+		BSTNode* tnode = *target;
 		*target = (*target)->RNode;
 		return tnode;
 	}

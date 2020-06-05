@@ -4,14 +4,14 @@ bool Player::MoveCheck()
 {
 	if (MoveTimeCheck())
 	{
-		if (kbhit())
+		if (_kbhit())
 		{
-			if (getch() == ARROW)
+			if (_getch() == ARROW)
 			{
-				switch (getch())
+				switch (_getch())
 				{
 				case ARROW:
-					switch (getch())
+					switch (_getch())
 					{
 					case ARROW_UP:
 						Move(UP);

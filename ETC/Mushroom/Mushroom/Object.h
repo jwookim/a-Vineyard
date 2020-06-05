@@ -12,6 +12,7 @@ private:
 	/*int m_iWidth;
 	int m_iHeight;*/
 public:
+	Object();
 	inline Position GetPosition()
 	{
 		return m_Position;
@@ -21,5 +22,6 @@ public:
 	void SetColor(int color);
 	void Draw();
 	void Erase();
+	~Object();
 };
 

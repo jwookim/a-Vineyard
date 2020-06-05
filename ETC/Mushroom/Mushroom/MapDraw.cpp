@@ -87,12 +87,12 @@ void MapDraw::BoxDraw(int Start_x, int Start_y, int Width, int Height)
 int MapDraw::MenuSelectCursor(int MenuLen, int AddCol, int x, int y)
 {
 	int Select = 1;
-	RED
+	ChangeColor(RED);
 	DrawPoint("¢¹", x, y);
-	ORIGINAL
+	ChangeColor(ORIGINAL);
 		while (1)
 		{
-			switch (getch())
+			switch (_getch())
 			{
 			case 'w':
 				if (Select - 1 >= 1)
@@ -113,19 +113,13 @@ int MapDraw::MenuSelectCursor(int MenuLen, int AddCol, int x, int y)
 			case ENTER:
 				return Select;
 			}
-			RED
-				DrawPoint("¢¹", x, y);
-			ORIGINAL
+			ChangeColor(RED);
+			DrawPoint("¢¹", x, y);
+			ChangeColor(ORIGINAL);
 		}
 }
 
-void MapDraw::ClearWindow()
-{
-	system("cls");
-	BLUE
-		BoxDraw(0, 0, WIDTH, HEIGHT);
-	ORIGINAL
-}
+
 
 MapDraw::~MapDraw()
 {

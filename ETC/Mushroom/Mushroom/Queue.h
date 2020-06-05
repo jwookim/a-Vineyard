@@ -31,13 +31,7 @@ T Queue<T>::Pop()
 	return NULL;
 }
 
-Position Queue<Position>::Pop()
-{
-	if (m_Queue.ToTail())
-		return m_Queue.Remove();
 
-	return { -1, -1 };
-}
 
 template<typename T>
 T Queue<T>::Peek()
@@ -48,13 +42,7 @@ T Queue<T>::Peek()
 	return NULL;
 }
 
-Position Queue<Position>::Peek()
-{
-	if (m_Queue.ToTail())
-		return m_Queue.ViewNode();
 
-	return { -1, -1 };
-}
 
 template<typename T>
 void Queue<T>::Init()

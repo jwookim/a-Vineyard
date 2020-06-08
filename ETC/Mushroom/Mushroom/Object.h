@@ -6,7 +6,7 @@ class Object
 {
 private:
 	Position m_Position;
-	char m_chShape;
+	string m_strShape;
 	int m_iColor;
 	MapDraw DrawManager;
 	/*int m_iWidth;
@@ -18,7 +18,7 @@ public:
 		return m_Position;
 	}
 	void SetPosition(Position pos);
-	void SetShape(char shape);
+	void SetShape(string shape);
 	void SetColor(int color);
 	void Draw();
 	void Erase();

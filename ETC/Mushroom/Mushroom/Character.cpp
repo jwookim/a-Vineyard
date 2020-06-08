@@ -2,7 +2,6 @@
 
 Character::Character()
 {
-
 }
 
 void Character::TimeCheck()

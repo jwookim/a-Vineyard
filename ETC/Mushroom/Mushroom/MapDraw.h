@@ -6,26 +6,26 @@
 using namespace std;
 
 #define ENTER 13
-#define WIDTH 800
-#define HEIGHT 600
+#define WIDTH 200
+#define HEIGHT 50
 
 //////////////////////////////////////////////////////
 #define col GetStdHandle(STD_OUTPUT_HANDLE) 
 #define BLACK 0x0000/* | 0x0008 << 4 */
-#define DARK_BLUE 0x0001 | 0x0008 << 4
-#define GREEN 0x0002 | 0x0008 << 4
-#define BLUE_GREEN 0x0003 | 0x0008 << 4
-#define BLOOD 0x0004 | 0x0008 << 4
-#define PUPPLE 0x0005 | 0x0008 << 4
-#define GOLD 0x0006 | 0x0008 << 4			//색상 지정
-#define ORIGINAL 0x0007 | 0x0008 << 4
-#define GRAY 0x0008 | 0x0008 << 4
-#define BLUE 0x0009 | 0x0008 << 4
-#define HIGH_GREEN 0x000a | 0x0008 << 4
-#define SKY_BLUE 0x000b | 0x0008 << 4
-#define RED 0x000c | 0x0008 << 4
-#define PLUM 0x000d | 0x0008 << 4
-#define YELLOW 0x000e | 0x0008 << 4
+#define DARK_BLUE 0x0001 /*| 0x0008 << 4*/
+#define GREEN 0x0002 /*| 0x0008 << 4*/
+#define BLUE_GREEN 0x0003 /*| 0x0008 << 4*/
+#define BLOOD 0x0004 /*| 0x0008 << 4*/
+#define PUPPLE 0x0005 /*| 0x0008 << 4*/
+#define GOLD 0x0006 /*| 0x0008 << 4*/			//색상 지정
+#define ORIGINAL 0x0007 /*| 0x0008 << 4*/
+#define GRAY 0x0008 /*| 0x0008 << 4*/
+#define BLUE 0x0009 /*| 0x0008 << 4*/
+#define HIGH_GREEN 0x000a /*| 0x0008 << 4*/
+#define SKY_BLUE 0x000b /*| 0x0008 << 4*/
+#define RED 0x000c /*| 0x0008 << 4*/
+#define PLUM 0x000d /*| 0x0008 << 4*/
+#define YELLOW 0x000e /*| 0x0008 << 4*/
 //////////////////////////////////////////////////////
 
 

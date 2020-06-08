@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<string>
 using namespace std;
 #define UP {0, -1}
 #define DOWN {0, 1}

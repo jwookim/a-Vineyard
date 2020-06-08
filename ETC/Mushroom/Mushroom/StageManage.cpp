@@ -4,13 +4,20 @@ StageManage::StageManage(int stage)
 {
 	m_istage = stage;
 
-	for (int y = 0; y < HEIGHT; y++)
+	char Buff[30];
+
+	sprintf_s(Buff, "mode con cols=%d lines=%d", WIDTH, HEIGHT);
+
+	system(Buff);
+
+	for (int y = 0; y < HEIGHT - 1; y++)
 	{
-		for (int x = 0; x < WIDTH / 2; x++)
+		for (int x = 0; x < WIDTH / 2 - 1; x++)
 		{
-			if (x == 0 || y == 0 || x == WIDTH / 2 || y == HEIGHT)
+			if (x == 0 || y == 0 || x == WIDTH / 2 - 2 || y == HEIGHT - 2)
 			{
-				Block* newBlock = new Block({x, y});
+				Block* newBlock = new Block({ x, y });
+				m_Block.Insert(newBlock);
 			}
 		}
 	}

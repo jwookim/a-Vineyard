@@ -5,4 +5,6 @@
 void main()
 {
 	StageManage st(1);
+
+	st.TimeProgress();
 }

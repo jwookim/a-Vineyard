@@ -3,8 +3,11 @@
 
 Teemo::Teemo()
 {
-	SetShape('¿À');
-	SetColor(GOLD);
-	SetPosition({ WIDTH / 4,HEIGHT });
+	SetShape("¿À");
+	SetColor(YELLOW);
+
+	
+
+	SetPosition({ WIDTH / 4, HEIGHT / 2 });
 	Draw();
 }

@@ -9,9 +9,9 @@ void Object::SetPosition(Position pos)
 	m_Position = pos;
 }
 
-void Object::SetShape(char shape)
+void Object::SetShape(string shape)
 {
-	m_chShape = shape;
+	m_strShape = shape;
 }
 
 void Object::SetColor(int color)
@@ -22,7 +22,7 @@ void Object::SetColor(int color)
 void Object::Draw()
 {
 	DrawManager.ChangeColor(m_iColor);
-	DrawManager.DrawPoint(to_string(m_chShape), m_Position.x, m_Position.y);
+	DrawManager.DrawPoint(m_strShape, m_Position.x, m_Position.y);
 	DrawManager.ChangeColor(ORIGINAL);
 }
 

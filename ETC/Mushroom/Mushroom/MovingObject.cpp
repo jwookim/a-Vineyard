@@ -1,5 +1,6 @@
 #include "MovingObject.h"
 
+
 bool MovingObject::MoveTimeCheck()
 {
 	if (clock() >= m_iMoveTime + (STANDARD_CLOCK + ((STANDARD_SPEED - m_iSpeed) * (STANDARD_CLOCK / STANDARD_SPEED))))

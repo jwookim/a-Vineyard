@@ -3,7 +3,7 @@
 
 Block::Block(Position pos)
 {
-	SetShape('бс');
+	SetShape("бс");
 	SetColor(DARK_BLUE);
 	SetPosition(pos);
 	Draw();

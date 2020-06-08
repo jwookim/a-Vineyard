@@ -2,6 +2,7 @@
 
 Character::Character()
 {
+	SetSpeed(STANDARD_SPEED);
 }
 
 void Character::TimeCheck()

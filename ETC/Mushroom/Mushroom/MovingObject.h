@@ -21,6 +21,7 @@ public:
 	void Move(Direct direct);
 	void Move();
 	void MoveCancle();
+	void SetSpeed(int speed);
 	inline int GetSpeed()
 	{
 		return m_iSpeed;

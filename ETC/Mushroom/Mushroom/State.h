@@ -32,10 +32,20 @@ class Debuff : public State
 {
 private:
 	D_CATEGORY m_Category;
+public:
+	inline D_CATEGORY GetDebuff()
+	{
+		return m_Category;
+	}
 };
 
 class Buff : public State
 {
 private:
 	B_CATEGORY m_Category;
+public:
+	inline B_CATEGORY GetBuff()
+	{
+		return m_Category;
+	}
 };

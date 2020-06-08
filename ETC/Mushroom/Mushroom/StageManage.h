@@ -3,6 +3,15 @@
 #include"BSTree.h"
 #include"AllChamp.h"
 #include"AllObj.h"
+
+enum END_TYPE
+{
+	END_CONTINUE,
+	END_GAME_OVER,
+	END_CLEAR,
+	END_EXIT
+};
+
 class StageManage
 {
 private:
@@ -18,13 +27,13 @@ private:
 	BSTree m_Door;
 public:
 	StageManage(int stage);
-	void TimeProgress();
+	END_TYPE TimeProgress();
 	void MoveCheck();
 	void StatusCheck();
 	void SwitchCheck();
 	void TrapCheck();
 	void HitCheck();
-	void EndCheck();
+	END_TYPE EndCheck();
 	void Restoration(Object* target);
 	~StageManage();
 };

@@ -30,11 +30,12 @@ private:
 	Skill* m_W;
 	Skill* m_E;
 	Skill* m_R;
-	List<Buff*> m_State;
+	List<Buff*> m_Buff;
+	List<Debuff*> m_Debuff;
 public:
 	Character();
 	void TimeCheck();
-	void Attack(/*Character* enemy*/);
+	virtual void Attack(Character* enemy);
 	void Damage(int damage, Buff* state = NULL);
 	void Death();
 	inline int GetAtk()

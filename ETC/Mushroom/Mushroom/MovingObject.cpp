@@ -27,10 +27,16 @@ void MovingObject::Move(Direct direct)
 void MovingObject::Move()
 {
 	SetPosition(m_NextPos);
+	m_iMoveTime = clock();
 	Draw();
 }
 
 void MovingObject::MoveCancle()
 {
 	m_NextPos = GetPosition();
+}
+
+void MovingObject::SetSpeed(int speed)
+{
+	m_iSpeed = speed;
 }

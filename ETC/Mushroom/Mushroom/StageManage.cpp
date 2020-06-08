@@ -19,14 +19,21 @@ StageManage::StageManage(int stage)
 				Block* newBlock = new Block({ x, y });
 				m_Block.Insert(newBlock);
 			}
+
+			else if (x == 1 || y == 1 || x == WIDTH / 2 - 3 || y == HEIGHT - 3)
+			{
+				Bush* newBush = new Bush({ x, y });
+				m_Bush.Insert(newBush);
+			}
 		}
 	}
 
 	m_Player = new Teemo;
 }
 
-void StageManage::TimeProgress()
+END_TYPE StageManage::TimeProgress()
 {
+	END_TYPE check;
 	while (1)
 	{
 		StatusCheck();
@@ -37,7 +44,12 @@ void StageManage::TimeProgress()
 
 		TrapCheck();
 
+		HitCheck();
 
+		check = EndCheck();
+
+		if (check != END_CONTINUE)
+			return check;
 	}
 }
 
@@ -156,6 +168,31 @@ void StageManage::TrapCheck()
 void StageManage::StatusCheck()
 {
 
+}
+
+void StageManage::HitCheck()
+{
+	Projectile* tmp;
+	if (m_Projectile.First())
+	{
+		tmp = m_Projectile.ViewNode();
+		
+		if (m_Player->GetPosition() == tmp->GetPosition())
+		{
+			if ((Character*)m_Player != (Character*)(tmp->GetCaster()))
+			{
+				((Character*)(tmp->GetCaster()))->Attack(m_Player);
+				m_Player->Draw();
+				delete m_Projectile.Remove();
+			}
+		}
+	}
+}
+
+END_TYPE StageManage::EndCheck()
+{
+
+	return END_CONTINUE;
 }
 
 void StageManage::Restoration(Object* target)

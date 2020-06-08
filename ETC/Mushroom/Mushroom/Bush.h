@@ -4,6 +4,6 @@
 class Bush : public Object
 {
 public:
-	Bush();
+	Bush(Position pos);
 };
 

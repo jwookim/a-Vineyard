@@ -5,6 +5,7 @@
 enum B_CATEGORY
 {
 	B_CATEGORY_MELEE_ENHANCE,
+	B_CATEGORY_ATTACK_UP,
 	B_CATEGORY_SPEED_UP,
 	B_CATEGORY_HIDING,
 	B_CATEGORY_SHIELD
@@ -26,6 +27,10 @@ private:
 	int m_iStartTime;
 public:
 	bool TimeCheck();
+	inline int GetValue()
+	{
+		return m_iValue;
+	}
 };
 
 class Debuff : public State

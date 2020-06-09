@@ -46,6 +46,10 @@ public:
 	{
 		return m_iHealth;
 	}
+	void AddBuff(Buff* buff);
+	void AddDebuff(Debuff* debuff);
+	void BuffCheck();
+	void DebuffCheck();
 	void SetP();
 	void SetQ();
 	void SetW();

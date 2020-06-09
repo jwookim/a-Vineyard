@@ -11,11 +11,12 @@ c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\main.cpp(6): warni
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Player.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  Projectile.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   StageManage.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  State.cpp
   Teemo.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Teemo_Melee.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Trap.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.

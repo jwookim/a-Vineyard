@@ -164,6 +164,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="Switch.cpp" />
     <ClCompile Include="Teemo.cpp" />
+    <ClCompile Include="Teemo_Melee.cpp" />
     <ClCompile Include="Trap.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +191,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="Switch.h" />
     <ClInclude Include="Teemo.h" />
+    <ClInclude Include="Teemo_Melee.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Trap.h" />
   </ItemGroup>

@@ -176,13 +176,97 @@ void StageManage::HitCheck()
 	if (m_Projectile.First())
 	{
 		tmp = m_Projectile.ViewNode();
-		
+
 		if (m_Player->GetPosition() == tmp->GetPosition())
 		{
 			if ((Character*)m_Player != (Character*)(tmp->GetCaster()))
 			{
 				((Character*)(tmp->GetCaster()))->Attack(m_Player);
 				m_Player->Draw();
+				delete m_Projectile.Remove();
+			}
+		}
+		else
+		{
+			if (m_Enemy.First())
+			{
+				if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
+				{
+					if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
+					{
+						((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
+						m_Enemy.ViewNode()->Draw();
+						delete m_Projectile.Remove();
+					}
+				}
+				while (m_Enemy.Next())
+				{
+					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
+					{
+						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
+						{
+							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
+							m_Enemy.ViewNode()->Draw();
+							delete m_Projectile.Remove();
+						}
+					}
+				}
+			}
+		}
+
+		Object* block = m_Block.Search(tmp->GetPosition());
+
+		if (block != NULL)
+		{
+			block->Draw();
+			delete m_Projectile.Remove();
+		}
+		while (m_Projectile.Next())
+		{
+			tmp = m_Projectile.ViewNode();
+
+			if (m_Player->GetPosition() == tmp->GetPosition())
+			{
+				if ((Character*)m_Player != (Character*)(tmp->GetCaster()))
+				{
+					((Character*)(tmp->GetCaster()))->Attack(m_Player);
+					m_Player->Draw();
+					delete m_Projectile.Remove();
+				}
+			}
+			else
+			{
+				if (m_Enemy.First())
+				{
+					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
+					{
+						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
+						{
+							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
+							m_Enemy.ViewNode()->Draw();
+							delete m_Projectile.Remove();
+						}
+					}
+				}
+				while (m_Enemy.Next())
+				{
+					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
+					{
+						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
+						{
+							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
+							m_Enemy.ViewNode()->Draw();
+							delete m_Projectile.Remove();
+						}
+					}
+				}
+			}
+
+			Object* block = m_Block.Search(tmp->GetPosition());
+
+			if (block != NULL)
+			{
+				block->Draw();
 				delete m_Projectile.Remove();
 			}
 		}

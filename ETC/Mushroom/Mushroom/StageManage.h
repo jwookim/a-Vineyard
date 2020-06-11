@@ -1,5 +1,6 @@
 #pragma once
 #include"List.h"
+#include<list>
 #include"BSTree.h"
 #include"AllChamp.h"
 #include"AllObj.h"
@@ -18,8 +19,8 @@ private:
 	int m_istage;
 	Position m_Goal;
 	Player* m_Player;
-	List<Enemy*> m_Enemy;
-	List<Projectile*> m_Projectile;
+	list<Enemy*> m_Enemy;
+	list<Projectile*> m_Projectile;
 	BSTree m_Block;
 	BSTree m_Bush;
 	BSTree m_Switch;

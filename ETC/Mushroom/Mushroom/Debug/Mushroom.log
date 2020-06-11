@@ -1,29 +1,598 @@
-﻿  StageManage.cpp
+﻿  Block.cpp
 c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  Mushroom.vcxproj -> C:\Users\Admin\Documents\GitHub\jeongwookim\ETC\Mushroom\Debug\Mushroom.exe
-﻿  Character.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  BSTree.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Bush.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Character.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Enemy.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  GameManage.cpp
   Garen.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Main.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\main.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\main.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  MapDraw.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.cpp(31): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+  MovingObject.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Mushroom.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Object.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Player.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Position.cpp
+  Projectile.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Queue.cpp
+  Skill.cpp
   StageManage.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(69): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(71): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(75): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(77): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(91): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(95): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(108): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(109): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(113): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(115): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(117): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(125): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(126): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(127): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(135): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(140): error C2039: 'First': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(142): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(144): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(145): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(147): error C2039: 'Next': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(149): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(151): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(152): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(176): error C2039: 'First': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(178): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(186): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(191): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(193): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(195): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(197): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(198): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(199): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(202): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(204): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(206): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(208): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(209): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(210): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(222): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(224): error C2039: 'Next': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(226): error C2039: 'ViewNode': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(234): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(239): error C2039: 'First': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(241): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(243): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(245): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(246): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(247): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(251): error C2039: 'Next': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(253): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(255): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(257): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(258): error C2039: 'ViewNode': 'std::list<Enemy *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Enemy *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(22): note: 'std::list<Enemy *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Enemy *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(259): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.cpp(270): error C2039: 'Remove': 'std::list<Projectile *,std::allocator<_Ty>>'의 멤버가 아닙니다.
+          with
+          [
+              _Ty=Projectile *
+          ]
+  c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\stagemanage.h(23): note: 'std::list<Projectile *,std::allocator<_Ty>>' 선언을 참조하십시오.
+          with
+          [
+              _Ty=Projectile *
+          ]
   State.cpp
-  Teemo.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  Teemo_Melee.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  Trap.cpp
-c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Switch.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   코드를 생성하고 있습니다...
-Character.obj : error LNK2001: "public: virtual void __thiscall Character::Attack(class Character *)" (?Attack@Character@@UAEXPAV1@@Z) 외부 기호를 확인할 수 없습니다.
-Teemo.obj : error LNK2001: "public: virtual void __thiscall Character::Attack(class Character *)" (?Attack@Character@@UAEXPAV1@@Z) 외부 기호를 확인할 수 없습니다.
-C:\Users\A05\Desktop\GitHub\jeongwookim\ETC\Mushroom\Debug\Mushroom.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(68): warning C4715: 'BSTree::Search': 모든 제어 경로에서 값을 반환하지는 않습니다.
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\bstree.cpp(47): warning C4715: 'BSTree::Insert': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  컴파일하고 있습니다...
+  Teemo.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Teemo_Melee.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Trap.cpp
+c:\users\admin\documents\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  코드를 생성하고 있습니다...

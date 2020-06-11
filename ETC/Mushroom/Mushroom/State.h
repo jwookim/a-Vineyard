@@ -31,6 +31,18 @@ public:
 	{
 		return m_iValue;
 	}
+	void SetStartTime(int time)
+	{
+		m_iStartTime = time;
+	}
+	void SetDuration(int dur)
+	{
+		m_iDuration = dur;
+	}
+	void SetValue(int val)
+	{
+		m_iValue = val;
+	}
 };
 
 class Debuff : public State
@@ -42,6 +54,10 @@ public:
 	{
 		return m_Category;
 	}
+	void SetCategory(D_CATEGORY debuff)
+	{
+		m_Category = debuff;
+	}
 };
 
 class Buff : public State
@@ -52,5 +68,24 @@ public:
 	inline B_CATEGORY GetBuff()
 	{
 		return m_Category;
+	}
+	void SetCategory(B_CATEGORY buff)
+	{
+		m_Category = buff;
+	}
+};
+
+class Melee : public Buff
+{
+private:
+	Debuff* m_Effect;
+public:
+	inline Debuff* GetEffect()
+	{
+		return m_Effect;
+	}
+	void SetEffect(Debuff* effect)
+	{
+		m_Effect = effect;
 	}
 };

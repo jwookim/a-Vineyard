@@ -2,7 +2,7 @@
 
 Character::Character()
 {
-	SetSpeed(STANDARD_SPEED);
+	//SetSpeed(STANDARD_SPEED);
 }
 
 void Character::Attack(Character* target)
@@ -16,38 +16,52 @@ void Character::TimeCheck()
 	DebuffCheck();
 }
 
+void Character::AddBuff(Buff* buff)
+{
+	m_Buff.push_back(buff);
+	buff->SetStartTime(clock());
+	switch (buff->GetBuff())
+	{
+	case B_CATEGORY_ATTACK_UP:
+		m_iAtk += buff->GetValue();
+		break;
+	case B_CATEGORY_SPEED_UP:
+		SetSpeed(GetSpeed() + buff->GetValue());
+		break;
+	}
+}
+
+void Character::AddDebuff(Debuff* debuff)
+{
+	m_Debuff.push_back(debuff);
+	debuff->SetStartTime(clock());
+	switch (debuff->GetDebuff())
+	{
+	case D_CATEGORY_SLOW:
+		SetSpeed(GetSpeed() - debuff->GetValue());
+	}
+}
+
 void Character::BuffCheck()
 {
-	if (m_Buff.First())
+	list<Buff*>::iterator iter;
+	if (!m_Buff.empty())
 	{
-		if (m_Buff.ViewNode()->TimeCheck() == false)
+		for (iter = m_Buff.begin(); iter != m_Buff.end(); ++iter)
 		{
-			switch (m_Buff.ViewNode()->GetBuff())
+			if ((*iter)->TimeCheck() == false)
 			{
-			case B_CATEGORY_ATTACK_UP:
-				m_iAtk -= m_Buff.ViewNode()->GetValue();
-				break;
-			case B_CATEGORY_SPEED_UP:
-				SetSpeed(GetSpeed() - m_Buff.ViewNode()->GetValue());
-				break;
-			}
-			delete m_Buff.Remove();
-		}
-
-		while (m_Buff.Next())
-		{
-			if (m_Buff.ViewNode()->TimeCheck() == false)
-			{
-				switch (m_Buff.ViewNode()->GetBuff())
+				switch ((*iter)->GetBuff())
 				{
 				case B_CATEGORY_ATTACK_UP:
-					m_iAtk -= m_Buff.ViewNode()->GetValue();
+					m_iAtk -= (*iter)->GetValue();
 					break;
 				case B_CATEGORY_SPEED_UP:
-					SetSpeed(GetSpeed() - m_Buff.ViewNode()->GetValue());
+					SetSpeed(GetSpeed() - (*iter)->GetValue());
 					break;
 				}
-				delete m_Buff.Remove();
+				delete *iter;
+				m_Buff.remove(*iter);
 			}
 		}
 	}
@@ -55,28 +69,20 @@ void Character::BuffCheck()
 
 void Character::DebuffCheck()
 {
-	if (m_Debuff.First())
+	list<Debuff*>::iterator iter;
+	if (!m_Debuff.empty())
 	{
-		if (m_Debuff.ViewNode()->TimeCheck() == false)
+		for (iter = m_Debuff.begin(); iter != m_Debuff.end(); ++iter)
 		{
-			switch (m_Debuff.ViewNode()->GetDebuff())
+			if ((*iter)->TimeCheck() == false)
 			{
-			case D_CATEGORY_SLOW:
-				SetSpeed(GetSpeed() + m_Buff.ViewNode()->GetValue());
-			}
-			delete m_Debuff.Remove();
-		}
-
-		while (m_Debuff.Next())
-		{
-			if (m_Debuff.ViewNode()->TimeCheck() == false)
-			{
-				switch (m_Debuff.ViewNode()->GetDebuff())
+				switch ((*iter)->GetDebuff())
 				{
 				case D_CATEGORY_SLOW:
-					SetSpeed(GetSpeed() + m_Buff.ViewNode()->GetValue());
+					SetSpeed(GetSpeed() + (*iter)->GetValue());
 				}
-				delete m_Debuff.Remove();
+				delete *iter;
+				m_Debuff.remove(*iter);
 			}
 		}
 	}

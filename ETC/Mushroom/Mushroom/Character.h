@@ -2,7 +2,7 @@
 #include"MovingObject.h"
 #include"Skill.h"
 #include"State.h"
-#include"List.h"
+#include<list>
 #include<conio.h>
 
 #define ARROW 224
@@ -30,8 +30,8 @@ private:
 	Skill* m_W;
 	Skill* m_E;
 	Skill* m_R;
-	List<Buff*> m_Buff;
-	List<Debuff*> m_Debuff;
+	list<Buff*> m_Buff;
+	list<Debuff*> m_Debuff;
 public:
 	Character();
 	void TimeCheck();

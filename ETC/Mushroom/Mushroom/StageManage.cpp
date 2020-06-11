@@ -56,8 +56,10 @@ END_TYPE StageManage::TimeProgress()
 void StageManage::MoveCheck()
 {
 	Position dest;
-	Enemy* curNode;
 
+	list<Enemy*>::iterator Eiter;
+	list<Enemy*>::iterator Eiter2;
+	list<Projectile*>::iterator Piter;
 	if (m_Player->MoveCheck())
 	{
 		dest = m_Player->GetNextPos();
@@ -66,90 +68,68 @@ void StageManage::MoveCheck()
 			m_Player->MoveCancle();
 		else
 		{
-			if (m_Enemy.First())
+			if (!m_Enemy.empty())
 			{
-				if (m_Enemy.ViewNode()->GetPosition() == dest)
-					m_Player->MoveCancle();
-				else
+				for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
 				{
-					while (m_Enemy.Next())
+					if ((*Eiter)->GetPosition() == dest)
 					{
-						if (m_Enemy.ViewNode()->GetPosition() == dest)
-						{
-							m_Player->MoveCancle();
-							break;
-						}
+						m_Player->MoveCancle();
+						break;
 					}
 				}
+
 			}
 		}
 
 		Restoration(m_Player);
 		m_Player->Move();
 	}
-
-	if (m_Enemy.First())
+	if (!m_Enemy.empty())
 	{
-		while (1)
+		for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
 		{
-			curNode = m_Enemy.ViewNode();
-			if (curNode->MoveCheck())
+			if ((*Eiter)->MoveCheck())
 			{
-				dest = curNode->GetNextPos();
+				dest = (*Eiter)->GetNextPos();
 
 				if (m_Block.Search(dest) != NULL)
-					curNode->MoveCancle();
+					(*Eiter)->MoveCancle();
 				else
 				{
 					if (m_Player->GetPosition() == dest)
-						curNode->MoveCancle();
+						(*Eiter)->MoveCancle();
 					else
 					{
-						m_Enemy.First();
-						if (m_Enemy.ViewNode()->GetPosition() == dest && m_Enemy.ViewNode() != curNode)
-							curNode->MoveCancle();
-						else
+						for (Eiter2 = m_Enemy.begin(); Eiter2 != m_Enemy.end(); ++Eiter2)
 						{
-							while (m_Enemy.Next())
+							if (Eiter == Eiter2)
+								continue;
+
+							if ((*Eiter)->GetPosition() == dest)
 							{
-								if (m_Enemy.ViewNode() == curNode)
-									continue;
-								if (m_Enemy.ViewNode()->GetPosition() == dest)
-								{
-									m_Player->MoveCancle();
-									break;
-								}
+								(*Eiter)->MoveCancle();
+								break;
 							}
 						}
-
-						m_Enemy.First();
-						while (m_Enemy.ViewNode() != curNode)
-							m_Enemy.Next();
 					}
 				}
 
-				Restoration(curNode);
-				curNode->Move();
+				Restoration((*Eiter));
+				(*Eiter)->Move();
 			}
-
-			if (m_Enemy.Next() == 0)
-				break;
 		}
 	}
 
-	if (m_Projectile.First())
+
+	if (!m_Projectile.empty())
 	{
-		if (m_Projectile.ViewNode()->MoveCheck())
+		for (Piter = m_Projectile.begin(); Piter != m_Projectile.end(); ++Piter)
 		{
-			Restoration(m_Projectile.ViewNode());
-			m_Projectile.ViewNode()->Move();
-		}
-		while (m_Projectile.Next())
-		{
-			if (m_Projectile.ViewNode()->MoveCheck())
+			if ((*Piter)->MoveCheck())
 			{
-				Restoration(m_Projectile.ViewNode());
-				m_Projectile.ViewNode()->Move();
+				Restoration(*Piter);
+				(*Piter)->Move();
 			}
 		}
 	}
@@ -173,7 +153,7 @@ void StageManage::StatusCheck()
 void StageManage::HitCheck()
 {
 	Projectile* tmp;
-	if (m_Projectile.First())
+	/*if (m_Projectile.First())
 	{
 		tmp = m_Projectile.ViewNode();
 
@@ -270,7 +250,7 @@ void StageManage::HitCheck()
 				delete m_Projectile.Remove();
 			}
 		}
-	}
+	}*/
 }
 
 END_TYPE StageManage::EndCheck()

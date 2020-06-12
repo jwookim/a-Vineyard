@@ -152,106 +152,52 @@ void StageManage::StatusCheck()
 
 void StageManage::HitCheck()
 {
-	Projectile* tmp;
-	/*if (m_Projectile.First())
+	list<Projectile*>::iterator Piter;
+	list<Enemy*>::iterator Eiter;
+	Object* block;
+
+	for (Piter = m_Projectile.begin(); Piter != m_Projectile.end(); ++Piter)
 	{
-		tmp = m_Projectile.ViewNode();
-
-		if (m_Player->GetPosition() == tmp->GetPosition())
-		{
-			if ((Character*)m_Player != (Character*)(tmp->GetCaster()))
-			{
-				((Character*)(tmp->GetCaster()))->Attack(m_Player);
-				m_Player->Draw();
-				delete m_Projectile.Remove();
-			}
-		}
-		else
-		{
-			if (m_Enemy.First())
-			{
-				if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
-				{
-					if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
-					{
-						((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
-						m_Enemy.ViewNode()->Draw();
-						delete m_Projectile.Remove();
-					}
-				}
-				while (m_Enemy.Next())
-				{
-					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
-					{
-						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
-						{
-							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
-							m_Enemy.ViewNode()->Draw();
-							delete m_Projectile.Remove();
-						}
-					}
-				}
-			}
-		}
-
-		Object* block = m_Block.Search(tmp->GetPosition());
+		block = m_Block.Search((*Piter)->GetPosition());
 
 		if (block != NULL)
 		{
 			block->Draw();
-			delete m_Projectile.Remove();
+			delete *Piter;
+			m_Projectile.remove(*Piter);
+			continue;
 		}
-		while (m_Projectile.Next())
+
+		if (m_Player->GetPosition() == (*Piter)->GetPosition())
 		{
-			tmp = m_Projectile.ViewNode();
-
-			if (m_Player->GetPosition() == tmp->GetPosition())
+			if ((Character*)m_Player != (Character*)((*Piter)->GetCaster()))
 			{
-				if ((Character*)m_Player != (Character*)(tmp->GetCaster()))
-				{
-					((Character*)(tmp->GetCaster()))->Attack(m_Player);
-					m_Player->Draw();
-					delete m_Projectile.Remove();
-				}
-			}
-			else
-			{
-				if (m_Enemy.First())
-				{
-					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
-					{
-						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
-						{
-							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
-							m_Enemy.ViewNode()->Draw();
-							delete m_Projectile.Remove();
-						}
-					}
-				}
-				while (m_Enemy.Next())
-				{
-					if (m_Enemy.ViewNode()->GetPosition() == tmp->GetPosition())
-					{
-						if ((Character*)m_Enemy.ViewNode() != (Character*)(tmp->GetCaster()))
-						{
-							((Character*)(tmp->GetCaster()))->Attack(m_Enemy.ViewNode());
-							m_Enemy.ViewNode()->Draw();
-							delete m_Projectile.Remove();
-						}
-					}
-				}
-			}
-
-			Object* block = m_Block.Search(tmp->GetPosition());
-
-			if (block != NULL)
-			{
-				block->Draw();
-				delete m_Projectile.Remove();
+				((Character*)((*Piter)->GetCaster()))->Attack(m_Player);
+				m_Player->Draw();
+				delete *Piter;
+				m_Projectile.remove(*Piter);
+				continue;
 			}
 		}
-	}*/
+		
+		for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
+		{
+			if ((*Eiter)->GetPosition() == (*Piter)->GetPosition())
+			{
+				if ((Character*)(*Eiter) != (Character*)((*Piter)->GetCaster()))
+				{
+					((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
+					(*Eiter)->Draw();
+					delete *Piter;
+					m_Projectile.remove(*Piter);
+					break;
+				}
+			}
+		}
+
+	}
 }
+
 
 END_TYPE StageManage::EndCheck()
 {

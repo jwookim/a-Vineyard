@@ -1,9 +1,18 @@
 #include "MovingObject.h"
 
+MovingObject::MovingObject()
+{
+	m_Direct = DOWN;
+}
+
+MovingObject::MovingObject(Direct dir)
+{
+	m_Direct = dir;
+}
 
 bool MovingObject::MoveTimeCheck()
 {
-	if (clock() >= m_iMoveTime + (STANDARD_CLOCK + ((STANDARD_SPEED - m_iSpeed) * (STANDARD_CLOCK / STANDARD_SPEED))))
+	if (clock() >= m_iMoveTime + ((STANDARD_CLOCK * 100) / m_iSpeed))
 		return true;
 	return false;
 }
@@ -39,4 +48,14 @@ void MovingObject::MoveCancle()
 void MovingObject::SetSpeed(int speed)
 {
 	m_iSpeed = speed;
+}
+
+void MovingObject::SetDirect(Direct dir)
+{
+	m_Direct = dir;
+}
+
+void MovingObject::SetMoveTime(int time)
+{
+	m_iMoveTime = time;
 }

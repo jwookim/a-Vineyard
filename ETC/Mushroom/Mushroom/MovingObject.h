@@ -15,6 +15,8 @@ private:
 	int m_iSpeed;
 	int m_iMoveTime;
 public:
+	MovingObject();
+	MovingObject(Direct dir);
 	virtual void TimeCheck();
 	virtual bool MoveCheck();
 	bool MoveTimeCheck();
@@ -22,6 +24,8 @@ public:
 	void Move();
 	void MoveCancle();
 	void SetSpeed(int speed);
+	void SetDirect(Direct direct);
+	void SetMoveTime(int time);
 	inline int GetSpeed()
 	{
 		return m_iSpeed;

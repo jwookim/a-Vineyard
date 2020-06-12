@@ -40,6 +40,8 @@ END_TYPE StageManage::TimeProgress()
 
 		MoveCheck();
 
+		AttackCheck();
+
 		SwitchCheck();
 
 		TrapCheck();
@@ -135,6 +137,14 @@ void StageManage::MoveCheck()
 	}
 }
 
+void StageManage::AttackCheck()
+{
+	Projectile* tmp = NULL;
+	if ((tmp = m_Player->AttackCheck()) != NULL)
+		m_Projectile.push_back(tmp);
+	tmp = NULL;
+}
+
 void StageManage::SwitchCheck()
 {
 
@@ -159,7 +169,7 @@ void StageManage::HitCheck()
 	for (Piter = m_Projectile.begin(); Piter != m_Projectile.end(); ++Piter)
 	{
 		block = m_Block.Search((*Piter)->GetPosition());
-
+		
 		if (block != NULL)
 		{
 			block->Draw();

@@ -38,7 +38,7 @@ bool Player::MoveCheck()
 
 				return true;
 			case 'a':
-
+				Attack();
 				return true;
 			default:
 				return false;

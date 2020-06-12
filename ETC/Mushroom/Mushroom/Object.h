@@ -17,6 +17,10 @@ public:
 	{
 		return m_Position;
 	}
+	inline int GetColor()
+	{
+		return m_iColor;
+	}
 	void SetPosition(Position pos);
 	void SetShape(string shape);
 	void SetColor(int color);

@@ -30,6 +30,7 @@ public:
 	StageManage(int stage);
 	END_TYPE TimeProgress();
 	void MoveCheck();
+	void AttackCheck();
 	void StatusCheck();
 	void SwitchCheck();
 	void TrapCheck();

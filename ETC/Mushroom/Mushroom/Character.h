@@ -2,6 +2,7 @@
 #include"MovingObject.h"
 #include"Skill.h"
 #include"State.h"
+#include"Projectile.h"
 #include<list>
 #include<conio.h>
 
@@ -13,7 +14,7 @@
 
 enum RANGE
 {
-	RANGE_MELEE,
+	RANGE_CLOSE,
 	RANGE_LONG
 };
 
@@ -32,10 +33,14 @@ private:
 	Skill* m_R;
 	list<Buff*> m_Buff;
 	list<Debuff*> m_Debuff;
+	list<Projectile*> m_Projectile;
 public:
 	Character();
 	void TimeCheck();
+	virtual Projectile* AttackCheck();
+	virtual void MeleeAttack(Character* enemy);
 	virtual void Attack(Character* enemy);
+	virtual void Attack();
 	void Damage(int damage, Buff* state = NULL);
 	void Death();
 	inline int GetAtk()
@@ -58,6 +63,6 @@ public:
 	void SetAtk();
 	void SetHealth();
 	void SetRegen();
-	void SetRange();
+	void SetRange(RANGE range);
 };
 

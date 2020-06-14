@@ -5,15 +5,57 @@ Character::Character()
 	//SetSpeed(STANDARD_SPEED);
 }
 
+void Character::MeleeAttack(Character* target)
+{
+
+}
+
 void Character::Attack(Character* target)
 {
 
+}
+
+void Character::Attack()
+{
+	if (m_Range == RANGE_LONG)
+	{
+		Direct dir;
+		Projectile* newProj = new Projectile(dir = GetDirect());
+		newProj->SetPosition(GetPosition() + dir);
+		newProj->SetSpeed(300);
+		newProj->SetCaster(this);
+		newProj->SetColor(GetColor());
+		if (dir.x = 1)
+			newProj->SetShape("กๆ");
+		else if (dir.x = -1)
+			newProj->SetShape("ก็");
+		else if (dir.y = 1)
+			newProj->SetShape("ก้");
+		else if (dir.y = -1)
+			newProj->SetShape("ก่");
+		newProj->Draw();
+		m_Projectile.push_back(newProj);
+	}
+	else if (m_Range == RANGE_CLOSE)
+		;
 }
 
 void Character::TimeCheck()
 {
 	BuffCheck();
 	DebuffCheck();
+}
+
+Projectile* Character::AttackCheck()
+{
+	if (!m_Projectile.empty())
+	{
+		Projectile* tmp = m_Projectile.front();
+		m_Projectile.pop_front();
+		return tmp;
+	}
+
+	return NULL;
 }
 
 void Character::AddBuff(Buff* buff)
@@ -86,4 +128,10 @@ void Character::DebuffCheck()
 			}
 		}
 	}
+}
+
+
+void Character::SetRange(RANGE range)
+{
+	m_Range = range;
 }

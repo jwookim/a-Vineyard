@@ -6,8 +6,10 @@ private:
 	MovingObject* m_Caster;
 	int m_iValue;
 public:
+	Projectile(Direct dir);
+	Projectile();
 	bool MoveCheck();
-	void SetCaster(MovingObject caster);
+	void SetCaster(MovingObject* caster);
 	void SetValue(int value);
 	inline MovingObject* GetCaster()
 	{

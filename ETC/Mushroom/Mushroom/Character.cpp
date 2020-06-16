@@ -2,6 +2,7 @@
 
 Character::Character()
 {
+	m_bAlive = true;
 	//SetSpeed(STANDARD_SPEED);
 }
 
@@ -10,31 +11,59 @@ void Character::MeleeAttack(Character* target)
 
 }
 
+bool Character::AttackTimeCheck()
+{
+	if (clock() >= m_iAtkTime + ((STANDARD_CLOCK * 100) / m_iAtkSpeed))
+		return true;
+	return false;
+}
+
 void Character::Attack(Character* target)
 {
+	target->Damage(m_iAtk);
 
+	list<Buff*>::iterator iter;
+
+	for (iter = m_Buff.begin(); iter != m_Buff.end();)
+	{
+		if ((*iter)->GetBuff() == B_CATEGORY_MELEE_ENHANCE)
+		{
+			target->Damage((*iter)->GetValue());
+			if (((Melee*)*iter)->GetEffect() != NULL)
+				target->AddDebuff(((Melee*)*iter)->GetEffect());
+
+			delete *iter;
+			iter = m_Buff.erase(iter);
+		}
+		else
+			iter++;
+	}
 }
 
 void Character::Attack()
 {
 	if (m_Range == RANGE_LONG)
 	{
-		Direct dir;
-		Projectile* newProj = new Projectile(dir = GetDirect());
-		newProj->SetPosition(GetPosition() + dir);
-		newProj->SetSpeed(300);
-		newProj->SetCaster(this);
-		newProj->SetColor(GetColor());
-		if (dir.x = 1)
-			newProj->SetShape("กๆ");
-		else if (dir.x = -1)
-			newProj->SetShape("ก็");
-		else if (dir.y = 1)
-			newProj->SetShape("ก้");
-		else if (dir.y = -1)
-			newProj->SetShape("ก่");
-		newProj->Draw();
-		m_Projectile.push_back(newProj);
+		if (AttackTimeCheck())
+		{
+			Direct dir;
+			Projectile* newProj = new Projectile(dir = GetDirect());
+			newProj->SetPosition(GetPosition() + dir);
+			newProj->SetSpeed(300);
+			newProj->SetCaster(this);
+			newProj->SetColor(GetColor());
+			if (dir.x == 1)
+				newProj->SetShape("กๆ");
+			else if (dir.x == -1)
+				newProj->SetShape("ก็");
+			else if (dir.y == 1)
+				newProj->SetShape("ก้");
+			else if (dir.y == -1)
+				newProj->SetShape("ก่");
+			newProj->Draw();
+			m_Projectile.push_back(newProj);
+			m_iAtkTime = clock();
+		}
 	}
 	else if (m_Range == RANGE_CLOSE)
 		;
@@ -89,7 +118,7 @@ void Character::BuffCheck()
 	list<Buff*>::iterator iter;
 	if (!m_Buff.empty())
 	{
-		for (iter = m_Buff.begin(); iter != m_Buff.end(); ++iter)
+		for (iter = m_Buff.begin(); iter != m_Buff.end();)
 		{
 			if ((*iter)->TimeCheck() == false)
 			{
@@ -103,8 +132,10 @@ void Character::BuffCheck()
 					break;
 				}
 				delete *iter;
-				m_Buff.remove(*iter);
+				iter = m_Buff.erase(iter);
 			}
+			else
+				iter++;
 		}
 	}
 }
@@ -114,7 +145,7 @@ void Character::DebuffCheck()
 	list<Debuff*>::iterator iter;
 	if (!m_Debuff.empty())
 	{
-		for (iter = m_Debuff.begin(); iter != m_Debuff.end(); ++iter)
+		for (iter = m_Debuff.begin(); iter != m_Debuff.end();)
 		{
 			if ((*iter)->TimeCheck() == false)
 			{
@@ -124,14 +155,51 @@ void Character::DebuffCheck()
 					SetSpeed(GetSpeed() + (*iter)->GetValue());
 				}
 				delete *iter;
-				m_Debuff.remove(*iter);
+				iter = m_Debuff.erase(iter);
 			}
+			else
+				iter++;
 		}
 	}
 }
 
+void Character::Damage(int damage)
+{
+	m_iHealth -= damage;
+
+	if (m_iHealth <= 0)
+		Death();
+}
+
+void Character::Death()
+{
+	SetColor(GRAY);
+	m_bAlive = false;
+
+	Draw();
+}
+
+void Character::SetAtk(int atk)
+{
+	m_iAtk = atk;
+}
+
+void Character::SetHealth(int health)
+{
+	m_iHealth = health;
+}
+
+void Character::SetRegen(int regen)
+{
+	m_iRegen = regen;
+}
 
 void Character::SetRange(RANGE range)
 {
 	m_Range = range;
+}
+
+void Character::SetAtkSpeed(int speed)
+{
+	m_iAtkSpeed = speed;
 }

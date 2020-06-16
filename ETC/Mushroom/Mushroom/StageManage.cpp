@@ -29,6 +29,8 @@ StageManage::StageManage(int stage)
 	}
 
 	m_Player = new Teemo;
+
+	m_Enemy.push_back(new Garen);
 }
 
 END_TYPE StageManage::TimeProgress()
@@ -166,19 +168,18 @@ void StageManage::HitCheck()
 	list<Enemy*>::iterator Eiter;
 	Object* block;
 
-	for (Piter = m_Projectile.begin(); Piter != m_Projectile.end(); ++Piter)
+	for (Piter = m_Projectile.begin(); Piter != m_Projectile.end();)
 	{
 		block = m_Block.Search((*Piter)->GetPosition());
 		
 		if (block != NULL)
 		{
 			block->Draw();
-			//delete *Piter;
-			m_Projectile.erase(Piter--);
-			continue;
+			delete *Piter;
+			Piter = m_Projectile.erase(Piter);
 		}
 
-		if (m_Player->GetPosition() == (*Piter)->GetPosition())
+		else if (m_Player->GetPosition() == (*Piter)->GetPosition())
 		{
 			if ((Character*)m_Player != (Character*)((*Piter)->GetCaster()))
 			{
@@ -186,25 +187,32 @@ void StageManage::HitCheck()
 				m_Player->Draw();
 				delete *Piter;
 				Piter = m_Projectile.erase(Piter);
-				Piter--;
-				continue;
 			}
+			else
+				Piter++;
 		}
-		
-		for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
+
+		else
 		{
-			if ((*Eiter)->GetPosition() == (*Piter)->GetPosition())
+			for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
 			{
-				if ((Character*)(*Eiter) != (Character*)((*Piter)->GetCaster()))
+				if ((*Eiter)->GetPosition() == (*Piter)->GetPosition())
 				{
-					((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
-					(*Eiter)->Draw();
-					delete *Piter;
-					Piter = m_Projectile.erase(Piter);
-					Piter--;
-					break;
+					if ((Character*)(*Eiter) != (Character*)((*Piter)->GetCaster()))
+					{
+						((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
+						(*Eiter)->Draw();
+						delete *Piter;
+						Piter = m_Projectile.erase(Piter);
+						break;
+					}
+					else
+						Eiter++;
 				}
 			}
+
+			if (Eiter == m_Enemy.end())
+				Piter++;
 		}
 
 	}
@@ -213,7 +221,10 @@ void StageManage::HitCheck()
 
 END_TYPE StageManage::EndCheck()
 {
-
+	if (!m_Player->GetAlive())
+		return END_GAME_OVER;
+	if (m_Player->GetPosition() == m_Goal)
+		return END_CLEAR;
 	return END_CONTINUE;
 }
 

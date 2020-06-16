@@ -27,19 +27,19 @@ bool Player::MoveCheck()
 				return true;
 			case 'q':
 
-				return true;
+				return false;
 			case 'w':
 
-				return true;
+				return false;
 			case 'e':
 
-				return true;
+				return false;
 			case 'r':
 
-				return true;
+				return false;
 			case 'a':
 				Attack();
-				return true;
+				return false;
 			default:
 				return false;
 			}

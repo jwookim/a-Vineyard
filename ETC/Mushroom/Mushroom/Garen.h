@@ -3,4 +3,8 @@
 
 class Garen : public Enemy
 {
+private:
+
+public:
+	Garen();
 };

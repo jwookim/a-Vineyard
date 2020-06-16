@@ -22,9 +22,12 @@ enum RANGE
 class Character : public MovingObject
 {
 private:
+	bool m_bAlive;
 	int m_iAtk;
 	int m_iHealth;
 	int m_iRegen;
+	int m_iAtkSpeed;
+	int m_iAtkTime;
 	RANGE m_Range;
 	Skill* m_P;
 	Skill* m_Q;
@@ -37,11 +40,12 @@ private:
 public:
 	Character();
 	void TimeCheck();
+	bool AttackTimeCheck();
 	virtual Projectile* AttackCheck();
 	virtual void MeleeAttack(Character* enemy);
 	virtual void Attack(Character* enemy);
 	virtual void Attack();
-	void Damage(int damage, Buff* state = NULL);
+	void Damage(int damage);
 	void Death();
 	inline int GetAtk()
 	{
@@ -51,6 +55,11 @@ public:
 	{
 		return m_iHealth;
 	}
+	inline bool GetAlive()
+	{
+		return m_bAlive;
+	}
+	void SetAtkSpeed(int speed);
 	void AddBuff(Buff* buff);
 	void AddDebuff(Debuff* debuff);
 	void BuffCheck();
@@ -60,9 +69,9 @@ public:
 	void SetW();
 	void SetE();
 	void SetR();
-	void SetAtk();
-	void SetHealth();
-	void SetRegen();
+	void SetAtk(int atk);
+	void SetHealth(int health);
+	void SetRegen(int regen);
 	void SetRange(RANGE range);
 };
 

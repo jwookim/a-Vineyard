@@ -173,8 +173,8 @@ void StageManage::HitCheck()
 		if (block != NULL)
 		{
 			block->Draw();
-			delete *Piter;
-			m_Projectile.remove(*Piter);
+			//delete *Piter;
+			m_Projectile.erase(Piter--);
 			continue;
 		}
 
@@ -185,7 +185,8 @@ void StageManage::HitCheck()
 				((Character*)((*Piter)->GetCaster()))->Attack(m_Player);
 				m_Player->Draw();
 				delete *Piter;
-				m_Projectile.remove(*Piter);
+				Piter = m_Projectile.erase(Piter);
+				Piter--;
 				continue;
 			}
 		}
@@ -199,7 +200,8 @@ void StageManage::HitCheck()
 					((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
 					(*Eiter)->Draw();
 					delete *Piter;
-					m_Projectile.remove(*Piter);
+					Piter = m_Projectile.erase(Piter);
+					Piter--;
 					break;
 				}
 			}

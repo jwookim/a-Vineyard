@@ -6,6 +6,11 @@ Projectile::Projectile(Direct dir)
 	SetMoveTime(clock());
 }
 
+Projectile::Projectile()
+{
+	SetMoveTime(clock());
+}
+
 void Projectile::SetCaster(MovingObject* caster)
 {
 	m_Caster = caster;

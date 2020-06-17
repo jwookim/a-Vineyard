@@ -46,21 +46,8 @@ void Character::Attack()
 	{
 		if (AttackTimeCheck())
 		{
-			Direct dir;
-			Projectile* newProj = new Projectile(dir = GetDirect());
-			newProj->SetPosition(GetPosition() + dir);
-			newProj->SetSpeed(300);
-			newProj->SetCaster(this);
-			newProj->SetColor(GetColor());
-			if (dir.x == 1)
-				newProj->SetShape("กๆ");
-			else if (dir.x == -1)
-				newProj->SetShape("ก็");
-			else if (dir.y == 1)
-				newProj->SetShape("ก้");
-			else if (dir.y == -1)
-				newProj->SetShape("ก่");
-			newProj->Draw();
+			Direct dir = GetDirect();
+			Melee_p* newProj = new Melee_p(GetPosition() + dir, dir, this);
 			m_Projectile.push_back(newProj);
 			m_iAtkTime = clock();
 		}

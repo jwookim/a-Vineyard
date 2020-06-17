@@ -2,13 +2,14 @@
 
 bool Player::MoveCheck()
 {
-	if (MoveTimeCheck())
+	
+	if (_kbhit())
 	{
-		if (_kbhit())
+		switch (_getch())
 		{
-			switch (_getch())
+		case ARROW:
+			if (MoveTimeCheck())
 			{
-			case ARROW:
 				switch (_getch())
 				{
 				case ARROW_UP:
@@ -25,24 +26,25 @@ bool Player::MoveCheck()
 					break;
 				}
 				return true;
-			case 'q':
-
-				return false;
-			case 'w':
-
-				return false;
-			case 'e':
-
-				return false;
-			case 'r':
-
-				return false;
-			case 'a':
-				Attack();
-				return false;
-			default:
-				return false;
 			}
+			return false;
+		case 'q':
+
+			return false;
+		case 'w':
+
+			return false;
+		case 'e':
+
+			return false;
+		case 'r':
+
+			return false;
+		case 'a':
+			Attack();
+			return false;
+		default:
+			return false;
 		}
 	}
 

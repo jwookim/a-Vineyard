@@ -25,6 +25,12 @@
     <Filter Include="헤더 파일\object\char">
       <UniqueIdentifier>{7fd25238-18df-45e9-9c07-833dff20e81f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\object\projectile">
+      <UniqueIdentifier>{3f8dff1e-99ea-45b3-bc64-7c89ae84dcf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\object\projectile">
+      <UniqueIdentifier>{b3aa55be-7c5a-4e54-b210-29bd0b38244e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameManage.cpp">
@@ -60,9 +66,6 @@
     <ClCompile Include="MovingObject.cpp">
       <Filter>소스 파일\object</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>소스 파일\object</Filter>
-    </ClCompile>
     <ClCompile Include="MapDraw.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -93,8 +96,11 @@
     <ClCompile Include="Queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Teemo_Melee.cpp">
-      <Filter>소스 파일\object</Filter>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>소스 파일\object\projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="Melee_p.cpp">
+      <Filter>소스 파일\object\projectile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,9 +143,6 @@
     <ClInclude Include="MovingObject.h">
       <Filter>헤더 파일\object</Filter>
     </ClInclude>
-    <ClInclude Include="Projectile.h">
-      <Filter>헤더 파일\object</Filter>
-    </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>헤더 파일\object</Filter>
     </ClInclude>
@@ -173,8 +176,11 @@
     <ClInclude Include="BSTree.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Teemo_Melee.h">
-      <Filter>헤더 파일\object</Filter>
+    <ClInclude Include="Projectile.h">
+      <Filter>헤더 파일\object\projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Melee_p.h">
+      <Filter>헤더 파일\object\projectile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

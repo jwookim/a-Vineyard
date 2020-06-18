@@ -186,6 +186,7 @@
     <ClInclude Include="Position.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="StageManage.h" />
     <ClInclude Include="State.h" />

@@ -47,7 +47,7 @@ void Character::Attack()
 		if (AttackTimeCheck())
 		{
 			Direct dir = GetDirect();
-			Melee_p* newProj = new Melee_p(GetPosition() + dir, dir, this);
+			Melee_p* newProj = new Melee_p(this);
 			m_Projectile.push_back(newProj);
 			m_iAtkTime = clock();
 		}

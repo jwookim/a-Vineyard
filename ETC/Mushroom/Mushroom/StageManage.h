@@ -2,6 +2,7 @@
 #include"List.h"
 #include<list>
 #include"BSTree.h"
+#include"Singleton.h"
 #include"AllChamp.h"
 #include"AllObj.h"
 
@@ -13,7 +14,7 @@ enum END_TYPE
 	END_EXIT
 };
 
-class StageManage
+class StageManage : public Singleton<StageManage>
 {
 private:
 	int m_istage;
@@ -27,7 +28,7 @@ private:
 	BSTree m_Trap;
 	BSTree m_Door;
 public:
-	StageManage(int stage);
+	StageManage();
 	END_TYPE TimeProgress();
 	void MoveCheck();
 	void AttackCheck();

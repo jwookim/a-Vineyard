@@ -1,13 +1,14 @@
 #include "Melee_p.h"
 
 
-Melee_p::Melee_p(Position pos, Direct dir, MovingObject* caster)
+Melee_p::Melee_p(MovingObject* caster)
 {
-	SetPosition(pos);
-	SetDirect(dir);
-	SetSpeed(300);
 	SetCaster(caster);
+	Direct dir = caster->GetDirect();
+	SetDirect(dir);
+	SetPosition(caster->GetPosition() + dir);
 	SetColor(caster->GetColor());
+	SetSpeed(300);
 
 	if (dir.x == 1)
 		SetShape("¡æ");

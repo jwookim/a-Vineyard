@@ -5,6 +5,7 @@
 Weapon::Weapon()
 {
 	m_pNextWeapon = NULL;
+	m_pParent = NULL;
 }
 
 void Weapon::SetName(string name)

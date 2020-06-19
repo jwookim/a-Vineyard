@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<list>
 #include"MapDraw.h"
 using namespace std;
 
@@ -17,6 +18,7 @@ enum STATUS
 class Weapon
 {
 protected:
+	Weapon* m_pParent;
 	string m_strName;
 	string m_strType;
 	int m_iAtk;

@@ -1,8 +1,8 @@
 #include "StageManage.h"
 
-StageManage::StageManage(int stage)
+StageManage::StageManage()
 {
-	m_istage = stage;
+	m_istage = 1;
 
 	char Buff[30];
 
@@ -194,24 +194,38 @@ void StageManage::HitCheck()
 
 		else
 		{
+			int check = 0;
 			for (Eiter = m_Enemy.begin(); Eiter != m_Enemy.end(); ++Eiter)
 			{
 				if ((*Eiter)->GetPosition() == (*Piter)->GetPosition())
 				{
+					check = 1;
+
 					if ((Character*)(*Eiter) != (Character*)((*Piter)->GetCaster()))
 					{
-						((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
-						(*Eiter)->Draw();
+						if (((Character*)(*Eiter))->GetAlive())
+						{
+							((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
+							(*Eiter)->Draw();
+						}
+						else
+						{
+							(*Eiter)->Erase();
+							delete *Eiter;
+							m_Enemy.erase(Eiter);
+						}
+
 						delete *Piter;
 						Piter = m_Projectile.erase(Piter);
 						break;
 					}
-					else
-						Eiter++;
+
+					Piter++;
+					break;
 				}
 			}
 
-			if (Eiter == m_Enemy.end())
+			if (check == 0)
 				Piter++;
 		}
 

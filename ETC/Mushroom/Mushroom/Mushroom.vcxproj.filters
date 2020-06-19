@@ -182,5 +182,8 @@
     <ClInclude Include="Melee_p.h">
       <Filter>헤더 파일\object\projectile</Filter>
     </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

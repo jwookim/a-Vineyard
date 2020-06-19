@@ -4,7 +4,7 @@
 
 void main()
 {
-	StageManage st(1);
+	StageManage::GetInstance()->TimeProgress();
 
-	st.TimeProgress();
+	StageManage::DeleteInstance();
 }

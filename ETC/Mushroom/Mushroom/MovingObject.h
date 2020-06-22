@@ -11,12 +11,13 @@ class MovingObject : public Object
 {
 private:
 	Position m_NextPos;
+	int m_iMoveTime;
+protected:
 	Direct m_Direct;
 	int m_iSpeed;
-	int m_iMoveTime;
 public:
-	MovingObject();
-	MovingObject(Direct dir);
+	MovingObject(Position pos);
+	MovingObject(Direct dir, Position pos);
 	virtual void TimeCheck();
 	virtual bool MoveCheck();
 	bool MoveTimeCheck();

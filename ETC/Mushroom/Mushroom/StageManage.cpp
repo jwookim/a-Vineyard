@@ -28,9 +28,9 @@ StageManage::StageManage()
 		}
 	}
 
-	m_Player = new Teemo;
+	m_Player = new Teemo({ WIDTH / 4, HEIGHT / 2 });
 
-	m_Enemy.push_back(new Garen);
+	m_Enemy.push_back(new Garen({ WIDTH / 4, HEIGHT / 4 }));
 }
 
 END_TYPE StageManage::TimeProgress()

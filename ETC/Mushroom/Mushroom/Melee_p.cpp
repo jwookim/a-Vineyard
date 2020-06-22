@@ -1,22 +1,18 @@
 #include "Melee_p.h"
 
 
-Melee_p::Melee_p(MovingObject* caster)
+Melee_p::Melee_p(MovingObject* caster) : Projectile(caster)
 {
-	SetCaster(caster);
-	Direct dir = caster->GetDirect();
-	SetDirect(dir);
-	SetPosition(caster->GetPosition() + dir);
-	SetColor(caster->GetColor());
-	SetSpeed(300);
+	m_iColor = caster->GetColor();
+	m_iSpeed = 300;
 
-	if (dir.x == 1)
+	if (m_Direct.x == 1)
 		SetShape("กๆ");
-	else if (dir.x == -1)
+	else if (m_Direct.x == -1)
 		SetShape("ก็");
-	else if (dir.y == 1)
+	else if (m_Direct.y == 1)
 		SetShape("ก้");
-	else if (dir.y == -1)
+	else if (m_Direct.y == -1)
 		SetShape("ก่");
 
 	Draw();

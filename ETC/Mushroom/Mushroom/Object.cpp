@@ -1,7 +1,8 @@
 #include "Object.h"
 
-Object::Object()
+Object::Object(Position pos)
 {
+	m_Position = pos;
 }
 
 void Object::SetPosition(Position pos)

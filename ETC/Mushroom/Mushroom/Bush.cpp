@@ -1,11 +1,10 @@
 #include "Bush.h"
 
 
-Bush::Bush(Position pos)
+Bush::Bush(Position pos) : Object(pos)
 {
-	SetColor(GREEN);
-	SetShape("¢Æ");
-	SetPosition(pos);
+	m_strShape = "¢Æ";
+	m_iColor = GREEN;
 
 	Draw();
 }

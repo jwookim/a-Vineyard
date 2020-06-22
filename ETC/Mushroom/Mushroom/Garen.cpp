@@ -1,16 +1,14 @@
 #include "Garen.h"
 
 
-Garen::Garen()
+Garen::Garen(Position pos) : Enemy(pos)
 {
-	SetShape("บุ");
-	SetColor(BLUE);
+	m_strShape = "บุ";
+	m_iColor = BLUE;
+	m_iAtk = 100;
+	m_iHealth = 600;
+	m_iAtkSpeed = 120;
+	m_iSpeed = 100;
 	SetRange(RANGE_CLOSE);
-	SetAtk(100);
-	SetHealth(600);
-	SetAtkSpeed(120);
-
-	SetSpeed(100);
-	SetPosition({ WIDTH / 4, HEIGHT / 4 });
 	Draw();
 }

@@ -6,5 +6,5 @@ class Garen : public Enemy
 private:
 
 public:
-	Garen();
+	Garen(Position pos);
 };

@@ -6,6 +6,7 @@ class Trap : public Object
 public:
 	bool m_bDisposable;
 private:
+	Trap(Position pos);
 	inline bool GetDisPosable()
 	{
 		return m_bDisposable;

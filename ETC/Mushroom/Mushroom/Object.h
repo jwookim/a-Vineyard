@@ -4,7 +4,7 @@
 
 class Object
 {
-private:
+protected:
 	Position m_Position;
 	string m_strShape;
 	int m_iColor;
@@ -12,7 +12,7 @@ private:
 	/*int m_iWidth;
 	int m_iHeight;*/
 public:
-	Object();
+	Object(Position pos);
 	inline Position GetPosition()
 	{
 		return m_Position;

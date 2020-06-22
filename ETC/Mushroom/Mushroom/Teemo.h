@@ -5,7 +5,7 @@ class Teemo : public Player
 private:
 
 public:
-	Teemo();
+	Teemo(Position pos);
 	void PassiveInit();
 };
 

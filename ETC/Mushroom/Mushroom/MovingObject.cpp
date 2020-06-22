@@ -1,11 +1,11 @@
 #include "MovingObject.h"
 
-MovingObject::MovingObject()
+MovingObject::MovingObject(Position pos) : Object(pos)
 {
 	m_Direct = DOWN;
 }
 
-MovingObject::MovingObject(Direct dir)
+MovingObject::MovingObject(Direct dir, Position pos) : Object(pos)
 {
 	m_Direct = dir;
 }

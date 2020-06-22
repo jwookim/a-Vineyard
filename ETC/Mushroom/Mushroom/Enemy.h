@@ -8,7 +8,7 @@ private:
 	Queue<Position> m_DestPos;
 	int m_iSight;
 public:
-	//Enemy();
+	Enemy(Position pos);
 	bool MoveCheck();
 	void Chase();
 	void Navigate();

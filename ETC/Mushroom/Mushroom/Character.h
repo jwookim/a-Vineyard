@@ -23,10 +23,6 @@ class Character : public MovingObject
 {
 private:
 	bool m_bAlive;
-	int m_iAtk;
-	int m_iHealth;
-	int m_iRegen;
-	int m_iAtkSpeed;
 	int m_iAtkTime;
 	RANGE m_Range;
 	Skill* m_P;
@@ -37,8 +33,13 @@ private:
 	list<Buff*> m_Buff;
 	list<Debuff*> m_Debuff;
 	list<Projectile*> m_Projectile;
+protected:
+	int m_iAtk;
+	int m_iHealth;
+	int m_iRegen;
+	int m_iAtkSpeed;
 public:
-	Character();
+	Character(Position pos);
 	void TimeCheck();
 	bool AttackTimeCheck();
 	virtual Projectile* AttackCheck();

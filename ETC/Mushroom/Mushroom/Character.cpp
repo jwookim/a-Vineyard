@@ -1,6 +1,6 @@
 #include "Character.h"
 
-Character::Character()
+Character::Character(Position pos) : MovingObject(pos)
 {
 	m_bAlive = true;
 	//SetSpeed(STANDARD_SPEED);

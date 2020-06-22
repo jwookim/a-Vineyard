@@ -1,16 +1,14 @@
 #include "Teemo.h"
 
 
-Teemo::Teemo()
+Teemo::Teemo(Position pos) : Player(pos)
 {
-	SetShape("¿À");
-	SetColor(YELLOW);
+	m_strShape = "¿À";
+	m_iColor = YELLOW;
+	m_iAtk = 70;
+	m_iHealth = 400;
+	m_iAtkSpeed = 70;
+	m_iSpeed = 90;
 	SetRange(RANGE_LONG);
-	SetAtk(70);
-	SetHealth(400);
-	SetAtkSpeed(70);
-
-	SetSpeed(90);
-	SetPosition({ WIDTH / 4, HEIGHT / 2 });
 	Draw();
 }

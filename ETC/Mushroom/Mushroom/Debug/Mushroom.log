@@ -1,3 +1,32 @@
-﻿  StageManage.cpp
+﻿  Block.cpp
 c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Bush.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Character.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\character.cpp(56): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+  Enemy.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Garen.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Main.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\main.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Mushroom.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Player.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Projectile.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  StageManage.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Switch.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Teemo.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Melee_p.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Trap.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  코드를 생성하고 있습니다...
   Mushroom.vcxproj -> C:\Users\A05\Desktop\GitHub\jeongwookim\ETC\Mushroom\Debug\Mushroom.exe

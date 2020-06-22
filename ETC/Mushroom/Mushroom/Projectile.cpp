@@ -1,15 +1,12 @@
 #include "Projectile.h"
 
-Projectile::Projectile(Direct dir)
+Projectile::Projectile(MovingObject* caster) : MovingObject(caster->GetPosition() + caster->GetDirect())
 {
-	SetDirect(dir);
+	m_Caster = caster;
+	m_Direct = m_Caster->GetDirect();
 	SetMoveTime(clock());
 }
 
-Projectile::Projectile()
-{
-	SetMoveTime(clock());
-}
 
 void Projectile::SetCaster(MovingObject* caster)
 {

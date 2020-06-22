@@ -59,3 +59,10 @@ public:
 	~Weapon();
 };
 
+class WpList : public Weapon
+{
+protected:
+	list<Weapon*> m_Weapon;
+public:
+	void AddWeapon(Weapon* wp);
+};

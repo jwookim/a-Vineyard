@@ -1,10 +1,9 @@
 #include "Block.h"
 
 
-Block::Block(Position pos)
+Block::Block(Position pos) : Object(pos)
 {
-	SetShape("бс");
-	SetColor(DARK_BLUE);
-	SetPosition(pos);
+	m_strShape = "бс";
+	m_iColor = DARK_BLUE;
 	Draw();
 }

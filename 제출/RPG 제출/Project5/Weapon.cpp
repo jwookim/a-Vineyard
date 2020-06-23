@@ -4,7 +4,6 @@
 
 Weapon::Weapon()
 {
-	m_pNextWeapon = NULL;
 	m_pParent = NULL;
 }
 
@@ -28,9 +27,9 @@ void Weapon::SetPrice(int price)
 	m_iPrice = price;
 }
 
-void Weapon::SetNextWeapon(Weapon* weapon)
+void Weapon::SetParent(Weapon* weapon)
 {
-	m_pNextWeapon = weapon;
+	m_pParent = weapon;
 }
 
 void Weapon::ShowInfo_Shop(int line)
@@ -46,9 +45,28 @@ void Weapon::ShowInfo(int line)
 
 void Weapon::Clear()
 {
-	delete m_pNextWeapon;
-	m_pNextWeapon = NULL;
 }
+
+
+
 Weapon::~Weapon()
 {
+}
+
+
+void WpList::AddWeapon(Weapon* wp)
+{
+	m_Weapon.push_back(wp);
+}
+
+void WpList::RemoveWeapon(Weapon* wp)
+{
+	list<Weapon*>::iterator remove = find(m_Weapon.begin(), m_Weapon.end(), wp);
+
+	if (remove != m_Weapon.end())
+	{
+		m_Weapon.erase(remove);
+		delete wp;
+	}
+
 }

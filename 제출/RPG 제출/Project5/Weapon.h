@@ -24,14 +24,13 @@ protected:
 	int m_iAtk;
 	int m_iPrice;
 	MapDraw DrawManager;
-	Weapon* m_pNextWeapon;
 public:
 	virtual STATUS Attack() = 0;
 	void SetName(string name);
 	void SetType(string Type);
 	void SetAtk(int atk);
 	void SetPrice(int price);
-	void SetNextWeapon(Weapon* weapon);
+	void SetParent(Weapon* weapon);
 	inline string GetName()
 	{
 		return m_strName;
@@ -48,13 +47,15 @@ public:
 	{
 		return m_iPrice;
 	}
-	inline Weapon* GetNextWeapon()
+	inline Weapon* GetParent()
 	{
-		return m_pNextWeapon;
+		return m_pParent;
 	}
 	void Clear();
 	void ShowInfo_Shop(int line);
 	void ShowInfo(int line);
+	virtual void AddWeapon(Weapon* wp) {};
+	virtual void RemoveWeapon(Weapon* wp) {};
 	Weapon();
 	~Weapon();
 };
@@ -65,4 +66,5 @@ protected:
 	list<Weapon*> m_Weapon;
 public:
 	void AddWeapon(Weapon* wp);
+	void RemoveWeapon(Weapon* wp);
 };

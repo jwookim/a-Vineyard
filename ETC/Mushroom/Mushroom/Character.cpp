@@ -47,13 +47,21 @@ void Character::Attack()
 		if (AttackTimeCheck())
 		{
 			Direct dir = GetDirect();
-			Melee_p* newProj = new Melee_p(this);
+			Melee_long* newProj = new Melee_long(this);
 			m_Projectile.push_back(newProj);
 			m_iAtkTime = clock();
 		}
 	}
 	else if (m_Range == RANGE_CLOSE)
-		;
+	{
+		if (AttackTimeCheck())
+		{
+			Direct dir = GetDirect();
+			Melee_close* newProj = new Melee_close(this);
+			m_Projectile.push_back(newProj);
+			m_iAtkTime = clock();
+		}
+	}
 }
 
 void Character::TimeCheck()

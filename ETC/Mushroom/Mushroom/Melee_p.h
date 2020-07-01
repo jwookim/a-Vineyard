@@ -1,10 +1,17 @@
 #pragma once
 #include"Projectile.h"
-class Melee_p : public Projectile
+class Melee_long : public Projectile
 {
 private:
 
 public:
-	Melee_p(MovingObject* caster);
+	Melee_long(MovingObject* caster);
 };
 
+class Melee_close : public Projectile
+{
+private:
+
+public:
+	Melee_close(MovingObject* caster);
+};

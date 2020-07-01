@@ -5,6 +5,7 @@ Projectile::Projectile(MovingObject* caster) : MovingObject(caster->GetPosition(
 	m_Caster = caster;
 	m_Direct = m_Caster->GetDirect();
 	SetMoveTime(clock());
+	m_iCreatTime = clock();
 }
 
 
@@ -21,4 +22,18 @@ bool Projectile::MoveCheck()
 		return true;
 	}
 	return false;
+}
+
+bool Projectile::LifeCheck()
+{
+	if (m_iCreatTime + m_iDuration < clock())
+		return false;
+	
+	return true;
+}
+
+
+void Projectile::AttackTarget(MovingObject* target)
+{
+	m_Attack(target);
 }

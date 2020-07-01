@@ -205,6 +205,7 @@ void StageManage::HitCheck()
 					{
 						if (((Character*)(*Eiter))->GetAlive())
 						{
+							(*Piter)->AttackTarget(*Eiter);
 							((Character*)((*Piter)->GetCaster()))->Attack(*Eiter);
 							(*Eiter)->Draw();
 						}
@@ -226,7 +227,16 @@ void StageManage::HitCheck()
 			}
 
 			if (check == 0)
-				Piter++;
+			{
+				if (!((*Piter)->LifeCheck()))
+				{
+					Restoration(*Piter);
+					delete *Piter;
+					Piter = m_Projectile.erase(Piter);
+				}
+				else
+					Piter++;
+			}
 		}
 
 	}

@@ -123,6 +123,8 @@ void GameManage::Check(Position pos)
 			Boom();
 		else
 		{
+			delete iter->second;
+			m_Map.erase(iter);
 			Direct dir;
 			int sum = Detection(pos + (dir = UP));
 			sum += Detection(pos + (dir = DOWN));
@@ -138,8 +140,6 @@ void GameManage::Check(Position pos)
 			else
 				MapDraw::GetInstance()->DrawPoint(to_string(sum), pos.x, pos.y);
 
-			delete iter->second;
-			m_Map.erase(iter);
 		}
 
 	}
@@ -157,10 +157,6 @@ void GameManage::Spread(Position pos)
 	Check(pos + (dir = DOWN));
 	Check(pos + (dir = LEFT));
 	Check(pos + (dir = RIGHT));
-	Check(pos + (dir = UL));
-	Check(pos + (dir = UR));
-	Check(pos + (dir = DL));
-	Check(pos + (dir = DR));
 }
 
 

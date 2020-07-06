@@ -4,7 +4,7 @@
 #include"Mine.h"
 #include<iostream>
 #include<conio.h>
-#include<set>
+#include<map>
 using namespace std;
 
 #define ENTER 13
@@ -22,35 +22,26 @@ using namespace std;
 #define DL {-1, 1}
 #define DR {1, 1}
 
-struct BlockPointerComparator
-{
-	bool operator () (const Block* a, const Block* b)
-	{
-		return a->GetPosition() < b->GetPosition();
-	}
-};
 
-enum CHECK
-{
-	CHECK_UNKNOWN = -1,
-	CHECK_BLANK,
-	CHECK_MINE
-};
+typedef Position Direct;
 
 class GameManage : public Singletone<GameManage>
 {
 private:
-	set<Block*, BlockPointerComparator> m_Map;
-	//Block* m_Map[HEIGHT][WIDTH];
-	//CHECK m_CheckMap[HEIGHT][WIDTH];
+	map<Position , Block*> m_Map;
 	int m_iCheckNum;
+	bool m_bAlive;
 	Position m_Cursor;
 public:
 	GameManage();
 	void Init(Position pos);
 	void Play();
 	void Move();
-	void Check();
+	void MoveCursor();
+	void Check(Position pos);
+	void Spread();
 	void Spread(Position pos);
-	CHECK Check(Position pos);
+	int Detection(Position pos);
+	void Boom();
+	//CHECK Check(Position pos);
 };

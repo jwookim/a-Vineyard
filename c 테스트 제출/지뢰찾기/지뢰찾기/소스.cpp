@@ -1,7 +1,10 @@
 #include"GameManage.h"
+#include<ctime>
 
 void main()
 {
-	
-	GameManage::GetInstance();
+	srand((unsigned)time(NULL));
+	GameManage::GetInstance()->Play();
+
+	GameManage::DestroyInstance();
 }

@@ -1,12 +1,18 @@
 #pragma once
 #include"MapDraw.h"
 
+enum CHECK
+{
+	CHECK_BLANK,
+	CHECK_MINE
+};
+
 struct Position
 {
 	int x;
 	int y;
 
-	bool operator == (Position p)
+	bool operator == (Position p) const
 	{
 		if (x == p.x && y == p.y)
 			return true;
@@ -14,7 +20,15 @@ struct Position
 		return false;
 	}
 
-	bool operator > (Position p)
+	bool operator != (Position p) const
+	{
+		if (x == p.x && y == p.y)
+			return false;
+
+		return true;
+	}
+
+	bool operator > (Position p) const
 	{
 		if (x > p.x)
 			return true;
@@ -29,7 +43,7 @@ struct Position
 			return false;
 	}
 
-	bool operator < (Position p)
+	bool operator < (Position p) const
 	{
 		if (x < p.x)
 			return true;
@@ -42,6 +56,17 @@ struct Position
 		}
 		else
 			return false;
+	}
+
+	Position operator +(Position p)
+	{
+		return { x + p.x , y + p.y };
+	}
+
+	void operator +=(Position p)
+	{
+		x += p.x;
+		y += p.y;
 	}
 };
 
@@ -57,6 +82,7 @@ public:
 		return m_Position;
 	}
 	void SetPosition(Position pos);
+	virtual CHECK Click();
 	bool operator == (Position p);
 	bool operator > (Position p);
 	bool operator < (Position p);

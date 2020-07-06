@@ -4,5 +4,6 @@ class Mine : public Block
 {
 public:
 	Mine(Position pos);
+	CHECK Click();
 };
 

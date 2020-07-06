@@ -1,7 +1,10 @@
 #pragma once
 #include"Singletone.h"
 #include"MapDraw.h"
+#include"Mine.h"
 #include<iostream>
+#include<conio.h>
+#include<set>
 using namespace std;
 
 #define ENTER 13
@@ -19,6 +22,14 @@ using namespace std;
 #define DL {-1, 1}
 #define DR {1, 1}
 
+struct BlockPointerComparator
+{
+	bool operator () (const Block* a, const Block* b)
+	{
+		return a->GetPosition() < b->GetPosition();
+	}
+};
+
 enum CHECK
 {
 	CHECK_UNKNOWN = -1,
@@ -26,17 +37,12 @@ enum CHECK
 	CHECK_MINE
 };
 
-struct Position
-{
-	int x;
-	int y;
-};
-
 class GameManage : public Singletone<GameManage>
 {
 private:
-	CHECK m_Map[HEIGHT][WIDTH];
-	CHECK m_CheckMap[HEIGHT][WIDTH];
+	set<Block*, BlockPointerComparator> m_Map;
+	//Block* m_Map[HEIGHT][WIDTH];
+	//CHECK m_CheckMap[HEIGHT][WIDTH];
 	int m_iCheckNum;
 	Position m_Cursor;
 public:
@@ -48,11 +54,3 @@ public:
 	void Spread(Position pos);
 	CHECK Check(Position pos);
 };
-
-bool operator == (Position p1, Position p2)
-{
-	if (p1.x == p2.x && p1.y == p2.y)
-		return true;
-	
-	return false;
-}

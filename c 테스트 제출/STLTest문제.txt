@@ -11,6 +11,11 @@ int operator + (int a, int b, int c)
 2-1.String s("Hello!");
 const char* sz = s;
 
+
+2-2.const char* sz = "Hello!";
+String s("Hi~!");
+s = sz;
+
 class String
 {
 private:
@@ -20,11 +25,12 @@ public:
 	{
 		strcpy(m_chBuff, buff);
 	}
-}
 
-2-2.const char* sz = "Hello!";
-String s("Hi~!");
-s = sz;
+	void operator = (char* ch)
+	{
+		strcpy(m_chBuff, ch);
+	}
+}
 
 
 
@@ -46,6 +52,13 @@ int main()
 	return 0;
 }
 
+template <typename T>
+Copy(T* dest, T* source, int num)
+{
+	for(int i=0; i<num; i++)
+		dest[i] = source[i];
+}
+
 
 4.Push(), Empty(), Pop()이 동작하는 최소한의 Stack 클래스를 작성 하시오.
 
@@ -65,6 +78,35 @@ int main()
 
 	if (!st.Empy())
 		cout << st.Pop() << endl;
+}
+
+template<typename T>
+class Stack
+{
+private:
+	int m_iNumofData
+	T m_Stack[10];
+public:
+	Stack()
+	{
+		m_iNumofData=0;
+	}
+	bool Empty()
+	{
+		if(m_iNumofData == 0)
+			return true;
+
+		return false;
+	}
+	void Push(T data)
+	{
+		if(m_iNumofData < 10)
+			m_Stack[m_iNumofData++] = data;
+	}
+	T Pop()
+	{
+		return m_Stack[m_iNumofData--];
+	}
 }
 
 5.Push(), Empty(), Pop()이 동작하는 최소한의 Queue 클래스를 작성하시오.
@@ -89,6 +131,50 @@ int main()
 	return 0;
 }
 
+#define MAX 10
+
+template<typename T>
+class Queue
+{
+private:
+	int m_iNumofData
+	int m_iHead;
+	T m_Queue[MAX];
+public:
+	Queue()
+	{
+		m_iNumofData=0;
+		m_iHead=0;
+	}
+	bool Empty()
+	{
+		if(m_iNumofData == 0)
+			return true;
+
+		return false;
+	}
+	void Push(T data)
+	{
+		if(m_iNumofData < MAX)
+		{
+			int num = m_iHead + m_iNumofData++;
+			
+			if(num >= MAX)
+				num -= MAX;
+			m_Queue[num] = data;
+		}
+	}
+	T Pop()
+	{
+		T rdata = m_Queue[m_iHead++];
+
+		if(m_iHead >= MAX)
+			m_iHead -= MAX;
+
+		return rdata;
+	}
+}
+
 6.각각의 맞는 답을 작성하시오.
 
 	6-1.STL 구성 요소에서 객테를 저장하는 객체를( 컨테이너 )라 한다.
@@ -107,6 +193,11 @@ C D E
 
 8.vector, deque, list의 특징을 기술하시오.
 
+ 셋 모두 시퀀스 컨테이너로 구성되며,
+ 그 중에서도 vector와 deque은 배열 기반의 컨테이너,
+ list는 노드 기반의 컨테이너로 이루어져있다.
+ vector는 컨테이너가 하나의 덩어리로 이루어져있고
+ deque은 여러개로 나뉘어져서 할당된다.
 
 
 9.vector의 []연산자와 at()의 공통점과 차이를 쓰세요
@@ -119,10 +210,17 @@ C D E
 
 10.vector와 deque의 가장 큰 차이점을 쓰세요
 
+ vector는 하나의 덩어리로 할당되어 컨테이너의 크기를 넘어갈 경우
+ 컨테이너를 재할당한 후 이전의 원소들을 복사해오는 과정이 필요하지만
+
+ deque은 여러개로 나뉘어 객체를 저장하기 때문에 할당된 범위를 넘어가면
+ 새로 할당하기만 하면 된다.
 
 
 11.vector와 list의 가장 큰 차이점을 쓰세요.
 
+ vector는 임의 접근 연산자 사용이 가능하지만
+ list는 불가능함
 
 
 12. 시퀀스 컨테이너와 연관 컨테이너의 가장 큰 차이점을 쓰세요.
@@ -149,6 +247,8 @@ C D E
 
 17.vector<int> v는 10,20,30,40,50의 원소를 가지고 있다. 
 알고리즘을 사용하여 30을 제거하는 코드를 작성하시오
+
+ v.erase(30)
 
 
 18.vector<int> v는 10,20,30,40,50,60,70,80,90,100의 순차열을 가지는 원소를 가지고 있다.
@@ -181,17 +281,17 @@ v1 + v2의 합집합을 v3에 출력하는 코드를 작성하시오.
 
 
 25.X::iterator와 X::const_iterator의 차이점을 설명하시오.
-iterator는 참조와 수정 모두 가능하지만
-const_iterator는 참조는 가능하지만 수정은 불가능함
+ iterator는 참조와 원소의 수정 모두 가능하지만
+ const_iterator는 참조는 가능하지만 원소의 수정은 불가능함
 
 26.vector<int> v1은 10,20,30,40,50을 순차열로 가지는 원소를 가지고 있다.
 정방향 반복자 iter는 40을 가리키고있고 역방향 반복자 riter는 40을 가리키고있다.
 다음 질문에 알맞는 답을 하시오.
 
-	26-1.*iter와 *riter의 값을 쓰시오.
-	26-2.*++iter와 *++riter의 값을 각각 쓰시오.
-	26-3.X::iterator iter2 = riter가 가능한가?
-	26-4.X::reverse_iterator riter2 = iter가 가능한가?
+	26-1.*iter와 *riter의 값을 쓰시오. 40, 40
+	26-2.*++iter와 *++riter의 값을 각각 쓰시오. 50, 30
+	26-3.X::iterator iter2 = riter가 가능한가? 가능
+	26-4.X::reverse_iterator riter2 = iter가 가능한가? 가능
 
 27 다음 구문에서 오류를 찾아서 수정해보자.
 

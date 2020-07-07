@@ -9,9 +9,9 @@ using namespace std;
 
 #define ENTER 13
 
-#define WIDTH 10
-#define HEIGHT 10
-#define MINE 30
+#define WIDTH 30
+#define HEIGHT 30
+#define MINE 100
 
 #define UP {0, -1}
 #define DOWN {0, 1}
@@ -34,14 +34,13 @@ private:
 	Position m_Cursor;
 public:
 	GameManage();
+	~GameManage();
 	void Init(Position pos);
 	void Play();
 	void Move();
 	void MoveCursor();
 	void Check(Position pos);
-	void Spread();
 	void Spread(Position pos);
 	int Detection(Position pos);
 	void Boom();
-	//CHECK Check(Position pos);
 };

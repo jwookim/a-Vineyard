@@ -2,9 +2,15 @@
 
 GameManage::GameManage()
 {
+	char Buff[30];
+	sprintf_s(Buff, "mode con: cols=%d lines=%d", WIDTH * 2 + 1, HEIGHT + 1);
+	system(Buff);
+
+
 	m_iCheckNum = 0;
 	m_bAlive = true;
 	m_Cursor = { 0,0 };
+
 	for (int y = 0; y < HEIGHT; y++)
 	{
 		for (int x = 0; x < WIDTH; x++)
@@ -12,21 +18,25 @@ GameManage::GameManage()
 			MapDraw::GetInstance()->DrawPoint("□", x, y);
 		}
 	}
-
+	
 	MoveCursor();
 }
 
 void GameManage::Play()
 {
-	while (m_bAlive)
+	while (m_bAlive && m_iCheckNum < WIDTH*HEIGHT - MINE)
 	{
 		Move();
 	}
+	MapDraw::GetInstance()->gotoxy(0, HEIGHT);
+	cout << "게임 종료!";
+	_getch();
 }
 
 void GameManage::Init(Position pos)
 {
 	Position tmp;
+	Mine* mtmp;
 	for (int i = 0; i < MINE; i++)
 	{
 		while (1)
@@ -36,8 +46,10 @@ void GameManage::Init(Position pos)
 
 			if (tmp != pos)
 			{
-				if (m_Map.insert(pair<Position, Block*>(tmp, new Mine(tmp))).second)
+				if (m_Map.insert(pair<Position, Block*>(tmp, mtmp = new Mine(tmp))).second)
 					break;
+				else
+					delete mtmp;
 			}
 		}
 	}
@@ -97,6 +109,7 @@ void GameManage::Move()
 			break;
 		case ENTER:
 			Check(m_Cursor);
+			MoveCursor();
 			break;
 		}
 	}
@@ -145,10 +158,6 @@ void GameManage::Check(Position pos)
 	}
 }
 
-void GameManage::Spread()
-{
-
-}
 
 void GameManage::Spread(Position pos)
 {
@@ -179,11 +188,24 @@ void GameManage::Boom()
 	map<Position, Block*>::iterator iter;
 	for (iter = m_Map.begin(); iter != m_Map.end();)
 	{
-		iter->second->Click();
+		if (dynamic_cast<Mine*>(iter->second) != NULL)
+			iter->second->Click();
 
 		delete iter->second;
 		iter = m_Map.erase(iter);
 	}
 
 	m_bAlive = false;
+}
+
+GameManage::~GameManage()
+{
+	map<Position, Block*>::iterator iter;
+	for (iter = m_Map.begin(); iter != m_Map.end();)
+	{
+		delete iter->second;
+		iter = m_Map.erase(iter);
+	}
+
+	MapDraw::DestroyInstance();
 }

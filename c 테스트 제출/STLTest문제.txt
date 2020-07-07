@@ -1,6 +1,9 @@
 1.func(10, 20, 30) 세 인자를받는 연산자 오버로딩 함수로 선언하시요
 
-
+int operator + (int a, int b, int c)
+{
+	return a+b+c;
+}
 
 2.다음 구문이 컴파일 될 수 있게 최소한의 String클래스를 작성하시오
 
@@ -8,6 +11,16 @@
 2-1.String s("Hello!");
 const char* sz = s;
 
+class String
+{
+private:
+	char m_chBuff[50];
+public:
+	String(char[] buff)
+	{
+		strcpy(m_chBuff, buff);
+	}
+}
 
 2-2.const char* sz = "Hello!";
 String s("Hi~!");
@@ -114,15 +127,22 @@ C D E
 
 12. 시퀀스 컨테이너와 연관 컨테이너의 가장 큰 차이점을 쓰세요.
 
+ 시퀀스 컨테이너는 들어온 순서대로 정렬이 되는 반면
+ 연관 컨테이너는 각자의 기준으로 데이터를 정렬시킨다.
 
 13. 연관 컨테이너의 기본 정렬 기분은 무엇인가?
 
+ 내림차순(Less)
 
 14.set과 map의 특징을 기술하시오.
 
+ 좌 우 노드를 이용하여 데이터를 저장하며
+ 각자의 기준을 통해 데이터를 정렬한다.
 
 15.set과 map의 차이점을 기술하시오.
 
+ set은 데이터가 곧 키가 되지만
+ map은 키와 데이터를 pair를 통해 따로 저장한다
 
 16.연관 컨테이너의 찾기 관련 함수의 성능을 기술 하시오.
 

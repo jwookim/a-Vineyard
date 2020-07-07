@@ -83,6 +83,7 @@ public:
 	}
 	void SetPosition(Position pos);
 	virtual CHECK Click();
+	void Hide();
 	bool operator == (Position p);
 	bool operator > (Position p);
 	bool operator < (Position p);

@@ -137,31 +137,29 @@ template<typename T>
 class Queue
 {
 private:
-	int m_iNumofData
 	int m_iHead;
+	int m_iTail
 	T m_Queue[MAX];
 public:
 	Queue()
 	{
-		m_iNumofData=0;
 		m_iHead=0;
+		m_iTail = MAX - 1;
 	}
 	bool Empty()
 	{
-		if(m_iNumofData == 0)
+		if(Distance == 1)
 			return true;
 
 		return false;
 	}
 	void Push(T data)
 	{
-		if(m_iNumofData < MAX)
+		if(Distance < 2)
 		{
-			int num = m_iHead + m_iNumofData++;
-			
-			if(num >= MAX)
-				num -= MAX;
-			m_Queue[num] = data;
+			if(++m_iTail >= MAX)
+				m_iTail -= MAX;
+			m_Queue[m_iTail] = data;
 		}
 	}
 	T Pop()
@@ -172,6 +170,13 @@ public:
 			m_iHead -= MAX;
 
 		return rdata;
+	}
+	int Distance()
+	{
+		int num = m_iHead - m_iTail;
+		if(num < 0)
+			num += MAX;
+		return num;
 	}
 }
 
@@ -245,11 +250,13 @@ public:
 16.연관 컨테이너의 찾기 관련 함수의 성능을 기술 하시오.
 
 
+
+
 17.vector<int> v는 10,20,30,40,50의 원소를 가지고 있다. 
 알고리즘을 사용하여 30을 제거하는 코드를 작성하시오
 
- v.erase(30)
-
+auto iter = find(v.begin(), v.end(), 30);
+v.erase(iter);
 
 18.vector<int> v는 10,20,30,40,50,60,70,80,90,100의 순차열을 가지는 원소를 가지고 있다.
 알고리즘을 사용하여 50,40,30,20,10,60,70,80,90,100을 만들어 주는 코드를 작성하시오.

@@ -1,0 +1,4 @@
+﻿  Melee_p.cpp
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\mapdraw.h(47): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\melee_p.cpp(9): error C2276: '&': 바인딩된 멤버 함수 식의 연산이 잘못되었습니다.
+c:\users\a05\desktop\github\jeongwookim\etc\mushroom\mushroom\melee_p.cpp(28): error C2276: '&': 바인딩된 멤버 함수 식의 연산이 잘못되었습니다.

@@ -1,0 +1,11 @@
+﻿  소스.cpp
+c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\소스.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\memorypool.h(36): error C2440: '초기화 중': '_Ty *'에서 'char *'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=char *
+          ]
+  c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\memorypool.h(36): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+  c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\memorypool.h(32): note: 클래스 템플릿 멤버 함수 'void *MemoryPool<char *,100>::Alloc(void)'을(를) 컴파일하고 있습니다.
+  c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\소스.cpp(14): note: 컴파일 중인 함수 템플릿 인스턴스화 'void *MemoryPool<char *,100>::Alloc(void)'에 대한 참조를 확인하십시오.
+  c:\users\a05\desktop\github\jeongwookim\문제\stl\memorypool\memorypool\소스.cpp(10): note: 컴파일 중인 클래스 템플릿 인스턴스화 'MemoryPool<char *,100>'에 대한 참조를 확인하세요.

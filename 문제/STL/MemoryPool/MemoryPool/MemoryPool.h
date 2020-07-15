@@ -6,7 +6,7 @@ template<typename T, int BlokNum = 100>
 class MemoryPool
 {
 private:
-	vector<char*> m_Point;
+	vector<char> m_Point;
 	int m_iNextP;
 	int m_iUseableNum;
 public:
@@ -41,8 +41,9 @@ public:
 	}
 	void /*operator delete*/DeAlloc(void* target)
 	{
-		target = m_iNextP;
-		m_iNextP = (target - &m_Point[0]) / sizeof(T);
+		char* targetPoint = static_cast<char*>(target);
+		*targetPoint = m_iNextP;
+		m_iNextP = (targetPoint - &m_Point[0]) / sizeof(T);
 		m_iUseableNum++;
 	}
 };

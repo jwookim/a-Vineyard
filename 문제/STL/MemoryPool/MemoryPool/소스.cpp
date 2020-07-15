@@ -10,7 +10,7 @@ void main()
 
 	srand((unsigned)time(NULL));
 	 
-	MemoryPool<char*, 120> Mp;
+	MemoryPool<char*> Mp;
 
 	chrono::system_clock::time_point start;
 	chrono::system_clock::time_point end;
@@ -27,12 +27,15 @@ void main()
 		*list[i] = new char[ran];
 	}
 
+
 	for (int i = 0; i < 100; i++)
 	{
 		delete *list[i];
 
 		delete list[i];
 	}
+
+
 	end = chrono::system_clock::now();
 
 	microSec = chrono::duration_cast<chrono::microseconds>(end - start);

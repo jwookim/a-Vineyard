@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-template<typename T, int BlokNum = 100>
+template<typename T, int BlockNum = 100>
 class MemoryPool
 {
 private:
@@ -12,11 +12,11 @@ private:
 public:
 	MemoryPool()
 	{
-		m_Point.assign(sizeof(T) * BlokNum, 0);
+		m_Point.assign(sizeof(T) * BlockNum, 0);
 		m_iNextP = 0;
 		m_iUseableNum = 0;
 
-		for (int i = 0; i < sizeof(T) * BlokNum; i += sizeof(T))
+		for (int i = 0; i < sizeof(T) * BlockNum; i += sizeof(T))
 		{
 			if (i % sizeof(T) == 0)
 				m_Point[i] = ++m_iUseableNum;

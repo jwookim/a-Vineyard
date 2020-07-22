@@ -32,11 +32,17 @@ LPCTSTR lpszClass = TEXT("HelloWorld"); //클래스 명 : 창이름
 }
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
+	HDC hdc;
 	switch (iMessage)
 	{
 	case WM_DESTROY: // 윈도우가 파괴되었다는 메세지
 		PostQuitMessage(0); //GetMessage함수에 WM_QUIT 메시지를 보낸다.
 		return 0; //WndProc의 Switch는 break 대신 return 0; 를 쓴다.
+	case WM_LBUTTONDOWN:
+		hdc = GetDC(hWnd);
+		TextOut(hdc, 100, 100, TEXT("^오^"), 4);
+		ReleaseDC(hWnd, hdc);
+		return 0;
 	}
 	return(DefWindowProc(hWnd, iMessage, wParam, lParam)); // case에 있는 메시지를 제외한 나머지 메시지를 처리한다.
 }

@@ -20,7 +20,7 @@ LPCTSTR lpszClass = TEXT("HelloWorld"); //클래스 명 : 창이름
 	//WndClass는 기본 윈도우환경을 만드는 구조체다. 맴버변수는 밑에와 같다.
 	WndClass.cbClsExtra = 0; //예약영역
 	WndClass.cbWndExtra = 0; //예약영역 (신경x)
-	WndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH); //배경색
+	WndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH); //배경색
 	WndClass.hCursor = LoadCursor(NULL, IDC_ARROW); //커서
 	WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION); //아이콘 모양
 	WndClass.hInstance = hInstance; //(프로그램 핸들값(번호)등록)

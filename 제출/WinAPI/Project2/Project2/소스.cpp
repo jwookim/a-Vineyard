@@ -54,64 +54,64 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		TextOut(hdc, 100, 100, TEXT("^¿À^"), 4);
 		ReleaseDC(hWnd, hdc);
 		hdc = BeginPaint(hWnd, &ps);
-		for (int y = 0; y <= 100; y += 10)
+		for (int y = 0; y <= 90; y += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 750 + cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(255, 255, rand() % 266));
-				SetPixel(hdc, 750 - cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(255, rand() % 266, 255));
-				SetPixel(hdc, 750 + cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, 255, 255));
-				SetPixel(hdc, 750 - cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 750 + cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(255, 255, rand() % 266));
+				SetPixel(hdc, 750 - cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(255, rand() % 266, 255));
+				SetPixel(hdc, 750 + cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, 255, 255));
+				SetPixel(hdc, 750 - cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
-		for (int x = 0; x <= 100; x += 10)
+		for (int x = 0; x <= 90; x += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 750 + cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(255, 255, rand() % 266));
-				SetPixel(hdc, 750 - cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(255, rand() % 266, 255));
-				SetPixel(hdc, 750 + cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, 255, 255));
-				SetPixel(hdc, 750 - cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 750 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i / 1)) * 100, RGB(255, 255, rand() % 266));
+				SetPixel(hdc, 750 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i / 1)) * 100, RGB(255, rand() % 266, 255));
+				SetPixel(hdc, 750 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i / 1)) * 100, RGB(rand() % 266, 255, 255));
+				SetPixel(hdc, 750 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i / 1)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
-		for (int y = 0; y <= 100; y += 10)
+		for (int y = 0; y <= 90; y += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 500 + cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(0, 0, rand() % 266));
-				SetPixel(hdc, 500 - cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(0, rand() % 266, 0));
-				SetPixel(hdc, 500 + cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, 0, 0));
-				SetPixel(hdc, 500 - cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 500 + cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(0, 0, rand() % 266));
+				SetPixel(hdc, 500 - cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(0, rand() % 266, 0));
+				SetPixel(hdc, 500 + cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, 0, 0));
+				SetPixel(hdc, 500 - cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
-		for (int x = 0; x <= 100; x += 10)
+		for (int x = 0; x <= 90; x += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 500 + cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(0, 0, rand() % 266));
-				SetPixel(hdc, 500 - cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(0, rand() % 266, 0));
-				SetPixel(hdc, 500 + cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, 0, 0));
-				SetPixel(hdc, 500 - cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 500 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i)) * 100, RGB(0, 0, rand() % 266));
+				SetPixel(hdc, 500 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i)) * 100, RGB(0, rand() % 266, 0));
+				SetPixel(hdc, 500 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i)) * 100, RGB(rand() % 266, 0, 0));
+				SetPixel(hdc, 500 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
-		for (int y = 0; y <= 100; y += 10)
+		for (int y = 0; y <= 90; y += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 250 + cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(255, 255, rand() % 266));
-				SetPixel(hdc, 250 - cos(GetRadian(i / 100)) * 100, 500 + sin(GetRadian(i / 100)) * y, RGB(255, rand() % 266, 255));
-				SetPixel(hdc, 250 + cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, 255, 255));
-				SetPixel(hdc, 250 - cos(GetRadian(i / 100)) * 100, 500 - sin(GetRadian(i / 100)) * y, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 250 + cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(255, 255, rand() % 266));
+				SetPixel(hdc, 250 - cos(GetRadian(i)) * 100, 500 + sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(255, rand() % 266, 255));
+				SetPixel(hdc, 250 + cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, 255, 255));
+				SetPixel(hdc, 250 - cos(GetRadian(i)) * 100, 500 - sin(GetRadian(i)) * sin(GetRadian(y)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
-		for (int x = 0; x <= 100; x += 10)
+		for (int x = 0; x <= 90; x += 10)
 		{
-			for (int i = 0; i < 9000; i++)
+			for (int i = 0; i < 90; i++)
 			{
-				SetPixel(hdc, 250 + cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(0, 0, rand() % 266));
-				SetPixel(hdc, 250 - cos(GetRadian(i / 100)) * x, 500 + sin(GetRadian(i / 100)) * 100, RGB(0, rand() % 266, 0));
-				SetPixel(hdc, 250 + cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, 0, 0));
-				SetPixel(hdc, 250 - cos(GetRadian(i / 100)) * x, 500 - sin(GetRadian(i / 100)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
+				SetPixel(hdc, 250 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i)) * 100, RGB(0, 0, rand() % 266));
+				SetPixel(hdc, 250 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 + sin(GetRadian(i)) * 100, RGB(0, rand() % 266, 0));
+				SetPixel(hdc, 250 + cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i)) * 100, RGB(rand() % 266, 0, 0));
+				SetPixel(hdc, 250 - cos(GetRadian(i)) * cos(GetRadian(x)) * 100, 500 - sin(GetRadian(i)) * 100, RGB(rand() % 266, rand() % 266, rand() % 266));
 			}
 		}
 		EndPaint(hWnd, &ps);

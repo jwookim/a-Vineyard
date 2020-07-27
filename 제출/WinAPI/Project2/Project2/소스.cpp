@@ -3,6 +3,11 @@
 #include<ctime>
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst;//글로벌 인스턴스핸들값
+int g_ix = 500;
+int g_iy = 500;
+bool g_bShape = true;
+
+#define RADIUS 50
 
 double GetRadian(double degree)
 {
@@ -43,18 +48,58 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
 	HDC hdc;
 	PAINTSTRUCT ps;
+	RECT rect = {0, 0, 1000, 1000};
+
 	switch (iMessage)
 	{
 	case WM_DESTROY: // 윈도우가 파괴되었다는 메세지
 		PostQuitMessage(0); //GetMessage함수에 WM_QUIT 메시지를 보낸다.
 		return 0; //WndProc의 Switch는 break 대신 return 0; 를 쓴다.
+	case WM_KEYDOWN:
+		switch (wParam)
+		{
+		case VK_LEFT:
+			g_ix -= 1;
+			break;
+		case VK_RIGHT:
+			g_ix += 1;
+			break;
+		case VK_UP:
+			g_iy -= 1;
+			break;
+		case VK_DOWN:
+			g_iy += 1;
+			break;
+		}
+		InvalidateRect(hWnd, &rect, TRUE);
+		return 0;
 	case WM_LBUTTONDOWN:
-		hdc = GetDC(hWnd);
-		SetTextAlign(hdc, TA_CENTER);
-		TextOut(hdc, 100, 100, TEXT("^오^"), 4);
-		ReleaseDC(hWnd, hdc);
+		if (MessageBox(hWnd, TEXT("도형 변경"), TEXT("ㅎㅎ"), MB_OKCANCEL) == IDOK)
+			g_bShape = !g_bShape;
+		return 0;
+	case WM_MOUSEMOVE:
+		g_ix = LOWORD(lParam);
+		g_iy = HIWORD(lParam);
+		InvalidateRect(hWnd, &rect, TRUE);
 		return 0;
 	case WM_PAINT:
+		hdc = BeginPaint(hWnd, &ps);
+
+		if (g_ix + RADIUS > 1000)
+			g_ix = 1000 - RADIUS;
+		else if (g_ix - RADIUS < 0)
+			g_ix = RADIUS;
+
+		if (g_iy + RADIUS > 1000)
+			g_iy = 1000 - RADIUS;
+		else if (g_iy - RADIUS < 0)
+			g_iy = RADIUS;
+
+		if (g_bShape)
+			Ellipse(hdc, g_ix - RADIUS, g_iy + RADIUS, g_ix + RADIUS, g_iy - RADIUS);
+		else
+			Rectangle(hdc, g_ix - RADIUS, g_iy + RADIUS, g_ix + RADIUS, g_iy - RADIUS);
+		EndPaint(hWnd, &ps);
 		return 0;
 	}
 	return(DefWindowProc(hWnd, iMessage, wParam, lParam)); // case에 있는 메시지를 제외한 나머지 메시지를 처리한다.

@@ -1,24 +1,149 @@
 #include<Windows.h>
 #include<math.h>
+#include<string>
 #include<ctime>
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst;//글로벌 인스턴스핸들값
-int g_ix = 500;
-int g_iy = 500;
-bool g_bShape = true;
-RECT rect = { 0, 0, 1000, 1000 };
+SYSTEMTIME st;
+RECT rect = { 1, 1, 1000, 1000 };
 
-#define RADIUS 50
+
+#define RADIUS 100
 
 double GetRadian(double degree)
 {
 	return degree * (3.1415926535 / (double)180);
 }
 
-LPCTSTR lpszClass = TEXT("HelloWorld"); //클래스 명 : 창이름
-	int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPervlnstance, LPSTR lpszCmdParam, int nCmdShow)
+enum DIRECT
 {
-		srand((unsigned)time(NULL));
+	DIR_NW,
+	DIR_NE,
+	DIR_SW,
+	DIR_SE
+};
+
+class Clock
+{
+private:
+	int m_ix;
+	int m_iy;
+	int m_iRadius;
+	int m_iHour;
+	int m_iMin;
+	int m_iSecond;
+	DIRECT m_dir;
+public:
+	Clock(int x, int y, int rad) : m_ix(x), m_iy(y), m_iRadius(rad)
+	{
+		m_dir = (DIRECT)(rand() % 4);
+	}
+	void Move()
+	{
+		if (m_ix - m_iRadius <= 1 || m_ix + m_iRadius >= 1000)
+		{
+			switch (m_dir)
+			{
+			case DIR_NW:
+				m_dir = DIR_NE;
+				break;
+			case DIR_NE:
+				m_dir = DIR_NW;
+				break;
+			case DIR_SW:
+				m_dir = DIR_SE;
+				break;
+			case DIR_SE:
+				m_dir = DIR_SW;
+				break;
+			}
+		}
+
+		if (m_iy - m_iRadius <= 1 || m_iy + m_iRadius >= 1000)
+		{
+			switch (m_dir)
+			{
+			case DIR_NW:
+				m_dir = DIR_SW;
+				break;
+			case DIR_NE:
+				m_dir = DIR_SE;
+				break;
+			case DIR_SW:
+				m_dir = DIR_NW;
+				break;
+			case DIR_SE:
+				m_dir = DIR_NE;
+				break;
+			}
+		}
+
+		switch (m_dir)
+		{
+		case DIR_NW:
+			m_ix--;
+			m_iy--;
+			break;
+		case DIR_NE:
+			m_ix++;
+			m_iy--;
+			break;
+		case DIR_SW:
+			m_ix--;
+			m_iy++;
+			break;
+		case DIR_SE:
+			m_ix++;
+			m_iy++;
+			break;
+		}
+
+		GetLocalTime(&st);
+
+		m_iHour = st.wHour;
+		m_iMin = st.wMinute;
+		m_iSecond = st.wSecond;
+
+	}
+	int GetX()
+	{
+		return m_ix;
+	}
+	int GetY()
+	{
+		return m_iy;
+	}
+	int GetRad()
+	{
+		return m_iRadius;
+	}
+	int GetHour()
+	{
+		return m_iHour;
+	}
+	int GetMin()
+	{
+		return m_iMin;
+	}
+	int GetSecond()
+	{
+		return m_iSecond;
+	}
+};
+
+Clock watch(200, 500, RADIUS);
+
+void CALLBACK Move(HWND hWnd, UINT uMsg, UINT idEvent, DWORD dwTime)
+{
+	watch.Move();
+
+	InvalidateRect(hWnd, &rect, TRUE);
+}
+
+LPCTSTR lpszClass = TEXT("HelloWorld"); //클래스 명 : 창이름
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPervlnstance, LPSTR lpszCmdParam, int nCmdShow)
+{
+	srand((unsigned)time(NULL));
 	HWND hWnd;
 	MSG Message;
 	WNDCLASS WndClass;
@@ -50,55 +175,52 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	HDC hdc;
 	PAINTSTRUCT ps;
 
+	HPEN hNewPen;
+
 	switch (iMessage)
 	{
+	case WM_CREATE:
+		SetTimer(hWnd, 1, 40, Move);
+		SendMessage(hWnd, WM_TIMER, 1, 0);
+		return 0;
 	case WM_DESTROY: // 윈도우가 파괴되었다는 메세지
+		KillTimer(hWnd, 1);
 		PostQuitMessage(0); //GetMessage함수에 WM_QUIT 메시지를 보낸다.
 		return 0; //WndProc의 Switch는 break 대신 return 0; 를 쓴다.
-	case WM_KEYDOWN:
-		switch (wParam)
-		{
-		case VK_LEFT:
-			g_ix -= 1;
-			break;
-		case VK_RIGHT:
-			g_ix += 1;
-			break;
-		case VK_UP:
-			g_iy -= 1;
-			break;
-		case VK_DOWN:
-			g_iy += 1;
-			break;
-		}
-		InvalidateRect(hWnd, &rect, TRUE);
-		return 0;
-	case WM_LBUTTONDOWN:
-		if (MessageBox(hWnd, TEXT("도형 변경"), TEXT("ㅎㅎ"), MB_OKCANCEL) == IDOK)
-			g_bShape = !g_bShape;
-		return 0;
-	case WM_MOUSEMOVE:
-		g_ix = LOWORD(lParam);
-		g_iy = HIWORD(lParam);
-		InvalidateRect(hWnd, &rect, TRUE);
-		return 0;
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
+		Rectangle(hdc, 0, 0, 1001, 1001);
+		Ellipse(hdc, watch.GetX() - watch.GetRad(), watch.GetY() + watch.GetRad(), watch.GetX() + watch.GetRad(), watch.GetY() - watch.GetRad());
 
-		if (g_ix + RADIUS > 1000)
-			g_ix = 1000 - RADIUS;
-		else if (g_ix - RADIUS < 0)
-			g_ix = RADIUS;
+		for (int i = 1; i <= 12; i++)
+		{
+			int size = 1;
+			if (i >= 10)
+				size = 2;
 
-		if (g_iy + RADIUS > 1000)
-			g_iy = 1000 - RADIUS;
-		else if (g_iy - RADIUS < 0)
-			g_iy = RADIUS;
+			SetTextAlign(hdc, TA_CENTER);
+			TCHAR buff[10];
+			wsprintf(buff, TEXT("%d"), i);
+			TextOut(hdc, watch.GetX() + cos(GetRadian(i * 30 - 90)) * (watch.GetRad() - 10), watch.GetY() + sin(GetRadian(i * 30 - 90)) * (watch.GetRad() - 10) - 6, buff, size);
+		}
 
-		if (g_bShape)
-			Ellipse(hdc, g_ix - RADIUS, g_iy + RADIUS, g_ix + RADIUS, g_iy - RADIUS);
-		else
-			Rectangle(hdc, g_ix - RADIUS, g_iy + RADIUS, g_ix + RADIUS, g_iy - RADIUS);
+		hNewPen = CreatePen(PS_SOLID, 3, RGB(100, 100, 100));
+		SelectObject(hdc, hNewPen);
+		MoveToEx(hdc, watch.GetX(), watch.GetY(), NULL);
+		LineTo(hdc, watch.GetX() + cos(GetRadian(watch.GetHour() * 30 - 90)) * (watch.GetRad() / 3), watch.GetY() + sin(GetRadian(watch.GetHour() * 30 - 90)) * (watch.GetRad() / 3));
+		DeleteObject(hNewPen);
+
+		hNewPen = CreatePen(PS_SOLID, 2, RGB(100, 100, 100));
+		SelectObject(hdc, hNewPen);
+		MoveToEx(hdc, watch.GetX(), watch.GetY(), NULL);
+		LineTo(hdc, watch.GetX() + cos(GetRadian(watch.GetMin() * 6 - 90)) * (watch.GetRad() - 20), watch.GetY() + sin(GetRadian(watch.GetMin() * 6 - 90)) * (watch.GetRad() - 20));
+		DeleteObject(hNewPen);
+
+		hNewPen = CreatePen(PS_SOLID, 1, RGB(255, 100, 100));
+		SelectObject(hdc, hNewPen);
+		MoveToEx(hdc, watch.GetX(), watch.GetY(), NULL);
+		LineTo(hdc, watch.GetX() + cos(GetRadian(watch.GetSecond() * 6 - 90)) * (watch.GetRad() - 20), watch.GetY() + sin(GetRadian(watch.GetSecond() * 6 - 90)) * (watch.GetRad() - 20));
+		DeleteObject(hNewPen);
 		EndPaint(hWnd, &ps);
 		return 0;
 	}

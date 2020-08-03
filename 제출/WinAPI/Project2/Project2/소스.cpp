@@ -207,7 +207,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		hNewPen = CreatePen(PS_SOLID, 3, RGB(100, 100, 100));
 		SelectObject(hdc, hNewPen);
 		MoveToEx(hdc, watch.GetX(), watch.GetY(), NULL);
-		LineTo(hdc, watch.GetX() + cos(GetRadian(watch.GetHour() * 30 - 90)) * (watch.GetRad() / 3), watch.GetY() + sin(GetRadian(watch.GetHour() * 30 - 90)) * (watch.GetRad() / 3));
+		LineTo(hdc, watch.GetX() + cos(GetRadian(watch.GetHour() * 30 + watch.GetMin() / 2 - 90)) * (watch.GetRad() / 3), watch.GetY() + sin(GetRadian(watch.GetHour() * 30 + watch.GetMin() / 2 - 90)) * (watch.GetRad() / 3));
 		DeleteObject(hNewPen);
 
 		hNewPen = CreatePen(PS_SOLID, 2, RGB(100, 100, 100));
